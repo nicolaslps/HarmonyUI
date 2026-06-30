@@ -11,3 +11,7 @@
 
 # PHP CS Fixer
 /.php-cs-fixer.cache
+
+# Node / Vite+
+/node_modules/
+
