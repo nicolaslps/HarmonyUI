@@ -1,1 +1,7 @@
 .idea
+
+# Composer (root tooling)
+/vendor/
+
+# Rector
+/.rector.cache
