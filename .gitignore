@@ -5,3 +5,6 @@
 
 # Rector
 /.rector.cache
+
+# Twig CS Fixer
+/.twig-cs-fixer.cache
