@@ -1,0 +1,9 @@
+{
+    "name": "harmonyui/monorepo",
+    "description": "Monorepo HarmonyUI : application(s) sous apps/ et package(s) partagé(s) sous packages/.",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.2"
+    }
+}
