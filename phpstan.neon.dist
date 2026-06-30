@@ -1,0 +1,23 @@
+includes:
+    - phpstan-baseline.neon
+
+parameters:
+    level: 6
+
+    reportUnmatchedIgnoredErrors: false
+    treatPhpDocTypesAsCertain: false
+
+    paths:
+        - apps/doc/src
+        - packages/core/src
+
+    excludePaths:
+        - '**/tests/**.php'
+        - '**/Tests/**.php'
+        - '**/vendor/**.php'
+
+    bootstrapFiles:
+        - apps/doc/vendor/autoload.php
+
+    symfony:
+        containerXmlPath: apps/doc/var/cache/dev/App_KernelDevDebugContainer.xml
