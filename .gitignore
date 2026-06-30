@@ -8,3 +8,6 @@
 
 # Twig CS Fixer
 /.twig-cs-fixer.cache
+
+# PHP CS Fixer
+/.php-cs-fixer.cache

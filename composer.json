@@ -4,14 +4,15 @@
     "type": "project",
     "license": "MIT",
     "require": {
-        "php": ">=8.2"
+        "php": ">=8.4"
     },
     "require-dev": {
         "rector/rector": "^2.5",
         "phpstan/phpstan": "^2.2",
         "phpstan/phpstan-symfony": "^2.0",
         "phpstan/extension-installer": "^1.4",
-        "vincentlanglet/twig-cs-fixer": "^4.0"
+        "vincentlanglet/twig-cs-fixer": "^4.0",
+        "friendsofphp/php-cs-fixer": "^3.0"
     },
     "scripts": {
         "rector": "rector process",
@@ -19,7 +20,9 @@
         "phpstan": "phpstan analyse",
         "phpstan:baseline": "phpstan analyse --generate-baseline",
         "twig-cs": "twig-cs-fixer lint",
-        "twig-cs:fix": "twig-cs-fixer lint --fix"
+        "twig-cs:fix": "twig-cs-fixer lint --fix",
+        "cs": "php-cs-fixer check --diff",
+        "cs:fix": "php-cs-fixer fix"
     },
     "config": {
         "allow-plugins": {
