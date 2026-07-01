@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block body %}
+    <article class="doc-page">
+        {{ page.html|raw }}
+    </article>
+{% endblock %}
