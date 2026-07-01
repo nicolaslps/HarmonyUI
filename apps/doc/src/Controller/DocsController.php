@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Service\DocPageRenderer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -11,10 +12,12 @@ use Symfony\Component\Routing\Attribute\Route;
 final class DocsController extends AbstractController
 {
     #[Route('/docs/{path}', name: 'app_docs', requirements: ['path' => '.+'])]
-    public function show(string $path): Response
+    public function show(string $path, DocPageRenderer $renderer): Response
     {
-        $segments = explode('/', $path);
+        $page = $renderer->render($path);
 
-        dd($segments);
+        return $this->render('doc/show.html.twig', [
+            'page' => $page,
+        ]);
     }
 }
