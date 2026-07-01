@@ -36,10 +36,19 @@ services:
             - [addExtension, ['@League\CommonMark\Extension\GithubFlavoredMarkdownExtension']]
             - [addExtension, ['@League\CommonMark\Extension\FrontMatter\FrontMatterExtension']]
 
-    League\CommonMark\MarkdownConverter:
-        arguments:
-            $environment: '@League\CommonMark\Environment\Environment'
+    League\CommonMark\Parser\MarkdownParserInterface:
+        class: League\CommonMark\Parser\MarkdownParser
+        arguments: ['@League\CommonMark\Environment\Environment']
+
+    League\CommonMark\Renderer\DocumentRendererInterface:
+        class: League\CommonMark\Renderer\HtmlRenderer
+        arguments: ['@League\CommonMark\Environment\Environment']
+
+    # Standalone front matter parser: lets DocCatalog read page metadata
+    # without converting the Markdown body.
+    League\CommonMark\Extension\FrontMatter\FrontMatterParserInterface:
+        factory: ['@League\CommonMark\Extension\FrontMatter\FrontMatterExtension', 'getFrontMatterParser']
 
     App\Service\DocPageRenderer:
         arguments:
-            $contentDir: '%kernel.project_dir%/content/doc'
+            $contentDir: '%doc.content_dir%'
