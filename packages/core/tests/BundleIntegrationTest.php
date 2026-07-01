@@ -17,10 +17,6 @@ final class BundleIntegrationTest extends KernelTestCase
     protected function tearDown(): void
     {
         parent::tearDown();
-
-        // Le boot de FrameworkBundle enregistre un gestionnaire d'exceptions
-        // qui n'est pas retiré au shutdown du kernel ; on le restaure pour éviter
-        // que PHPUnit ne marque le test comme « risky ».
         restore_exception_handler();
     }
 

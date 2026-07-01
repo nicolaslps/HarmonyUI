@@ -4,14 +4,27 @@ declare(strict_types=1);
 
 namespace HarmonyUI\Core;
 
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
-/**
- * Bundle de base de HarmonyUI.
- *
- * Pour l'instant il ne fait rien : il sert juste à être importé par
- * les applications du monorepo.
- */
 final class HarmonyUICoreBundle extends AbstractBundle
 {
+    public function getPath(): string
+    {
+        return \dirname(__DIR__);
+    }
+
+    public function prependExtension(ContainerConfigurator $container, ContainerBuilder $builder): void
+    {
+        if (!$builder->hasExtension('twig_component')) {
+            return;
+        }
+
+        // Both keys are mandatory; provide defaults so consuming apps don't have to.
+        $builder->prependExtensionConfig('twig_component', [
+            'defaults' => [],
+            'anonymous_template_directory' => 'components',
+        ]);
+    }
 }

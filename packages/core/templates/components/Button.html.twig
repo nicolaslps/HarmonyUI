@@ -1,0 +1,15 @@
+{% props
+    variant = 'primary',
+    size = 'md',
+    type = 'button',
+    disabled = false,
+%}
+
+<button
+    type="{{ type }}"
+    class="hui-btn hui-btn--{{ variant }} hui-btn--{{ size }}"
+    {{ disabled ? 'disabled' : '' }}
+    {{ attributes }}
+>
+    {% block content %}{% endblock %}
+</button>

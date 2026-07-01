@@ -10,7 +10,7 @@ importers:
     devDependencies:
       vite-plus:
         specifier: ^0.2.1
-        version: 0.2.1(vite@8.1.0)
+        version: 0.2.1(@vitest/browser-playwright@4.1.9)(vite@8.1.0)
 
 packages:
 
@@ -464,6 +464,12 @@ packages:
   '@types/estree@1.0.9':
     resolution: {integrity: sha512-GhdPgy1el4/ImP05X05Uw4cw2/M93BCUmnEvWZNStlCzEKME4Fkk+YpoA5OiHNQmoS7Cafb8Xa3Pya8m1Qrzeg==}
 
+  '@vitest/browser-playwright@4.1.9':
+    resolution: {integrity: sha512-Bq1rOGf9waevzG3EOkO/dene6bvKTUsZMVg8S1i+WH3JcMjuXEjiahP9rAqZRELUqjBySOJsvvSWqK/B3wjKQw==}
+    peerDependencies:
+      playwright: '*'
+      vitest: 4.1.9
+
   '@vitest/browser-preview@4.1.9':
     resolution: {integrity: sha512-a4/OrkMDb/WUnE4OOB/4FJbK3rYVO7YykqtUgcTKG4p2a0R3XcjPVu7SLRHFBs2+NIYhv5yxp1Lz3dbdGBjIow==}
     peerDependencies:
@@ -670,6 +676,11 @@ packages:
       picomatch:
         optional: true
 
+  fsevents@2.3.2:
+    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
+    os: [darwin]
+
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -811,6 +822,16 @@ packages:
   picomatch@4.0.4:
     resolution: {integrity: sha512-QP88BAKvMam/3NxH6vj2o21R6MjxZUAd6nlwAS/pnGvN9IVLocLHxGYIzFhg6fUQ+5th6P4dv4eW9jX3DSIj7A==}
     engines: {node: '>=12'}
+
+  playwright-core@1.61.1:
+    resolution: {integrity: sha512-h7Qlt6m4REp25qvIdvbDtVmD4LqVXfpRxhORv9L0jzETM05p4fuPJ3dKyuSXQxDSbXnmS79HAgi9589lGSpLkg==}
+    engines: {node: '>=18'}
+    hasBin: true
+
+  playwright@1.61.1:
+    resolution: {integrity: sha512-DWnY5o3YbLWK4GovuAVwpqL+1VwGNdUGrRr++8j8PtQQzvAVZUIMjKQ90fY689sEJZJBbZVw1rXaOKSTitkzPQ==}
+    engines: {node: '>=18'}
+    hasBin: true
 
   pngjs@7.0.0:
     resolution: {integrity: sha512-LKWqWJRhstyYo9pGvgor/ivk2w94eSjE3RGVuzLGlr3NmD8bf7RcYGze1mNdEHRP6TRP6rMuDHk5t44hnTRyow==}
@@ -1254,12 +1275,26 @@ snapshots:
 
   '@types/estree@1.0.9': {}
 
+  '@vitest/browser-playwright@4.1.9(playwright@1.61.1)(vite@8.1.0)(vitest@4.1.9)':
+    dependencies:
+      '@vitest/browser': 4.1.9(vite@8.1.0)(vitest@4.1.9)
+      '@vitest/mocker': 4.1.9(vite@8.1.0)
+      playwright: 1.61.1
+      tinyrainbow: 3.1.0
+      vitest: 4.1.9(@vitest/browser-playwright@4.1.9)(@vitest/browser-preview@4.1.9)(vite@8.1.0)
+    transitivePeerDependencies:
+      - bufferutil
+      - msw
+      - utf-8-validate
+      - vite
+    optional: true
+
   '@vitest/browser-preview@4.1.9(vite@8.1.0)(vitest@4.1.9)':
     dependencies:
       '@testing-library/dom': 10.4.1
       '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.1)
       '@vitest/browser': 4.1.9(vite@8.1.0)(vitest@4.1.9)
-      vitest: 4.1.9(@vitest/browser-preview@4.1.9)(vite@8.1.0)
+      vitest: 4.1.9(@vitest/browser-playwright@4.1.9)(@vitest/browser-preview@4.1.9)(vite@8.1.0)
     transitivePeerDependencies:
       - bufferutil
       - msw
@@ -1275,7 +1310,7 @@ snapshots:
       pngjs: 7.0.0
       sirv: 3.0.2
       tinyrainbow: 3.1.0
-      vitest: 4.1.9(@vitest/browser-preview@4.1.9)(vite@8.1.0)
+      vitest: 4.1.9(@vitest/browser-playwright@4.1.9)(@vitest/browser-preview@4.1.9)(vite@8.1.0)
       ws: 8.21.0
     transitivePeerDependencies:
       - bufferutil
@@ -1389,6 +1424,9 @@ snapshots:
     optionalDependencies:
       picomatch: 4.0.4
 
+  fsevents@2.3.2:
+    optional: true
+
   fsevents@2.3.3:
     optional: true
 
@@ -1455,7 +1493,7 @@ snapshots:
 
   obug@2.1.3: {}
 
-  oxfmt@0.55.0(vite-plus@0.2.1(vite@8.1.0)):
+  oxfmt@0.55.0(vite-plus@0.2.1(@vitest/browser-playwright@4.1.9)(vite@8.1.0)):
     dependencies:
       tinypool: 2.1.0
     optionalDependencies:
@@ -1478,7 +1516,7 @@ snapshots:
       '@oxfmt/binding-win32-arm64-msvc': 0.55.0
       '@oxfmt/binding-win32-ia32-msvc': 0.55.0
       '@oxfmt/binding-win32-x64-msvc': 0.55.0
-      vite-plus: 0.2.1(vite@8.1.0)
+      vite-plus: 0.2.1(@vitest/browser-playwright@4.1.9)(vite@8.1.0)
 
   oxlint-tsgolint@0.23.0:
     optionalDependencies:
@@ -1489,7 +1527,7 @@ snapshots:
       '@oxlint-tsgolint/win32-arm64': 0.23.0
       '@oxlint-tsgolint/win32-x64': 0.23.0
 
-  oxlint@1.70.0(oxlint-tsgolint@0.23.0)(vite-plus@0.2.1(vite@8.1.0)):
+  oxlint@1.70.0(oxlint-tsgolint@0.23.0)(vite-plus@0.2.1(@vitest/browser-playwright@4.1.9)(vite@8.1.0)):
     optionalDependencies:
       '@oxlint/binding-android-arm-eabi': 1.70.0
       '@oxlint/binding-android-arm64': 1.70.0
@@ -1511,13 +1549,23 @@ snapshots:
       '@oxlint/binding-win32-ia32-msvc': 1.70.0
       '@oxlint/binding-win32-x64-msvc': 1.70.0
       oxlint-tsgolint: 0.23.0
-      vite-plus: 0.2.1(vite@8.1.0)
+      vite-plus: 0.2.1(@vitest/browser-playwright@4.1.9)(vite@8.1.0)
 
   pathe@2.0.3: {}
 
   picocolors@1.1.1: {}
 
   picomatch@4.0.4: {}
+
+  playwright-core@1.61.1:
+    optional: true
+
+  playwright@1.61.1:
+    dependencies:
+      playwright-core: 1.61.1
+    optionalDependencies:
+      fsevents: 2.3.2
+    optional: true
 
   pngjs@7.0.0: {}
 
@@ -1588,7 +1636,7 @@ snapshots:
   tslib@2.8.1:
     optional: true
 
-  vite-plus@0.2.1(vite@8.1.0):
+  vite-plus@0.2.1(@vitest/browser-playwright@4.1.9)(vite@8.1.0):
     dependencies:
       '@oxc-project/types': 0.136.0
       '@oxlint/plugins': 1.68.0
@@ -1602,11 +1650,12 @@ snapshots:
       '@vitest/spy': 4.1.9
       '@vitest/utils': 4.1.9
       '@voidzero-dev/vite-plus-core': 0.2.1
-      oxfmt: 0.55.0(vite-plus@0.2.1(vite@8.1.0))
-      oxlint: 1.70.0(oxlint-tsgolint@0.23.0)(vite-plus@0.2.1(vite@8.1.0))
+      oxfmt: 0.55.0(vite-plus@0.2.1(@vitest/browser-playwright@4.1.9)(vite@8.1.0))
+      oxlint: 1.70.0(oxlint-tsgolint@0.23.0)(vite-plus@0.2.1(@vitest/browser-playwright@4.1.9)(vite@8.1.0))
       oxlint-tsgolint: 0.23.0
-      vitest: 4.1.9(@vitest/browser-preview@4.1.9)(vite@8.1.0)
+      vitest: 4.1.9(@vitest/browser-playwright@4.1.9)(@vitest/browser-preview@4.1.9)(vite@8.1.0)
     optionalDependencies:
+      '@vitest/browser-playwright': 4.1.9(playwright@1.61.1)(vite@8.1.0)(vitest@4.1.9)
       '@voidzero-dev/vite-plus-darwin-arm64': 0.2.1
       '@voidzero-dev/vite-plus-darwin-x64': 0.2.1
       '@voidzero-dev/vite-plus-linux-arm64-gnu': 0.2.1
@@ -1658,7 +1707,7 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  vitest@4.1.9(@vitest/browser-preview@4.1.9)(vite@8.1.0):
+  vitest@4.1.9(@vitest/browser-playwright@4.1.9)(@vitest/browser-preview@4.1.9)(vite@8.1.0):
     dependencies:
       '@vitest/expect': 4.1.9
       '@vitest/mocker': 4.1.9(vite@8.1.0)
@@ -1681,6 +1730,7 @@ snapshots:
       vite: 8.1.0
       why-is-node-running: 2.3.0
     optionalDependencies:
+      '@vitest/browser-playwright': 4.1.9(playwright@1.61.1)(vite@8.1.0)(vitest@4.1.9)
       '@vitest/browser-preview': 4.1.9(vite@8.1.0)(vitest@4.1.9)
     transitivePeerDependencies:
       - msw

@@ -1,0 +1,74 @@
+/*
+ * HarmonyUI — library stylesheet.
+ * Served to applications via AssetMapper (the `harmonyui` namespace).
+ */
+
+.hui-btn {
+  --hui-btn-bg: #4f46e5;
+  --hui-btn-fg: #ffffff;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  background-color: var(--hui-btn-bg);
+  color: var(--hui-btn-fg);
+  transition: filter 0.15s ease;
+}
+
+.hui-btn:hover {
+  filter: brightness(1.05);
+}
+
+.hui-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Variants */
+.hui-btn--primary {
+  --hui-btn-bg: #4f46e5;
+  --hui-btn-fg: #ffffff;
+}
+
+.hui-btn--secondary {
+  --hui-btn-bg: #e5e7eb;
+  --hui-btn-fg: #111827;
+}
+
+.hui-btn--danger {
+  --hui-btn-bg: #dc2626;
+  --hui-btn-fg: #ffffff;
+}
+
+.hui-btn--ghost {
+  --hui-btn-bg: transparent;
+  --hui-btn-fg: #4f46e5;
+  border-color: #4f46e5;
+}
+
+/* Sizes */
+.hui-btn--sm {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.8125rem;
+}
+
+.hui-btn--md {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.hui-btn--lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
