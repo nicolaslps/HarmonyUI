@@ -1,7 +1,7 @@
 ---
 title: Button
 description: A clickable button component with multiple variants and states
-priority: 1s
+priority: 1
 ---
 
 # Button
