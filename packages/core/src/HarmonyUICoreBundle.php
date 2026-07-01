@@ -9,11 +9,13 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
+use function dirname;
+
 final class HarmonyUICoreBundle extends AbstractBundle
 {
     public function getPath(): string
     {
-        return \dirname(__DIR__);
+        return dirname(__DIR__);
     }
 
     public function prependExtension(ContainerConfigurator $container, ContainerBuilder $builder): void
@@ -22,7 +24,7 @@ final class HarmonyUICoreBundle extends AbstractBundle
             $builder->prependExtensionConfig('framework', [
                 'asset_mapper' => [
                     'paths' => [
-                        \dirname(__DIR__).'/assets' => '@harmonyui',
+                        dirname(__DIR__).'/assets' => '@harmonyui',
                     ],
                 ],
             ]);
