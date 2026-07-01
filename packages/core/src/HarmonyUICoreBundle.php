@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace HarmonyUI\Core;
 
+use Symfony\Component\AssetMapper\AssetMapper;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
@@ -17,6 +18,16 @@ final class HarmonyUICoreBundle extends AbstractBundle
 
     public function prependExtension(ContainerConfigurator $container, ContainerBuilder $builder): void
     {
+        if ($builder->hasExtension('framework') && class_exists(AssetMapper::class)) {
+            $builder->prependExtensionConfig('framework', [
+                'asset_mapper' => [
+                    'paths' => [
+                        \dirname(__DIR__).'/assets' => '@harmonyui',
+                    ],
+                ],
+            ]);
+        }
+
         if (!$builder->hasExtension('twig_component')) {
             return;
         }

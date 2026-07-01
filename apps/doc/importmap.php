@@ -16,4 +16,8 @@ return [
         'path' => './assets/app.js',
         'entrypoint' => true,
     ],
+    '@harmonyui/styles/harmonyui.css' => [
+        'path' => '@harmonyui/styles/harmonyui.css',
+        'type' => 'css',
+    ],
 ];
