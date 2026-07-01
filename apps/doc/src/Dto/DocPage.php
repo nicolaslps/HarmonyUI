@@ -6,11 +6,13 @@ namespace App\Dto;
 
 final readonly class DocPage
 {
+    /**
+     * @param list<DocHeading> $headings Headings in document order, for the table of contents.
+     */
     public function __construct(
-        public string $title,
-        public string $description,
-        public int $priority,
+        public DocPageMetadata $meta,
         public string $html,
+        public array $headings,
     ) {
     }
 }
