@@ -6,15 +6,15 @@ priority: 1
 
 # Button
 
-## Usage :
+## Usage
 
 ::: demo usage :::
 
-## Primary :
+## Primary
 
 ::: demo primary :::
 
-## Disabled :
+## Disabled
 
 ::: demo disabled :::
 
