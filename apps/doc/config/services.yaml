@@ -21,3 +21,24 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    # CommonMark: core syntax + GitHub-Flavored Markdown (tables, ...) + front matter
+    League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension: ~
+    League\CommonMark\Extension\GithubFlavoredMarkdownExtension: ~
+    League\CommonMark\Extension\FrontMatter\FrontMatterExtension: ~
+
+    League\CommonMark\Environment\Environment:
+        arguments:
+            $config: []
+        calls:
+            - [addExtension, ['@League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension']]
+            - [addExtension, ['@League\CommonMark\Extension\GithubFlavoredMarkdownExtension']]
+            - [addExtension, ['@League\CommonMark\Extension\FrontMatter\FrontMatterExtension']]
+
+    League\CommonMark\MarkdownConverter:
+        arguments:
+            $environment: '@League\CommonMark\Environment\Environment'
+
+    App\Service\DocPageRenderer:
+        arguments:
+            $contentDir: '%kernel.project_dir%/content/doc'

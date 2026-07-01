@@ -733,6 +733,17 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         html_to_text_converter?: scalar|Param|null, // A service implementing the "Symfony\Component\Mime\HtmlToTextConverter\HtmlToTextConverterInterface". // Default: null
  *     },
  * }
+ * @psalm-type TwigComponentConfig = array{
+ *     defaults?: array<string, string|array{ // Default: []
+ *         template_directory?: scalar|Param|null, // Default: "components"
+ *         name_prefix?: scalar|Param|null, // Default: ""
+ *     }>,
+ *     anonymous_template_directory?: scalar|Param|null, // Defaults to `components`
+ *     profiler?: bool|array{ // Enables the profiler for Twig Component
+ *         enabled?: bool|Param, // Default: "%kernel.debug%"
+ *         collect_components?: bool|Param, // Collect components instances // Default: true
+ *     },
+ * }
  * @psalm-type SymfonycastsTailwindConfig = array{
  *     input_css?: list<scalar|Param|null>,
  *     config_file?: scalar|Param|null, // Path to the tailwind.config.js file // Default: "%kernel.project_dir%/tailwind.config.js"
@@ -749,6 +760,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     services?: ServicesConfig,
  *     framework?: FrameworkConfig,
  *     twig?: TwigConfig,
+ *     twig_component?: TwigComponentConfig,
  *     symfonycasts_tailwind?: SymfonycastsTailwindConfig,
  *     "when@dev"?: array{
  *         imports?: ImportsConfig,
@@ -756,6 +768,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         services?: ServicesConfig,
  *         framework?: FrameworkConfig,
  *         twig?: TwigConfig,
+ *         twig_component?: TwigComponentConfig,
  *         symfonycasts_tailwind?: SymfonycastsTailwindConfig,
  *     },
  *     "when@prod"?: array{
@@ -764,6 +777,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         services?: ServicesConfig,
  *         framework?: FrameworkConfig,
  *         twig?: TwigConfig,
+ *         twig_component?: TwigComponentConfig,
  *         symfonycasts_tailwind?: SymfonycastsTailwindConfig,
  *     },
  *     "when@test"?: array{
@@ -772,6 +786,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         services?: ServicesConfig,
  *         framework?: FrameworkConfig,
  *         twig?: TwigConfig,
+ *         twig_component?: TwigComponentConfig,
  *         symfonycasts_tailwind?: SymfonycastsTailwindConfig,
  *     },
  *     ...<string, ExtensionType|array{ // extra keys must follow the when@%env% pattern or match an extension alias
