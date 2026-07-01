@@ -22,7 +22,11 @@
         "twig-cs": "twig-cs-fixer lint",
         "twig-cs:fix": "twig-cs-fixer lint --fix",
         "cs": "php-cs-fixer check --diff",
-        "cs:fix": "php-cs-fixer fix"
+        "cs:fix": "php-cs-fixer fix",
+        "test": [
+            "@php apps/doc/vendor/bin/phpunit -c apps/doc/phpunit.dist.xml",
+            "@php packages/core/vendor/bin/phpunit -c packages/core/phpunit.dist.xml"
+        ]
     },
     "config": {
         "allow-plugins": {
