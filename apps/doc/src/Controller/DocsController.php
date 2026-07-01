@@ -4,20 +4,29 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Service\DocCatalog;
 use App\Service\DocPageRenderer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
+use function sprintf;
+
 final class DocsController extends AbstractController
 {
-    #[Route('/docs/{path}', name: 'app_docs', requirements: ['path' => '.+'])]
-    public function show(string $path, DocPageRenderer $renderer): Response
+    #[Route('/docs/{slug}', name: 'app_docs', requirements: ['slug' => '.+'])]
+    public function show(string $slug, DocCatalog $catalog, DocPageRenderer $renderer): Response
     {
-        $page = $renderer->render($path);
+        $meta = $catalog->get($slug);
+        if (is_null($meta)) {
+             throw $this->createNotFoundException(sprintf('Documentation page "%s" not found.', $slug));
+        }
 
         return $this->render('doc/show.html.twig', [
-            'page' => $page,
+            'page' => $renderer->render($meta),
+            'navigation' => $catalog->byCategory(),
+            'previous' => $catalog->previous($slug),
+            'next' => $catalog->next($slug),
         ]);
     }
 }

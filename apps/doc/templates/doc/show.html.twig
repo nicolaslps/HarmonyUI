@@ -1,9 +1,57 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ page.title }}{% endblock %}
+{% block title %}{{ page.meta.title }}{% endblock %}
 
 {% block body %}
-    <article class="doc-page">
-        {{ page.html|raw }}
-    </article>
+    <div class="mx-auto flex max-w-7xl gap-12 px-6 py-8">
+        <aside class="hidden w-56 shrink-0 lg:block">
+            <nav class="sticky top-8 space-y-6">
+                {% for category, pages in navigation %}
+                    <div>
+                        <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">{{ category }}</p>
+                        <ul class="space-y-1 text-sm">
+                            {% for item in pages %}
+                                <li>
+                                    <a href="{{ path('app_docs', { slug: item.slug }) }}"
+                                       class="{{ item.slug == page.meta.slug ? 'font-semibold text-slate-900' : 'text-slate-600 hover:text-slate-900' }}">
+                                        {{ item.title }}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endfor %}
+            </nav>
+        </aside>
+
+        <article class="doc-page min-w-0 flex-1">
+            {{ page.html|raw }}
+
+            <nav class="mt-12 flex justify-between border-t border-slate-200 pt-6 text-sm">
+                {% if previous %}
+                    <a class="text-slate-600 hover:text-slate-900" href="{{ path('app_docs', { slug: previous.slug }) }}">&larr; {{ previous.title }}</a>
+                {% else %}
+                    <span></span>
+                {% endif %}
+                {% if next %}
+                    <a class="text-slate-600 hover:text-slate-900" href="{{ path('app_docs', { slug: next.slug }) }}">{{ next.title }} &rarr;</a>
+                {% endif %}
+            </nav>
+        </article>
+
+        {% if page.headings|length > 1 %}
+            <aside class="hidden w-56 shrink-0 xl:block">
+                <nav class="sticky top-8">
+                    <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">On this page</p>
+                    <ul class="space-y-1 text-sm">
+                        {% for heading in page.headings %}
+                            <li class="{{ heading.level == 3 ? 'pl-4' : heading.level == 2 ? 'pl-2' : '' }}">
+                                <a class="text-slate-600 hover:text-slate-900" href="#{{ heading.id }}">{{ heading.text }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </aside>
+        {% endif %}
+    </div>
 {% endblock %}

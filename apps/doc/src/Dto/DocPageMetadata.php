@@ -10,15 +10,11 @@ namespace App\Dto;
  */
 final readonly class DocPageMetadata
 {
-    /**
-     * @param list<string> $related Slugs of related pages.
-     */
     public function __construct(
         public string $slug,
         public string $title,
         public string $description,
         public int $priority,
-        public array $related = [],
     ) {
     }
 
