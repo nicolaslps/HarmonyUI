@@ -1,0 +1,49 @@
+# Kamal deployment — production
+#
+# Run from the monorepo root, after loading the (non-versioned) .env.kamal:
+#   set -a && source .env.kamal && set +a && kamal deploy
+
+service: harmonyui-docs
+image: nicolaslps/harmonyui-docs
+
+servers:
+    web:
+        - <%= ENV.fetch("KAMAL_PROD_HOST") %>
+
+ssh:
+    user: <%= ENV.fetch("KAMAL_SSH_DEPLOY_USER") %>
+    # References the secret name in .kamal/secrets (avoids the inline key_data deprecation)
+    key_data:
+        - KAMAL_SSH_DEPLOY_KEY
+
+proxy:
+    ssl: true
+    hosts:
+        - harmonyui.org
+        - www.harmonyui.org
+    healthcheck:
+        path: /health
+        interval: 3
+        timeout: 5
+
+registry:
+    server: ghcr.io
+    # Secret names resolved from .kamal/secrets-common (masked, kept out of the rendered config)
+    username:
+        - KAMAL_REGISTRY_USERNAME
+    password:
+        - KAMAL_REGISTRY_PASSWORD
+
+builder:
+    arch: amd64
+    target: frankenphp_prod
+    context: .
+
+env:
+    clear:
+        APP_ENV: prod
+        APP_DEBUG: "false"
+        SERVER_NAME: "www.harmonyui.org, harmonyui.org, :80, :443"
+        FRANKENPHP_CONFIG: "worker ./public/index.php"
+    secret:
+        - APP_SECRET

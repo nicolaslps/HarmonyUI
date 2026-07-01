@@ -15,3 +15,6 @@
 # Node / Vite+
 /node_modules/
 
+# Kamal
+/.env.kamal
+

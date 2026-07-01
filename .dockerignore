@@ -1,0 +1,11 @@
+# Keep the build context small
+**/vendor/
+**/node_modules/
+**/var/
+**/.git/
+**/.idea/
+**/.env.local
+**/.env.*.local
+**/.env.local.php
+**/*.cache
+.env.kamal
