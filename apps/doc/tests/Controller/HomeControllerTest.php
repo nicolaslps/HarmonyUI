@@ -14,7 +14,7 @@ final class HomeControllerTest extends WebTestCase
         $client->request('GET', '/');
 
         self::assertResponseIsSuccessful();
-        self::assertSelectorTextContains('h1', 'Bonjour');
+        self::assertSelectorTextContains('h1', 'HarmonyUI');
         self::assertSelectorTextContains('title', 'Doc — Accueil');
     }
 }
