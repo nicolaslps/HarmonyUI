@@ -7,7 +7,7 @@
     data-hui-accordion-collapsible-value="{{ collapsible ? 'true' : 'false' }}"
     data-hui-accordion-disabled-value="{{ disabled ? 'true' : 'false' }}"
     data-hui-accordion-value-value="{{ value|json_encode }}"
-    class="{{ ('hui-accordion ' ~ attributes.render('class'))|tailwind_merge }}"
+    class="{{ hui('accordion').apply({}, attributes.render('class'))|tailwind_merge }}"
     {{ attributes }}
 >
     {%- block content %}{% endblock -%}

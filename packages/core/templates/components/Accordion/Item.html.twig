@@ -4,7 +4,7 @@
     data-part="item"
     data-value="{{ value }}"
     {% if disabled %}data-hui-disabled=""{% endif %}
-    class="{{ ('hui-accordion__item ' ~ attributes.render('class'))|tailwind_merge }}"
+    class="{{ hui('accordion-item').apply({}, attributes.render('class'))|tailwind_merge }}"
     {{ attributes }}
 >
     {%- block content %}{% endblock -%}

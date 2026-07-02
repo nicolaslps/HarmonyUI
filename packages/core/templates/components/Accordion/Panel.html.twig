@@ -4,10 +4,10 @@
     data-slot="accordion-panel"
     data-part="item-content"
     hidden
-    class="{{ ('hui-accordion__panel ' ~ attributes.render('class'))|tailwind_merge }}"
+    class="{{ hui('accordion-panel').apply({}, attributes.render('class'))|tailwind_merge }}"
     {{ attributes }}
 >
-    <div class="hui-accordion__panel-body">
+    <div class="{{ hui('accordion-panel-body').apply({}) }}">
         {%- block content %}{% endblock -%}
     </div>
 </{{ as }}>
