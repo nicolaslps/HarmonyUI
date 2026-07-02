@@ -18,6 +18,11 @@ final class HarmonyUICoreBundle extends AbstractBundle
         return dirname(__DIR__);
     }
 
+    public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
+    {
+        $container->import(dirname(__DIR__).'/config/services.php');
+    }
+
     public function prependExtension(ContainerConfigurator $container, ContainerBuilder $builder): void
     {
         if ($builder->hasExtension('framework') && class_exists(AssetMapper::class)) {
