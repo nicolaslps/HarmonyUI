@@ -1,0 +1,11 @@
+{%- props value, disabled = false, as = 'div' -%}
+<{{ as }}
+    data-slot="accordion-item"
+    data-part="item"
+    data-value="{{ value }}"
+    {% if disabled %}data-hui-disabled=""{% endif %}
+    class="{{ ('hui-accordion__item ' ~ attributes.render('class'))|tailwind_merge }}"
+    {{ attributes }}
+>
+    {%- block content %}{% endblock -%}
+</{{ as }}>

@@ -1,0 +1,16 @@
+{%- props as = 'h3' -%}
+<{{ as }} data-slot="accordion-header" class="hui-accordion__header">
+    <button
+        type="button"
+        data-part="item-trigger"
+        class="{{ ('hui-accordion__trigger ' ~ attributes.render('class'))|tailwind_merge }}"
+        {{ attributes }}
+    >
+        {%- block content %}{% endblock -%}
+        <span data-part="item-indicator" class="hui-accordion__indicator" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                <path d="m6 9 6 6 6-6"/>
+            </svg>
+        </span>
+    </button>
+</{{ as }}>

@@ -1,0 +1,19 @@
+{
+    "name": "@harmonyui/core",
+    "license": "MIT",
+    "symfony": {
+        "controllers": {
+            "accordion": {
+                "main": "controllers/accordion_controller.js",
+                "name": "hui-accordion",
+                "fetch": "eager",
+                "enabled": true
+            }
+        },
+        "importmap": {
+            "@hotwired/stimulus": "^3.0.0",
+            "@zag-js/accordion": "^1.42.0",
+            "@zag-js/vanilla": "^1.42.0"
+        }
+    }
+}

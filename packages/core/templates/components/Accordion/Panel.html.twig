@@ -1,0 +1,13 @@
+{%- props as = 'div' -%}
+{# "hidden" avoids a flash of open content before the Zag machine takes over. #}
+<{{ as }}
+    data-slot="accordion-panel"
+    data-part="item-content"
+    hidden
+    class="{{ ('hui-accordion__panel ' ~ attributes.render('class'))|tailwind_merge }}"
+    {{ attributes }}
+>
+    <div class="hui-accordion__panel-body">
+        {%- block content %}{% endblock -%}
+    </div>
+</{{ as }}>

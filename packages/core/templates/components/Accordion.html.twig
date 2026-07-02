@@ -1,0 +1,14 @@
+{%- props multiple = false, collapsible = true, disabled = false, value = [], as = 'div' -%}
+<{{ as }}
+    data-slot="accordion"
+    data-part="root"
+    data-controller="hui-accordion"
+    data-hui-accordion-multiple-value="{{ multiple ? 'true' : 'false' }}"
+    data-hui-accordion-collapsible-value="{{ collapsible ? 'true' : 'false' }}"
+    data-hui-accordion-disabled-value="{{ disabled ? 'true' : 'false' }}"
+    data-hui-accordion-value-value="{{ value|json_encode }}"
+    class="{{ ('hui-accordion ' ~ attributes.render('class'))|tailwind_merge }}"
+    {{ attributes }}
+>
+    {%- block content %}{% endblock -%}
+</{{ as }}>
