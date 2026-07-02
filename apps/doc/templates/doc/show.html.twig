@@ -12,7 +12,7 @@
                         <ul class="space-y-1 text-sm">
                             {% for item in pages %}
                                 <li>
-                                    <a href="{{ path('app_docs', { slug: item.slug }) }}"
+                                    <a href="{{ path('app_docs', {slug: item.slug}) }}"
                                        class="{{ item.slug == page.meta.slug ? 'font-semibold text-slate-900' : 'text-slate-600 hover:text-slate-900' }}">
                                         {{ item.title }}
                                     </a>
@@ -29,12 +29,12 @@
 
             <nav class="mt-12 flex justify-between border-t border-slate-200 pt-6 text-sm">
                 {% if previous %}
-                    <a class="text-slate-600 hover:text-slate-900" href="{{ path('app_docs', { slug: previous.slug }) }}">&larr; {{ previous.title }}</a>
+                    <a class="text-slate-600 hover:text-slate-900" href="{{ path('app_docs', {slug: previous.slug}) }}">&larr; {{ previous.title }}</a>
                 {% else %}
                     <span></span>
                 {% endif %}
                 {% if next %}
-                    <a class="text-slate-600 hover:text-slate-900" href="{{ path('app_docs', { slug: next.slug }) }}">{{ next.title }} &rarr;</a>
+                    <a class="text-slate-600 hover:text-slate-900" href="{{ path('app_docs', {slug: next.slug}) }}">{{ next.title }} &rarr;</a>
                 {% endif %}
             </nav>
         </article>
