@@ -1,15 +1,34 @@
-{% props
-    variant = 'primary',
-    size = 'md',
-    type = 'button',
-    disabled = false,
-%}
-
-<button
-    type="{{ type }}"
-    class="hui-btn hui-btn--{{ variant }} hui-btn--{{ size }}"
-    {{ disabled ? 'disabled' : '' }}
+{%- props variant = 'primary', size = 'md', as = 'button' -%}
+{%- set style = html_cva(
+    base: 'hui-btn',
+    variants: {
+        variant: {
+            neutral: '',
+            primary: 'hui-btn--primary',
+            outline: 'hui-btn--outline',
+            secondary: 'hui-btn--secondary',
+            ghost: 'hui-btn--ghost',
+            success: 'hui-btn--success',
+            warning: 'hui-btn--warning',
+            danger: 'hui-btn--danger',
+            link: 'hui-btn--link',
+        },
+        size: {
+            xs: 'hui-btn--xs',
+            sm: 'hui-btn--sm',
+            md: 'hui-btn--md',
+            lg: 'hui-btn--lg',
+            icon: 'hui-btn--icon',
+            'icon-xs': 'hui-btn--icon-xs',
+            'icon-sm': 'hui-btn--icon-sm',
+            'icon-lg': 'hui-btn--icon-lg',
+        },
+    },
+) -%}
+<{{ as }}
+    data-slot="button"
+    class="{{ style.apply({variant: variant, size: size}, attributes.render('class'))|tailwind_merge }}"
     {{ attributes }}
 >
-    {% block content %}{% endblock %}
-</button>
+    {%- block content %}{% endblock -%}
+</{{ as }}>
