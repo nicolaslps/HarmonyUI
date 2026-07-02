@@ -1,4 +1,9 @@
 @import "tailwindcss";
+@import "../../vendor/harmonyui/core/assets/styles/harmonyui.css";
+
+@source "../../vendor/harmonyui/core/assets/styles/harmonyui.css";
+
+@custom-variant dark (&:where(.dark, .dark *):where(:not(.light, .light *)));
 
 /* temporary Typography for Markdown-generated documentation content */
 .doc-page {
