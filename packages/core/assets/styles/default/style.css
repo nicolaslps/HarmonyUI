@@ -4,9 +4,6 @@
 /* Default Theme */
 @import "./variables.css" layer(theme);
 
-/* Component customizations for default theme */
-@import "./components/index.css" layer(components);
-
 * {
     @apply border-border outline-ring/50;
 }
