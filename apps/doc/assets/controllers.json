@@ -1,0 +1,11 @@
+{
+    "controllers": {
+        "@harmonyui/core": {
+            "accordion": {
+                "enabled": true,
+                "fetch": "eager"
+            }
+        }
+    },
+    "entrypoints": []
+}
