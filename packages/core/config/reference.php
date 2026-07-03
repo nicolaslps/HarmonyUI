@@ -745,6 +745,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     },
  * }
  * @psalm-type HarmonyUiCoreConfig = array{
+ *     theme?: scalar|Param|null, // Component style theme (a directory of config/styles/). Themes are standalone and do not inherit from each other. // Default: "default"
  *     components?: array<string, array{ // Default: []
  *         base?: scalar|Param|null, // Classes always applied to the component.
  *         variants?: array<string, array<string, scalar|Param|null>>,

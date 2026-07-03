@@ -7,11 +7,16 @@ namespace HarmonyUI\Core;
 use HarmonyUI\Core\Style\ComponentStyle;
 use LogicException;
 use Symfony\Component\AssetMapper\AssetMapper;
+use Symfony\Component\Config\Definition\Configurator\DefinitionConfigurator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
 use function dirname;
+use function is_string;
+use function sprintf;
+
+use const GLOB_ONLYDIR;
 
 final class HarmonyUICoreBundle extends AbstractBundle
 {
@@ -25,13 +30,36 @@ final class HarmonyUICoreBundle extends AbstractBundle
         $definition->import('../config/definition.php');
     }
 
+    /**
+     * @param array{theme: string, components?: array<string, array<string, mixed>>} $config
+     */
     public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
     {
         $container->import(dirname(__DIR__).'/config/services.php');
+
+        $builder->getDefinition('harmonyui.twig.component_styles')
+            ->replaceArgument(0, $config['components'] ?? []);
     }
 
     public function prependExtension(ContainerConfigurator $container, ContainerBuilder $builder): void
     {
+        foreach ($builder->getExtensionConfig($this->extensionAlias) as $config) {
+            if (isset($config['components'])) {
+                throw new LogicException(sprintf('The "%s.components" option cannot be set in the bundle configuration. Define component styles in "config/harmony_ui/*.php" instead.', $this->extensionAlias));
+            }
+        }
+
+        // Prepend priority: selected theme < app config/harmony_ui/*.php. Themes are
+        // standalone: selecting one does not inherit the "default" theme styles.
+        $projectStyles = $this->loadStyles($builder, $builder->getParameter('kernel.project_dir').'/config/harmony_ui');
+        if ([] !== $projectStyles) {
+            $builder->prependExtensionConfig($this->extensionAlias, ['components' => $projectStyles]);
+        }
+
+        $builder->prependExtensionConfig($this->extensionAlias, [
+            'components' => $this->loadStyles($builder, dirname(__DIR__).'/config/styles/'.$this->resolveTheme($builder)),
+        ]);
+
         if ($builder->hasExtension('framework') && class_exists(AssetMapper::class)) {
             $builder->prependExtensionConfig('framework', [
                 'asset_mapper' => [
