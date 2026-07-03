@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace HarmonyUI\Core;
 
+use HarmonyUI\Core\Style\ComponentStyle;
+use LogicException;
 use Symfony\Component\AssetMapper\AssetMapper;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
@@ -70,5 +72,28 @@ final class HarmonyUICoreBundle extends AbstractBundle
         }
 
         return $theme;
+    }
+
+    /**
+     * @return array<string, array<string, mixed>>
+     */
+    private function loadStyles(ContainerBuilder $builder, string $dir): array
+    {
+        if (!$builder->fileExists($dir, '/\.php$/')) {
+            return [];
+        }
+
+        $components = [];
+        foreach (glob($dir.'/*.php') ?: [] as $file) {
+            foreach (require $file as $name => $style) {
+                if (!$style instanceof ComponentStyle) {
+                    throw new LogicException(sprintf('"%s" must return an array of "%s" instances, got "%s" for component "%s".', $file, ComponentStyle::class, get_debug_type($style), $name));
+                }
+
+                $components[$name] = $style->toConfig();
+            }
+        }
+
+        return $components;
     }
 }
