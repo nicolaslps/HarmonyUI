@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Dto\DocPageMetadata;
 use App\Service\DocCatalog;
 use App\Service\DocPageRenderer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -18,8 +19,8 @@ final class DocsController extends AbstractController
     public function show(string $slug, DocCatalog $catalog, DocPageRenderer $renderer): Response
     {
         $meta = $catalog->get($slug);
-        if (is_null($meta)) {
-             throw $this->createNotFoundException(sprintf('Documentation page "%s" not found.', $slug));
+        if (!$meta instanceof DocPageMetadata) {
+            throw $this->createNotFoundException(sprintf('Documentation page "%s" not found.', $slug));
         }
 
         return $this->render('doc/show.html.twig', [

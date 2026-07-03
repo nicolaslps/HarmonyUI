@@ -30,7 +30,7 @@ final class DocCatalog
     }
 
     /**
-     * @return list<DocPageMetadata> Pages sorted by priority, then title.
+     * @return list<DocPageMetadata> pages sorted by priority, then title
      */
     public function all(): array
     {
@@ -129,9 +129,9 @@ final class DocCatalog
 
         return new DocPageMetadata(
             $slug,
-            strval($meta['title'] ?? $slug),
-            strval($meta['description'] ?? ''),
-            intval($meta['priority'] ?? 0),
+            (string) ($meta['title'] ?? $slug),
+            (string) ($meta['description'] ?? ''),
+            (int) ($meta['priority'] ?? 0),
         );
     }
 }

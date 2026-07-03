@@ -80,10 +80,12 @@ final readonly class DocPageRenderer
         $position = 0;
 
         foreach ($document->iterator() as $node) {
-            if (!$node instanceof Heading || $node->getLevel() > self::MAX_TOC_LEVEL) {
+            if (!$node instanceof Heading) {
                 continue;
             }
-
+            if ($node->getLevel() > self::MAX_TOC_LEVEL) {
+                continue;
+            }
             $text = StringContainerHelper::getChildText($node, [RawMarkupContainerInterface::class]);
 
             $token = substr(hash('xxh64', sprintf('%s|%d|%s', $seed, $position, $text)), 0, 6);
