@@ -2,11 +2,13 @@
 
 declare(strict_types=1);
 
+use HarmonyUI\Core\Twig\ComponentStylesExtension;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use TalesFromADev\Twig\Extra\Tailwind\TailwindExtension;
 use TalesFromADev\Twig\Extra\Tailwind\TailwindRuntime;
 use Twig\Extra\Html\HtmlExtension;
 
+use function Symfony\Component\DependencyInjection\Loader\Configurator\abstract_arg;
 use function Symfony\Component\DependencyInjection\Loader\Configurator\service;
 
 return static function (ContainerConfigurator $container): void {
@@ -18,8 +20,6 @@ return static function (ContainerConfigurator $container): void {
         ->set('harmonyui.twig.html_extension', HtmlExtension::class)
         ->tag('twig.extension');
 
-    // tales-from-a-dev/twig-tailwind-extra: provides the `tailwind_merge` filter.
-    // The filter delegates to a runtime that performs the actual class merge.
     $services
         ->set('harmonyui.twig.tailwind_extension', TailwindExtension::class)
         ->tag('twig.extension');
@@ -31,4 +31,9 @@ return static function (ContainerConfigurator $container): void {
             service('cache.app'),
         ])
         ->tag('twig.runtime');
+
+    $services
+        ->set('harmonyui.twig.component_styles', ComponentStylesExtension::class)
+        ->args([abstract_arg('merged component styles')])
+        ->tag('twig.extension');
 };
