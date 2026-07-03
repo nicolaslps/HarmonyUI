@@ -744,6 +744,15 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         collect_components?: bool|Param, // Collect components instances // Default: true
  *     },
  * }
+ * @psalm-type HarmonyUiCoreConfig = array{
+ *     theme?: scalar|Param|null, // Component style theme (a directory of config/styles/). Themes inherit the "default" theme for anything they do not redefine. // Default: "default"
+ *     components?: array<string, array{ // Default: []
+ *         base?: scalar|Param|null, // Classes always applied to the component.
+ *         variants?: array<string, array<string, scalar|Param|null>>,
+ *         compound_variants?: list<list<mixed>>,
+ *         default_variants?: array<string, scalar|Param|null>,
+ *     }>,
+ * }
  * @psalm-type SymfonycastsTailwindConfig = array{
  *     input_css?: list<scalar|Param|null>,
  *     config_file?: scalar|Param|null, // Path to the tailwind.config.js file // Default: "%kernel.project_dir%/tailwind.config.js"
@@ -765,6 +774,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     framework?: FrameworkConfig,
  *     twig?: TwigConfig,
  *     twig_component?: TwigComponentConfig,
+ *     harmony_ui_core?: HarmonyUiCoreConfig,
  *     symfonycasts_tailwind?: SymfonycastsTailwindConfig,
  *     stimulus?: StimulusConfig,
  *     "when@dev"?: array{
@@ -774,6 +784,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         framework?: FrameworkConfig,
  *         twig?: TwigConfig,
  *         twig_component?: TwigComponentConfig,
+ *         harmony_ui_core?: HarmonyUiCoreConfig,
  *         symfonycasts_tailwind?: SymfonycastsTailwindConfig,
  *         stimulus?: StimulusConfig,
  *     },
@@ -784,6 +795,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         framework?: FrameworkConfig,
  *         twig?: TwigConfig,
  *         twig_component?: TwigComponentConfig,
+ *         harmony_ui_core?: HarmonyUiCoreConfig,
  *         symfonycasts_tailwind?: SymfonycastsTailwindConfig,
  *         stimulus?: StimulusConfig,
  *     },
@@ -794,6 +806,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         framework?: FrameworkConfig,
  *         twig?: TwigConfig,
  *         twig_component?: TwigComponentConfig,
+ *         harmony_ui_core?: HarmonyUiCoreConfig,
  *         symfonycasts_tailwind?: SymfonycastsTailwindConfig,
  *         stimulus?: StimulusConfig,
  *     },

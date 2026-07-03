@@ -2,6 +2,7 @@
 @import "../../vendor/harmonyui/core/assets/styles/harmonyui.css";
 
 @source "../../vendor/harmonyui/core/assets/styles/harmonyui.css";
+@source "../../vendor/harmonyui/core/config/styles/default";
 
 @custom-variant dark (&:where(.dark, .dark *):where(:not(.light, .light *)));
 

@@ -18,6 +18,11 @@ final class HarmonyUICoreBundle extends AbstractBundle
         return dirname(__DIR__);
     }
 
+    public function configure(DefinitionConfigurator $definition): void
+    {
+        $definition->import('../config/definition.php');
+    }
+
     public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
     {
         $container->import(dirname(__DIR__).'/config/services.php');

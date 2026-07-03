@@ -18,6 +18,10 @@ priority: 1
 
 ::: demo disabled :::
 
+## Extending
+
+::: demo extend :::
+
 | Prop | Type | Défaut |
 |---|---|---|
 | variant | string | `primary` |

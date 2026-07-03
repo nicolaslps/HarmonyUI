@@ -744,6 +744,14 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         collect_components?: bool|Param, // Collect components instances // Default: true
  *     },
  * }
+ * @psalm-type HarmonyUiCoreConfig = array{
+ *     components?: array<string, array{ // Default: []
+ *         base?: scalar|Param|null, // Classes always applied to the component.
+ *         variants?: array<string, array<string, scalar|Param|null>>,
+ *         compound_variants?: list<list<mixed>>,
+ *         default_variants?: array<string, scalar|Param|null>,
+ *     }>,
+ * }
  * @psalm-type ConfigType = array{
  *     imports?: ImportsConfig,
  *     parameters?: ParametersConfig,
@@ -751,6 +759,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     framework?: FrameworkConfig,
  *     twig?: TwigConfig,
  *     twig_component?: TwigComponentConfig,
+ *     harmony_ui_core?: HarmonyUiCoreConfig,
  *     "when@test"?: array{
  *         imports?: ImportsConfig,
  *         parameters?: ParametersConfig,
