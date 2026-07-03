@@ -50,4 +50,25 @@ final class HarmonyUICoreBundle extends AbstractBundle
             'anonymous_template_directory' => 'components',
         ]);
     }
+
+    /**
+     * Prepends run before the configuration is processed, so the theme is read from the raw extension configs.
+     */
+    private function resolveTheme(ContainerBuilder $builder): string
+    {
+        $theme = 'default';
+        foreach ($builder->getExtensionConfig($this->extensionAlias) as $config) {
+            if (isset($config['theme'])) {
+                $theme = $config['theme'];
+            }
+        }
+
+        if (!is_string($theme) || !is_dir(dirname(__DIR__).'/config/styles/'.$theme)) {
+            $available = array_map(basename(...), glob(dirname(__DIR__).'/config/styles/*', GLOB_ONLYDIR) ?: []);
+
+            throw new LogicException(sprintf('Unknown HarmonyUI theme "%s". Available themes: "%s".', is_string($theme) ? $theme : get_debug_type($theme), implode('", "', $available)));
+        }
+
+        return $theme;
+    }
 }
