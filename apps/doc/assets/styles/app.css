@@ -6,6 +6,19 @@
 
 @custom-variant dark (&:where(.dark, .dark *):where(:not(.light, .light *)));
 
+/* tempest/highlight tokens for server-side code highlighting */
+.hl-keyword { color: var(--color-rose-600); }
+.hl-type { color: var(--color-sky-700); }
+.hl-property { color: var(--color-violet-600); }
+.hl-attribute { color: var(--color-amber-700); }
+.hl-value { color: var(--color-emerald-700); }
+.hl-literal,
+.hl-number { color: var(--color-amber-600); }
+.hl-variable,
+.hl-generic { color: var(--color-slate-800); }
+.hl-injection { color: var(--color-sky-700); }
+.hl-comment { color: var(--color-slate-400); font-style: italic; }
+
 /* temporary Typography for Markdown-generated documentation content */
 .doc-page {
     max-width: 48rem;

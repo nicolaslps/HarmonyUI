@@ -20,7 +20,8 @@
         "symfony/twig-bundle": "8.1.*",
         "symfony/ux-icons": "^3.2",
         "symfony/yaml": "8.1.*",
-        "symfonycasts/tailwind-bundle": "^0.14.0"
+        "symfonycasts/tailwind-bundle": "^0.14.0",
+        "tempest/highlight": "^2.27"
     },
     "config": {
         "allow-plugins": {
