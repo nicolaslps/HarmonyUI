@@ -30,4 +30,13 @@ final class BundleIntegrationTest extends KernelTestCase
         self::assertInstanceOf(HarmonyUICoreBundle::class, $bundles['HarmonyUICoreBundle']);
         self::assertTrue(self::getContainer()->has('kernel'));
     }
+
+    public function testComponentsAreExposedUnderTheUiPrefix(): void
+    {
+        self::bootKernel();
+
+        $factory = self::getContainer()->get('ux.twig_component.component_factory');
+
+        self::assertSame('@ui/components/Button.html.twig', $factory->metadataFor('ui:Button')->getTemplate());
+    }
 }

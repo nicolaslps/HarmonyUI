@@ -9,7 +9,7 @@ use Tempest\Highlight\Pattern;
 use Tempest\Highlight\Tokens\TokenTypeEnum;
 
 /**
- * Matches namespaced component open tags (e.g. `<twig:HarmonyUICore:Button>`),
+ * Matches namespaced component open tags (e.g. `<twig:ui:Button>`),
  * which the base HTML grammar deliberately ignores.
  */
 final readonly class TwigComponentOpenTagPattern implements Pattern

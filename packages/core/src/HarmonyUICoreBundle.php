@@ -70,6 +70,14 @@ final class HarmonyUICoreBundle extends AbstractBundle
             ]);
         }
 
+        if ($builder->hasExtension('twig')) {
+            $builder->prependExtensionConfig('twig', [
+                'paths' => [
+                    dirname(__DIR__).'/templates' => 'ui',
+                ],
+            ]);
+        }
+
         if (!$builder->hasExtension('twig_component')) {
             return;
         }
