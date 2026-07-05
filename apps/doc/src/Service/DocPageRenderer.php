@@ -41,7 +41,7 @@ final readonly class DocPageRenderer
         $i = 0;
 
         $raw = preg_replace_callback(
-            '/:::\s*demo\s+([a-z0-9\-]+)\s*:::/i',
+            '/<ComponentPreview\s+name="([a-z0-9\-]+)"\s*\/>/i',
             function (array $m) use (&$demos, &$i, $dir): string {
                 $key = 'DEMO_PLACEHOLDER_'.$i;
                 $demos[$key] = $this->read(sprintf('%s/examples/%s.twig', $dir, $m[1]));

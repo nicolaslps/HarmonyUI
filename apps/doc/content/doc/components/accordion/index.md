@@ -11,14 +11,14 @@ wired through a single Stimulus controller placed on the accordion root.
 
 ## Usage
 
-::: demo usage :::
+<ComponentPreview name="usage"/>
 
 ## Multiple
 
 Allow several items to stay open at the same time with `multiple`.
 
-::: demo multiple :::
+<ComponentPreview name="multiple"/>
 
 ## Disabled item
 
-::: demo disabled :::
+<ComponentPreview name="disabled"/>

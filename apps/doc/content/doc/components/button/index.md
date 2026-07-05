@@ -8,77 +8,77 @@ priority: 1
 
 Displays a button or a component that looks like a button.
 
-::: demo demo :::
+<ComponentPreview name="demo"/>
 
 ## Usage
 
-::: demo usage :::
+<ComponentPreview name="usage"/>
 
 ## Examples
 
 ### Primary
 
-::: demo primary :::
+<ComponentPreview name="primary"/>
 
 ### Outline
 
-::: demo outline :::
+<ComponentPreview name="outline"/>
 
 ### Secondary
 
-::: demo secondary :::
+<ComponentPreview name="secondary"/>
 
 ### Ghost
 
-::: demo ghost :::
+<ComponentPreview name="ghost"/>
 
 ### Danger
 
-::: demo danger :::
+<ComponentPreview name="danger"/>
 
 ### Link
 
-::: demo link :::
+<ComponentPreview name="link"/>
 
 ### Size
 
 Use the `size` prop to change the size of the button.
 
-::: demo size :::
+<ComponentPreview name="size"/>
 
 ### Icon
 
-::: demo icon :::
+<ComponentPreview name="icon"/>
 
 ### With Icon
 
 Remember to add the `data-icon="inline-start"` or `data-icon="inline-end"` attribute to the icon for the correct spacing.
 
-::: demo with-icon :::
+<ComponentPreview name="with-icon"/>
 
 ### Rounded
 
 Use the `rounded-full` class to make the button rounded.
 
-::: demo rounded :::
+<ComponentPreview name="rounded"/>
 
 ### Loading
 
 Render a spinning icon inside the button to show a loading state. Remember to add the `data-icon="inline-start"` or `data-icon="inline-end"` attribute to the spinner for the correct spacing.
 
-::: demo loading :::
+<ComponentPreview name="loading"/>
 
 ### As Link
 
 You can use the `as` prop on Button to make another element look like a button. Here's an example of a link that looks like a button.
 
-::: demo as-link :::
+<ComponentPreview name="as-link"/>
 
 ### RTL
 
 To enable RTL support, set the `dir="rtl"` attribute on the root element.
 
-::: demo rtl :::
+<ComponentPreview name="rtl"/>
 
 ## API Reference
 
