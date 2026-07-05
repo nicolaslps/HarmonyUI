@@ -82,7 +82,7 @@ To enable RTL support, set the `dir="rtl"` attribute on the root element.
 
 ## API Reference
 
-### `<twig:HarmonyUICore:Button>`
+### `<twig:ui:Button>`
 
 | Prop | Type | Description |
 |---|---|---|
