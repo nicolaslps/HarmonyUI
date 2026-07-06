@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="scroll-pt-20">
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
@@ -20,6 +20,7 @@
         {% endif %}
     </head>
     <body class="bg-background text-foreground">
+        {% include '_navbar.html.twig' %}
         {% block body %}{% endblock %}
     </body>
 </html>
