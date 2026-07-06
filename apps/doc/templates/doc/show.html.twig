@@ -2,6 +2,12 @@
 
 {% block title %}{{ page.meta.title }}{% endblock %}
 
+{% block meta %}
+    {% if page.meta.description %}
+        <meta name="description" content="{{ page.meta.description }}">
+    {% endif %}
+{% endblock %}
+
 {% block body %}
     <div class="mx-auto flex max-w-7xl gap-12 px-6 py-8">
         <aside class="hidden w-56 shrink-0 lg:block">
@@ -25,6 +31,13 @@
         </aside>
 
         <article class="doc-page min-w-0 flex-1">
+            <header>
+                <h1>{{ page.meta.title }}</h1>
+                {% if page.meta.description %}
+                    <p class="-mt-4 text-base text-slate-600">{{ page.meta.description }}</p>
+                {% endif %}
+            </header>
+
             {{ page.html|raw }}
 
             <nav class="mt-12 flex justify-between border-t border-slate-200 pt-6 text-sm">
