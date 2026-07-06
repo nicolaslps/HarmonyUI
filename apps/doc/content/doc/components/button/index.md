@@ -4,10 +4,6 @@ description: Displays a button or a component that looks like a button.
 priority: 1
 ---
 
-# Button
-
-Displays a button or a component that looks like a button.
-
 <ComponentPreview name="demo"/>
 
 ## Usage
