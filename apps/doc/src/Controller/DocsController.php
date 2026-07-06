@@ -13,9 +13,18 @@ use Symfony\Component\Routing\Attribute\Route;
 
 use function sprintf;
 
+#[Route('/docs/', name: 'app_docs_')]
 final class DocsController extends AbstractController
 {
-    #[Route('/docs/{slug}', name: 'app_docs', requirements: ['slug' => '.+'])]
+    #[Route('components', name: 'components', priority: 10)]
+    public function index(DocCatalog $catalog): Response
+    {
+        return $this->render('doc/components/index.html.twig', [
+            'components' => $catalog->byCategory()['components'] ?? [],
+        ]);
+    }
+
+    #[Route('{slug}', name: 'show', requirements: ['slug' => '.+'])]
     public function show(string $slug, DocCatalog $catalog, DocPageRenderer $renderer): Response
     {
         $meta = $catalog->get($slug);

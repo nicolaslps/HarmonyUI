@@ -20,11 +20,11 @@
                 </p>
 
                 <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6">
-                    <twig:ui:Button as="a" size="lg" href="{{ path('app_docs', {slug: 'overview/getting-started'}) }}">
+                    <twig:ui:Button as="a" size="lg" href="{{ path('app_docs_show', {slug: 'overview/getting-started'}) }}">
                         Get Started
                         <twig:ux:icon name="lucide:arrow-right" data-icon="inline-end" />
                     </twig:ui:Button>
-                    <twig:ui:Button as="a" variant="outline" size="lg" href="{{ path('app_docs', {slug: 'components'}) }}">
+                    <twig:ui:Button as="a" variant="outline" size="lg" href="{{ path('app_docs_components') }}">
                         Browse Components
                         <twig:ux:icon name="lucide:eye" data-icon="inline-end" />
                     </twig:ui:Button>

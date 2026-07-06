@@ -18,7 +18,7 @@
                         <ul class="space-y-1 text-sm">
                             {% for item in pages %}
                                 <li>
-                                    <a href="{{ path('app_docs', {slug: item.slug}) }}"
+                                    <a href="{{ path('app_docs_show', {slug: item.slug}) }}"
                                        class="{{ item.slug == page.meta.slug ? 'font-semibold text-slate-900' : 'text-slate-600 hover:text-slate-900' }}">
                                         {{ item.title }}
                                     </a>

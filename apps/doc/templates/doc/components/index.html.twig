@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Components — HarmonyUI{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="Browse every HarmonyUI component: headless, accessible Twig components for Symfony.">
+{% endblock %}
+
+{% block body %}
+    <div class="mx-auto max-w-7xl px-6 py-16 sm:py-24">
+        <header class="max-w-2xl">
+            <h1 class="text-4xl font-black tracking-tight text-foreground sm:text-5xl">Components</h1>
+            <p class="mt-4 text-base leading-7 text-muted-foreground">
+                Beautiful, headless Twig components that you configure instead of fork.
+            </p>
+        </header>
+
+        <ul class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {% for component in components %}
+                <li>
+                    <a href="{{ path('app_docs_show', {slug: component.slug}) }}"
+                       class="group flex h-full flex-col rounded-lg border border-slate-200 p-6 transition-colors hover:border-slate-300 hover:bg-slate-50">
+                        <h2 class="text-lg font-semibold text-foreground group-hover:text-primary">{{ component.title }}</h2>
+                        {% if component.description %}
+                            <p class="mt-2 text-sm leading-6 text-muted-foreground">{{ component.description }}</p>
+                        {% endif %}
+                    </a>
+                </li>
+            {% else %}
+                <li class="text-muted-foreground">No components documented yet.</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
