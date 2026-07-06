@@ -58,7 +58,7 @@ final readonly class DocPageRenderer
 
         foreach ($demos as $key => $source) {
             $rendered = $this->twig->createTemplate($source)->render();
-            $block = $this->twig->render('doc/_preview_block.html.twig', [
+            $block = $this->twig->render('doc/show/_preview_block.html.twig', [
                 'source' => $source,
                 'rendered' => $rendered,
             ]);

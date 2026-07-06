@@ -23,7 +23,7 @@ final class DocsController extends AbstractController
             throw $this->createNotFoundException(sprintf('Documentation page "%s" not found.', $slug));
         }
 
-        return $this->render('doc/show.html.twig', [
+        return $this->render('doc/show/show.html.twig', [
             'page' => $renderer->render($meta),
             'navigation' => $catalog->byCategory(),
             'previous' => $catalog->previous($slug),

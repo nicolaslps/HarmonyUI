@@ -1,0 +1,23 @@
+{% extends 'doc/show/layout.html.twig' %}
+
+{% block content %}
+    <header>
+        <h1>{{ page.meta.title }}</h1>
+        {% if page.meta.description %}
+            <p class="-mt-4 text-base text-slate-600">{{ page.meta.description }}</p>
+        {% endif %}
+    </header>
+
+    {{ page.html|raw }}
+
+    <nav class="mt-12 flex justify-between border-t border-slate-200 pt-6 text-sm">
+        {% if previous %}
+            <a class="text-slate-600 hover:text-slate-900" href="{{ path('app_docs', {slug: previous.slug}) }}">&larr; {{ previous.title }}</a>
+        {% else %}
+            <span></span>
+        {% endif %}
+        {% if next %}
+            <a class="text-slate-600 hover:text-slate-900" href="{{ path('app_docs', {slug: next.slug}) }}">{{ next.title }} &rarr;</a>
+        {% endif %}
+    </nav>
+{% endblock %}
