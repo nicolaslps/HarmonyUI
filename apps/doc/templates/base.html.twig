@@ -20,7 +20,7 @@
         {% endif %}
     </head>
     <body class="bg-background text-foreground">
-        {% include '_navbar.html.twig' %}
+        {{ include('_navbar.html.twig') }}
         {% block body %}{% endblock %}
     </body>
 </html>
