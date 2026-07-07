@@ -2,144 +2,140 @@
 
 @layer components {
     .prose {
-        max-width: 48rem;
         margin-inline: auto;
-        padding: 3rem 1.5rem;
         line-height: 1.75;
         color: color-mix(in oklab, var(--color-foreground) 72%, var(--color-muted-foreground));
     }
 
-    .prose h1,
-    .prose h2,
-    .prose h3,
-    .prose h4 {
-        color: var(--color-foreground);
-        letter-spacing: -0.02em;
-        scroll-margin-top: 6.5rem;
-    }
+    /* Everything inside .not-prose (demos, pagination…) is left untouched. */
+    .prose :not(.not-prose, .not-prose *) {
+        &:is(h1, h2, h3, h4) {
+            color: var(--color-foreground);
+            letter-spacing: -0.02em;
+            scroll-margin-top: 6.5rem;
+        }
 
-    .prose h1 {
-        font-size: 2.25rem;
-        line-height: 1.15;
-        font-weight: 700;
-        margin-bottom: 2rem;
-    }
+        &:is(h1) {
+            font-size: 2.25rem;
+            line-height: 1.15;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
 
-    .prose h2 {
-        font-size: 1.5rem;
-        font-weight: 700;
-        margin: 3rem 0 1.5rem;
-    }
+        &:is(h2) {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 3rem 0 1.5rem;
+        }
 
-    .prose h3 {
-        font-size: 1.25rem;
-        font-weight: 600;
-        margin: 2rem 0 1rem;
-    }
+        &:is(h3) {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+        }
 
-    .prose h4 {
-        font-size: 1.125rem;
-        font-weight: 600;
-        margin: 1.5rem 0 0.75rem;
-    }
+        &:is(h4) {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem;
+        }
 
-    .prose p {
-        margin: 1.25rem 0;
-    }
+        &:is(p) {
+            margin: 1.25rem 0;
+        }
 
-    .prose a {
-        color: var(--color-primary);
-        font-weight: 500;
-    }
+        &:is(a) {
+            color: var(--color-primary);
+            font-weight: 500;
+        }
 
-    .prose a:hover {
-        text-decoration: underline;
-    }
+        &:is(a):hover {
+            text-decoration: underline;
+        }
 
-    .prose strong {
-        color: var(--color-foreground);
-        font-weight: 600;
-    }
+        &:is(strong) {
+            color: var(--color-foreground);
+            font-weight: 600;
+        }
 
-    .prose :not(pre) > code {
-        background: var(--color-muted);
-        border: 1px solid var(--color-border);
-        border-radius: var(--radius-sm);
-        color: var(--color-foreground);
-        font-size: 0.8125em;
-        font-weight: 500;
-        padding: 0.1em 0.4em;
-    }
+        &:is(:not(pre) > code) {
+            background: var(--color-muted);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            color: var(--color-foreground);
+            font-size: 0.8125em;
+            font-weight: 500;
+            padding: 0.1em 0.4em;
+        }
 
-    .prose pre {
-        margin: 1.5rem 0;
-        padding: 1rem;
-        background: color-mix(in oklab, var(--color-muted) 50%, var(--color-background));
-        border: 1px solid var(--color-border);
-        border-radius: var(--radius-md);
-        font-size: 0.875rem;
-        overflow-x: auto;
-    }
+        &:is(pre) {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: color-mix(in oklab, var(--color-muted) 50%, var(--color-background));
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            font-size: 0.875rem;
+            overflow-x: auto;
+        }
 
-    .prose ul,
-    .prose ol {
-        margin: 1.25rem 0;
-        padding-left: 1.5rem;
-    }
+        &:is(ul, ol) {
+            margin: 1.25rem 0;
+            padding-left: 1.5rem;
+        }
 
-    .prose ul {
-        list-style-type: disc;
-    }
+        &:is(ul) {
+            list-style-type: disc;
+        }
 
-    .prose ol {
-        list-style-type: decimal;
-    }
+        &:is(ol) {
+            list-style-type: decimal;
+        }
 
-    .prose li {
-        margin: 0.5rem 0;
-    }
+        &:is(li) {
+            margin: 0.5rem 0;
+        }
 
-    .prose li::marker {
-        color: var(--color-muted-foreground);
-    }
+        &:is(li)::marker {
+            color: var(--color-muted-foreground);
+        }
 
-    .prose blockquote {
-        margin: 1.5rem 0;
-        padding-left: 1rem;
-        border-left: 2px solid var(--color-border);
-        color: var(--color-muted-foreground);
-        font-style: italic;
-    }
+        &:is(blockquote) {
+            margin: 1.5rem 0;
+            padding-left: 1rem;
+            border-left: 2px solid var(--color-border);
+            color: var(--color-muted-foreground);
+            font-style: italic;
+        }
 
-    .prose hr {
-        margin: 3rem 0;
-        border: 0;
-        border-top: 1px solid var(--color-border);
-    }
+        &:is(hr) {
+            margin: 3rem 0;
+            border: 0;
+            border-top: 1px solid var(--color-border);
+        }
 
-    .prose img {
-        margin: 1.5rem 0;
-        max-width: 100%;
-        border-radius: var(--radius-md);
-    }
+        &:is(img) {
+            margin: 1.5rem 0;
+            max-width: 100%;
+            border-radius: var(--radius-md);
+        }
 
-    .prose table {
-        width: 100%;
-        margin: 1.5rem 0;
-        border-collapse: collapse;
-        font-size: 0.875rem;
-    }
+        &:is(table) {
+            width: 100%;
+            margin: 1.5rem 0;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
 
-    .prose th,
-    .prose td {
-        border: 1px solid var(--color-border);
-        padding: 0.625rem 1rem;
-        text-align: left;
-    }
+        &:is(th, td) {
+            border: 1px solid var(--color-border);
+            padding: 0.625rem 1rem;
+            text-align: left;
+        }
 
-    .prose th {
-        background: color-mix(in oklab, var(--color-muted) 50%, var(--color-background));
-        color: var(--color-foreground);
-        font-weight: 600;
+        &:is(th) {
+            background: color-mix(in oklab, var(--color-muted) 50%, var(--color-background));
+            color: var(--color-foreground);
+            font-weight: 600;
+        }
     }
 }

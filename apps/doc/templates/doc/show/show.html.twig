@@ -10,14 +10,20 @@
 
     {{ page.html|raw }}
 
-    <nav class="mt-12 flex justify-between border-t border-slate-200 pt-6 text-sm">
+    <nav class="not-prose mt-12 flex justify-between pt-6">
         {% if previous %}
-            <a class="text-slate-600 hover:text-slate-900" href="{{ path('app_docs_show', {slug: previous.slug}) }}">&larr; {{ previous.title }}</a>
+            <twig:ui:Button as="a" variant="secondary" href="{{ path('app_docs_show', {slug: previous.slug}) }}">
+                <twig:ux:icon name="lucide:arrow-left" data-icon="inline-start" />
+                {{ previous.title }}
+            </twig:ui:Button>
         {% else %}
             <span></span>
         {% endif %}
         {% if next %}
-            <a class="text-slate-600 hover:text-slate-900" href="{{ path('app_docs_show', {slug: next.slug}) }}">{{ next.title }} &rarr;</a>
+            <twig:ui:Button as="a" variant="secondary" href="{{ path('app_docs_show', {slug: next.slug}) }}">
+                {{ next.title }}
+                <twig:ux:icon name="lucide:arrow-right" data-icon="inline-end" />
+            </twig:ui:Button>
         {% endif %}
     </nav>
 {% endblock %}
