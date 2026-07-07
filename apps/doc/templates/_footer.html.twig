@@ -1,0 +1,32 @@
+<footer class="mt-auto border-t border-border pt-14">
+    <div class="mx-auto flex max-w-352 flex-col items-start justify-between gap-6 px-6 sm:flex-row sm:items-center">
+        <p class="text-sm text-muted-foreground">
+            Built with &hearts; by
+            <twig:ui:Button as="a" variant="link" href="https://x.com/_nicolaslps" target="_blank" rel="noopener noreferrer" class="h-auto p-0 align-baseline">
+                Nicolas Lopes
+            </twig:ui:Button>
+            &copy; {{ 'now'|date('Y') }}
+        </p>
+
+        <ul class="flex items-center gap-6 text-sm">
+            <li>
+                <a href="{{ path('app_docs_show', {slug: 'overview/getting-started'}) }}"
+                   class="text-muted-foreground hover:text-foreground">Documentation</a>
+            </li>
+            <li>
+                <a href="{{ path('app_docs_components') }}"
+                   class="text-muted-foreground hover:text-foreground">Components</a>
+            </li>
+            <li>
+                <a href="https://github.com/nicolaslps/harmonyui" target="_blank" rel="noopener noreferrer"
+                   class="text-muted-foreground hover:text-foreground">GitHub</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="overflow-hidden" aria-hidden="true">
+        <p class="mx-auto max-w-352 translate-y-[22%] px-6 text-center text-[15vw] leading-none font-semibold tracking-tighter text-foreground/5 select-none">
+            HarmonyUI
+        </p>
+    </div>
+</footer>
