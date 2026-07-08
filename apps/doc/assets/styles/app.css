@@ -1,5 +1,7 @@
 @import "tailwindcss";
 @import "../../vendor/harmonyui/core/assets/styles/harmonyui.css";
+@import "./doc-theme.css";
+@import "./demo-theme.css";
 @import "./typography.css";
 
 @source "../../vendor/harmonyui/core/assets/styles/harmonyui.css";
