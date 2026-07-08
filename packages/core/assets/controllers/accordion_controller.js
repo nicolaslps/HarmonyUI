@@ -15,6 +15,7 @@ export default class extends Controller {
         collapsible: { type: Boolean, default: true },
         disabled: { type: Boolean, default: false },
         value: { type: Array, default: [] },
+        dir: { type: String, default: "ltr" },
     };
 
     connect() {
@@ -24,6 +25,7 @@ export default class extends Controller {
             collapsible: this.collapsibleValue,
             disabled: this.disabledValue,
             defaultValue: this.valueValue,
+            dir: this.dirValue,
             onValueChange: (details) => {
                 this.dispatch("change", { detail: details });
             },

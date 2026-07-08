@@ -1,13 +1,18 @@
 {%- props as = 'div' -%}
-{# "hidden" avoids a flash of open content before the Zag machine takes over. #}
+{# "hidden" avoids a flash of open content before the Zag machine takes over.
+   No data-state here: the machine adds it on boot, and the panel's @starting-style
+   rule keys on it so open-by-default items don't animate on page load. #}
 <{{ as }}
     data-slot="accordion-panel"
     data-part="item-content"
-    hidden
+    {% if not _hui_accordion_item_open|default(false) %}hidden{% endif %}
     class="{{ hui('accordion-panel').apply({}, attributes.render('class'))|tailwind_merge }}"
     {{ attributes }}
 >
-    <div class="{{ hui('accordion-panel-body').apply({}) }}">
-        {%- block content %}{% endblock -%}
+    {# Extra wrapper so the body padding is clipped when the grid row collapses to 0fr. #}
+    <div class="{{ hui('accordion-panel-clip').apply({}) }}">
+        <div class="{{ hui('accordion-panel-body').apply({}) }}">
+            {%- block content %}{% endblock -%}
+        </div>
     </div>
 </{{ as }}>

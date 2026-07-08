@@ -20,3 +20,12 @@ Allow several items to stay open at the same time with `multiple`.
 ## Disabled item
 
 <ComponentPreview name="disabled"/>
+
+## RTL
+
+Set `dir="rtl"` on the root to render the accordion for right-to-left languages.
+The direction is applied to the markup and forwarded to the Zag.js machine, and
+the default styles use logical properties so text and the indicator follow the
+reading direction.
+
+<ComponentPreview name="rtl"/>

@@ -1,8 +1,10 @@
 {%- props value, disabled = false, as = 'div' -%}
+{%- set _hui_accordion_item_open = value in _hui_accordion_open_values|default([]) -%}
 <{{ as }}
     data-slot="accordion-item"
     data-part="item"
     data-value="{{ value }}"
+    data-state="{{ _hui_accordion_item_open ? 'open' : 'closed' }}"
     {% if disabled %}data-hui-disabled=""{% endif %}
     class="{{ hui('accordion-item').apply({}, attributes.render('class'))|tailwind_merge }}"
     {{ attributes }}
