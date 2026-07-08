@@ -1,0 +1,11 @@
+liip_imagine:
+    driver: gd
+    cache: format_extension
+
+    filter_sets:
+        home_bg:
+            format: webp
+            quality: 60
+            filters:
+                downscale:
+                    max: [1400, 1400]
