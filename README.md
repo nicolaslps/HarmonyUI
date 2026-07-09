@@ -1,27 +1,29 @@
-# HarmonyUI — Monorepo
+# HarmonyUI
 
-Monorepo basique Symfony.
+HarmonyUI is a UI component library for Symfony. It provides beautifully styled Twig components, built on Tailwind CSS and extensible through design tokens and per-component configuration.
 
-## Structure
+Read the documentation at [harmonyui.org](https://harmonyui.org).
+
+## Installation
+
+```bash
+composer require harmonyui/ui
+```
+
+## Repository structure
+
+This is the main HarmonyUI monorepo. Issues and pull requests belong here.
 
 ```
 .
 ├── apps/
-│   └── doc/        Application Symfony (AssetMapper/importmap + page d'accueil « Bonjour »)
+│   └── doc/        Documentation site (harmonyui.org)
 └── packages/
-    └── core/       Package Symfony (bundle vide, juste importable)
+    └── ui/         The Symfony bundle, published as harmonyui/ui
 ```
 
-Le package `harmonyui/core` est relié à l'app via un dépôt Composer `path`
-(`apps/doc/composer.json` → `repositories`), puis symliké dans `apps/doc/vendor/`.
-Son bundle `HarmonyUI\Core\HarmonyUICoreBundle` est enregistré dans
-`apps/doc/config/bundles.php`.
+The `harmonyui/ui` package is distributed as a read-only sub-tree split of `packages/ui`.
 
-## Lancer l'app
+## License
 
-```bash
-cd apps/doc
-symfony serve        # ou : php -S 127.0.0.1:8000 -t public
-```
-
-Page d'accueil : `/` → « Bonjour ».
+The `harmonyui/ui` package is released under the [MIT license](packages/ui/LICENSE).
