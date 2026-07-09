@@ -1,6 +1,6 @@
 {
     "controllers": {
-        "@harmonyui/core": {
+        "@harmonyui/ui": {
             "accordion": {
                 "enabled": true,
                 "fetch": "eager"
