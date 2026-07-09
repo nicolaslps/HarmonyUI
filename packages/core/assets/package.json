@@ -11,9 +11,7 @@
             }
         },
         "importmap": {
-            "@hotwired/stimulus": "^3.0.0",
-            "@zag-js/accordion": "^1.42.0",
-            "@zag-js/vanilla": "^1.42.0"
+            "@hotwired/stimulus": "^3.0.0"
         }
     }
 }
