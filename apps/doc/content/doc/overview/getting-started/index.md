@@ -1,5 +1,5 @@
 ---
 title: Getting started
 description: Quick guide to get started with harmony ui.
-priority: 0
+priority: 10
 ---

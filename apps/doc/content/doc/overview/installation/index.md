@@ -1,5 +1,5 @@
 ---
 title: Installation
 description: A quick guide to install harmonyui.
-priority: 0
+priority: 10
 ---
