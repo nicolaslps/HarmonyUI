@@ -1,0 +1,5 @@
+---
+title: Skeleton
+description: Use to show a placeholder while content is loading.
+priority: 0
+---

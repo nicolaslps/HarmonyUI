@@ -1,7 +1,7 @@
 ---
 title: Button
 description: Displays a button or a component that looks like a button.
-priority: 1
+priority: 0
 ---
 
 <ComponentPreview name="demo"/>
