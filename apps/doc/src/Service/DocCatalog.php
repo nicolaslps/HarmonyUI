@@ -108,7 +108,7 @@ final class DocCatalog
 
             usort(
                 $pages,
-                static fn (DocPageMetadata $a, DocPageMetadata $b): int => [$a->priority, $a->title] <=> [$b->priority, $b->title],
+                static fn (DocPageMetadata $a, DocPageMetadata $b): int => [-$a->priority, $a->title] <=> [-$b->priority, $b->title],
             );
 
             return $pages;
