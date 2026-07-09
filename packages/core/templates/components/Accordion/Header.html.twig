@@ -5,7 +5,8 @@
     data-hui-accordion-target="trigger"
     data-action="click->hui-accordion#guard keydown->hui-accordion#navigate"
     data-state="{{ _hui_accordion_item_open|default(false) ? 'open' : 'closed' }}"
-    {% if _hui_accordion_item_disabled|default(false) %}aria-disabled="true" tabindex="-1"{% endif %}
+    {% if _hui_accordion_item_header_id is defined %}id="{{ _hui_accordion_item_header_id }}"{% endif %}
+    {% if _hui_accordion_item_disabled|default(false) %}aria-disabled="true"{% endif %}
     class="{{ hui('accordion-trigger').apply({}, attributes.render('class'))|tailwind_merge }}"
     {{ attributes }}
 >

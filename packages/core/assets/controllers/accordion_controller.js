@@ -35,9 +35,7 @@ export default class extends Controller {
             return;
         }
 
-        const triggers = this.triggerTargets.filter(
-            (trigger) => !trigger.closest("details").hasAttribute("data-hui-disabled"),
-        );
+        const triggers = this.triggerTargets;
         const index = triggers.indexOf(event.currentTarget);
         if (index === -1) {
             return;
