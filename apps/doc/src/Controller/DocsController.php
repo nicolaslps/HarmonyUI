@@ -7,6 +7,7 @@ namespace App\Controller;
 use App\Dto\DocPageMetadata;
 use App\Service\DocCatalog;
 use App\Service\DocPageRenderer;
+use App\Service\LegacySite;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -25,11 +26,20 @@ final class DocsController extends AbstractController
     }
 
     #[Route('{slug}', name: 'show', requirements: ['slug' => '.+'])]
-    public function show(string $slug, DocCatalog $catalog, DocPageRenderer $renderer): Response
+    public function show(string $slug, DocCatalog $catalog, DocPageRenderer $renderer, LegacySite $legacySite): Response
     {
         $meta = $catalog->get($slug);
         if (!$meta instanceof DocPageMetadata) {
             throw $this->createNotFoundException(sprintf('Documentation page "%s" not found.', $slug));
+        }
+
+        // Pages not rewritten yet embed the previous site instead of rendering.
+        if ($legacySite->isLegacy($slug)) {
+            return $this->render('legacy/under_construction.html.twig', [
+                'title' => $legacySite->seoTitle($meta->title),
+                'description' => $legacySite->seoDescription($meta->description),
+                'legacy_url' => $legacySite->url('/docs/'.$slug),
+            ]);
         }
 
         return $this->render('doc/show/show.html.twig', [

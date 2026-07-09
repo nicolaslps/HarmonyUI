@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="{{ description }}">
+    <link rel="canonical" href="{{ url(app.current_route, app.current_route_parameters) }}">
+{% endblock %}
+
+{% block body %}
+    <div class="mx-auto flex w-full max-w-7xl flex-1 flex-col px-6 py-10">
+        <header class="max-w-2xl">
+            <p class="text-sm font-semibold uppercase tracking-wide text-primary">Currently under construction</p>
+            <h1 class="mt-2 text-3xl font-black tracking-tight text-foreground sm:text-4xl">This page is being rewritten</h1>
+            <p class="mt-4 text-base leading-7 text-muted-foreground">
+                The new documentation for this page is not ready yet. In the meantime, here is the page from the previous version of the site.
+                You can also <a href="{{ legacy_url }}" target="_blank" rel="noopener" class="font-medium text-primary underline underline-offset-4">open it in a new tab</a>.
+            </p>
+        </header>
+
+        <iframe src="{{ legacy_url }}"
+                title="Previous version of this page"
+                loading="lazy"
+                class="mt-8 h-[70svh] w-full flex-1 rounded-lg border border-slate-200 bg-white"></iframe>
+    </div>
+{% endblock %}
