@@ -1,0 +1,66 @@
+<section class="grid items-center gap-8 py-16 lg:grid-cols-[2fr_1fr] lg:gap-14 lg:py-24">
+    <div class="relative order-last overflow-hidden rounded-2xl bg-muted lg:order-first">
+        <img src="{{ 'media/home-enterprises.png'|imagine_filter('home_bg') }}" alt="" class="absolute inset-0 h-full w-full object-cover" loading="lazy">
+        <div class="relative flex items-center justify-center p-4 py-12 sm:p-10 lg:p-14 lg:py-20">
+            <div class="w-full max-w-2xl overflow-hidden rounded-2xl border-8 border-white/30 bg-white bg-clip-padding shadow-2xl backdrop-blur-md">
+                <div class="relative flex h-9 items-center border-b border-slate-200 px-3">
+                    <div class="flex items-center gap-1.5">
+                        <span class="size-2.5 rounded-full bg-slate-200"></span>
+                        <span class="size-2.5 rounded-full bg-slate-200"></span>
+                        <span class="size-2.5 rounded-full bg-slate-200"></span>
+                    </div>
+                    <span class="absolute left-1/2 flex -translate-x-1/2 items-center gap-1.5 rounded-md bg-slate-100 px-3 py-1 text-xs text-slate-500">
+                        <twig:ux:icon name="lucide:lock" class="size-3" />
+                        yourapp.com/faq
+                    </span>
+                </div>
+                <div class="bg-white p-5 sm:p-8">
+                    <twig:ui:Accordion :value="['item-1']">
+                        <twig:ui:Accordion:Item value="item-1">
+                            <twig:ui:Accordion:Header>Is it accessible?</twig:ui:Accordion:Header>
+                            <twig:ui:Accordion:Panel>
+                                Yes. It adheres to the WAI-ARIA accordion design pattern.
+                            </twig:ui:Accordion:Panel>
+                        </twig:ui:Accordion:Item>
+                        <twig:ui:Accordion:Item value="item-2">
+                            <twig:ui:Accordion:Header>Does it work without JavaScript frameworks?</twig:ui:Accordion:Header>
+                            <twig:ui:Accordion:Panel>
+                                Yes. Twig on the server, a small Stimulus controller in the browser.
+                            </twig:ui:Accordion:Panel>
+                        </twig:ui:Accordion:Item>
+                        <twig:ui:Accordion:Item value="item-3">
+                            <twig:ui:Accordion:Header>Will it pass the audit?</twig:ui:Accordion:Header>
+                            <twig:ui:Accordion:Panel>
+                                Keyboard navigation, focus management and RTL ship upstream, and improve with every release.
+                            </twig:ui:Accordion:Panel>
+                        </twig:ui:Accordion:Item>
+                    </twig:ui:Accordion>
+                    <div class="mt-6 flex flex-wrap gap-2 text-xs text-slate-500">
+                        <span class="rounded-full border border-slate-200 px-2.5 py-1">WAI-ARIA pattern</span>
+                        <span class="rounded-full border border-slate-200 px-2.5 py-1">Keyboard: ↑ ↓ Home End</span>
+                        <span class="rounded-full border border-slate-200 px-2.5 py-1">RTL ready</span>
+                        <span class="rounded-full border border-slate-200 px-2.5 py-1">Reduced motion</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-md lg:justify-self-end">
+        <p class="text-sm font-semibold tracking-widest text-muted-foreground uppercase">
+            Enterprises
+        </p>
+        <h2 class="mt-4 text-3xl font-semibold tracking-tighter text-balance text-foreground sm:text-4xl">
+            Built to outlive the rebrand.
+        </h2>
+        <p class="mt-5 text-lg leading-8 text-muted-foreground">
+            Accessibility, keyboard support and RTL ship in the vendor folder and
+            improve with every release, so the app you deliver today still passes
+            the audit five from now, across every team and every codebase.
+        </p>
+        <a href="{{ path('app_docs_show', {slug: 'overview/getting-started'}) }}" class="mt-7 inline-flex items-center gap-2 font-medium text-foreground hover:underline">
+            Read how updates stay safe
+            <twig:ux:icon name="lucide:arrow-right" class="size-4" />
+        </a>
+    </div>
+</section>

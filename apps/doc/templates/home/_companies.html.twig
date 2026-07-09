@@ -1,0 +1,52 @@
+<section class="grid items-center gap-8 py-16 lg:grid-cols-[2fr_1fr] lg:gap-14 lg:py-24">
+    <div class="relative order-last overflow-hidden rounded-2xl bg-muted lg:order-first">
+        <img src="{{ 'media/home-companies.png'|imagine_filter('home_bg') }}" alt="" class="absolute inset-0 h-full w-full object-cover" loading="lazy">
+        <div class="relative flex items-center justify-center p-4 py-12 sm:p-10 lg:p-14 lg:py-20">
+            <div class="w-full max-w-3xl overflow-hidden rounded-2xl border-8 border-white/30 bg-white bg-clip-padding shadow-2xl backdrop-blur-md">
+                <div class="relative flex h-8 items-center border-b border-slate-200 px-3">
+                    <div class="flex items-center gap-1.5">
+                        <span class="size-2.5 rounded-full bg-slate-200"></span>
+                        <span class="size-2.5 rounded-full bg-slate-200"></span>
+                        <span class="size-2.5 rounded-full bg-slate-200"></span>
+                    </div>
+                    <span class="absolute left-1/2 -translate-x-1/2 text-xs text-slate-400">config/harmony_ui/button.php</span>
+                </div>
+                <div class="grid sm:grid-cols-[3fr_2fr]">
+                    <pre class="overflow-x-auto border-b border-slate-200 bg-slate-50 p-5 font-mono text-xs leading-6 text-slate-700 sm:border-r sm:border-b-0"><code>return [
+    'button' => new ComponentStyle(
+        variants: [
+            'variant' => [
+                'extended' => 'bg-gradient-to-r
+                    from-fuchsia-500 to-cyan-500
+                    text-white',
+            ],
+        ],
+    ),
+];</code></pre>
+                    <div class="flex min-h-44 flex-col items-center justify-center gap-3 bg-white p-5">
+                        <twig:ui:Button variant="extended">Book a demo</twig:ui:Button>
+                        <span class="mt-2 text-center text-xs text-slate-400">Your variant, next to the built-in ones. This button uses this site's real config.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-md lg:justify-self-end">
+        <p class="text-sm font-semibold tracking-widest text-muted-foreground uppercase">
+            Small &amp; growing companies
+        </p>
+        <h2 class="mt-4 text-3xl font-semibold tracking-tighter text-balance text-foreground sm:text-4xl">
+            A design system, without the design-system team.
+        </h2>
+        <p class="mt-5 text-lg leading-8 text-muted-foreground">
+            Declare your brand once, in tokens, variants and themes, and every
+            developer plays from the same sheet. Add a variant in config, and it
+            exists everywhere, instantly. New pages stay consistent by construction.
+        </p>
+        <a href="{{ path('app_docs_show', {slug: 'overview/getting-started'}) }}" class="mt-7 inline-flex items-center gap-2 font-medium text-foreground hover:underline">
+            See how theming works
+            <twig:ux:icon name="lucide:arrow-right" class="size-4" />
+        </a>
+    </div>
+</section>

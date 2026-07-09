@@ -1,0 +1,35 @@
+<section class="relative mt-4 mb-24">
+    <div class="relative overflow-hidden rounded-3xl bg-muted">
+        <img
+            src="{{ 'media/home-hero.png'|imagine_filter('home_bg') }}"
+            alt=""
+            class="absolute inset-0 h-full w-full object-cover"
+            loading="lazy"
+        >
+
+        <div class="relative flex items-center justify-center p-4 py-10 sm:p-10 lg:p-16">
+            <div class="grid w-full max-w-6xl overflow-hidden rounded-2xl border-8 border-white/30 bg-white bg-clip-padding shadow-2xl backdrop-blur-md lg:grid-cols-2">
+                <div class="flex min-h-72 flex-col border-b border-slate-200 lg:min-h-[30rem] lg:border-r lg:border-b-0">
+                    <div class="flex h-9 shrink-0 items-center gap-1.5 border-b border-slate-200 px-3">
+                        <span class="size-2.5 rounded-full bg-slate-200"></span>
+                        <span class="size-2.5 rounded-full bg-slate-200"></span>
+                        <span class="size-2.5 rounded-full bg-slate-200"></span>
+                        <span class="ml-3 text-xs text-slate-400">login.html.twig</span>
+                    </div>
+                    <div class="flex flex-1 items-center justify-center bg-slate-50 p-6 font-mono text-sm text-slate-400">
+                        Editor
+                    </div>
+                </div>
+
+                <div class="flex min-h-72 flex-col lg:min-h-[30rem]">
+                    <div class="flex h-9 shrink-0 items-center justify-center border-b border-slate-200 px-3">
+                        <span class="rounded-md bg-slate-100 px-3 py-1 text-xs text-slate-500">Preview</span>
+                    </div>
+                    <div class="flex flex-1 items-center justify-center bg-white p-6 text-sm text-slate-400">
+                        Result
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

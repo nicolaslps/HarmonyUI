@@ -1,0 +1,30 @@
+<section class="grid gap-10 pt-16 pb-12 lg:grid-cols-[7fr_5fr] lg:items-end lg:gap-16 lg:pt-28 lg:pb-16">
+    <div>
+        <div class="flex items-center gap-3 text-sm">
+            <span class="h-4 w-px bg-border" aria-hidden="true"></span>
+            <span class="text-muted-foreground">
+                Extensible UI components, tuned for <span class="font-semibold text-foreground">Symfony</span>
+            </span>
+        </div>
+        <h1 class="mt-8 text-5xl font-semibold tracking-tighter text-balance text-foreground sm:text-6xl xl:text-7xl">
+            Compose Interfaces In Perfect Harmony.
+        </h1>
+    </div>
+
+    <div class="max-w-xl">
+        <p class="text-lg leading-8 text-muted-foreground">
+            Twig components that live in your vendor folder, not your repo.
+            You write the melody with tokens, custom variants and themes.
+            HarmonyUI plays every interaction pitch-perfect, release after release.
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+            <twig:ui:Button as="a" size="lg" class="h-12 rounded-xl px-6 text-base" href="{{ path('app_docs_show', {slug: 'overview/getting-started'}) }}">
+                Start Composing
+            </twig:ui:Button>
+            <twig:ui:Button as="a" variant="secondary" size="lg" class="h-12 rounded-xl px-6 text-base" href="{{ path('app_docs_components') }}">
+                Browse Components
+            </twig:ui:Button>
+        </div>
+    </div>
+</section>
