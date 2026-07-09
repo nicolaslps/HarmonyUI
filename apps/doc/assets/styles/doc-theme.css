@@ -48,6 +48,8 @@
     --sage-foreground: oklch(0.24 0.04 152);
     --lavender: oklch(0.68 0.17 295);
     --lavender-foreground: oklch(0.985 0.008 295);
+
+    --page-shadow: 0 16px 28px -10px rgba(0, 0, 0, 0.13);
 }
 
 .dark {
@@ -89,6 +91,8 @@
     --sage-foreground: oklch(0.24 0.04 152);
     --lavender: oklch(0.74 0.15 295);
     --lavender-foreground: oklch(0.22 0.05 295);
+
+    --page-shadow: 0 16px 28px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--border);
 }
 
 @theme inline {
@@ -98,4 +102,5 @@
     --color-sage-foreground: var(--sage-foreground);
     --color-lavender: var(--lavender);
     --color-lavender-foreground: var(--lavender-foreground);
+    --shadow-page: var(--page-shadow);
 }

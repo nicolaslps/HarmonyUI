@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="scroll-pt-20">
+<html lang="en" class="scroll-pt-20">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,11 +20,11 @@
         <script src="https://cdn.jsdelivr.net/npm/frankenphp-hot-reload/+esm" type="module"></script>
         {% endif %}
     </head>
-    <body class="flex min-h-svh flex-col bg-background text-foreground">
-        {{ include('_navbar.html.twig') }}
-        {% block body %}{% endblock %}
-        {% block footer %}
-            {{ include('_footer.html.twig') }}
-        {% endblock %}
+    <body class="bg-background text-foreground">
+        <div class="relative z-10 flex min-h-svh flex-col bg-background shadow-page">
+            {{ include('_navbar.html.twig') }}
+            {% block body %}{% endblock %}
+        </div>
+        {{ include('_footer.html.twig') }}
     </body>
 </html>
