@@ -1,5 +1,5 @@
 {
-    "harmonyui/core": {
+    "harmonyui/ui": {
         "version": "dev-main"
     },
     "liip/imagine-bundle": {

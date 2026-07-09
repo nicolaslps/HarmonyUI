@@ -5,7 +5,7 @@ declare(strict_types=1);
 $finder = new PhpCsFixer\Finder()
     ->in([
         __DIR__.'/apps/doc/src',
-        __DIR__.'/packages/core/src',
+        __DIR__.'/packages/ui/src',
     ])
     ->exclude([
         'tests',

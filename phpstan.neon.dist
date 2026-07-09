@@ -9,7 +9,7 @@ parameters:
 
     paths:
         - apps/doc/src
-        - packages/core/src
+        - packages/ui/src
 
     excludePaths:
         - '**/tests/**.php'

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use HarmonyUI\Core\Style\ComponentStyle;
+use HarmonyUI\Style\ComponentStyle;
 
 return [
     'button' => new ComponentStyle(

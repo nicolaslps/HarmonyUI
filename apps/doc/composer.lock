@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "47c8096607f925de089a0527d3368e73",
+    "content-hash": "5ac3df31e970aadc055e96e0442e75cb",
     "packages": [
         {
             "name": "composer/semver",
@@ -159,12 +159,12 @@
             "time": "2024-07-08T12:26:09+00:00"
         },
         {
-            "name": "harmonyui/core",
+            "name": "harmonyui/ui",
             "version": "dev-main",
             "dist": {
                 "type": "path",
-                "url": "../../packages/core",
-                "reference": "379ce5114d8fb11ce499cd6cc925aa1f2608856e"
+                "url": "../../packages/ui",
+                "reference": "eb5f5368f174cfa066cb3c2e0ac6b361f602bb97"
             },
             "require": {
                 "php": ">=8.4",
@@ -192,12 +192,12 @@
             },
             "autoload": {
                 "psr-4": {
-                    "HarmonyUI\\Core\\": "src/"
+                    "HarmonyUI\\": "src/"
                 }
             },
             "autoload-dev": {
                 "psr-4": {
-                    "HarmonyUI\\Core\\Tests\\": "tests/"
+                    "HarmonyUI\\Tests\\": "tests/"
                 }
             },
             "scripts": {
@@ -7456,7 +7456,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "harmonyui/core": 20
+        "harmonyui/ui": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
@@ -7465,6 +7465,6 @@
         "ext-ctype": "*",
         "ext-iconv": "*"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.9.0"
 }
