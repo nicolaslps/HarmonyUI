@@ -10,6 +10,9 @@ Read the documentation at [harmonyui.org](https://harmonyui.org).
 composer require harmonyui/ui
 ```
 
+> [!WARNING]
+> HarmonyUI is pre-1.0: the API is not frozen yet, and each 0.x minor release (0.1 to 0.2, for example) may contain breaking changes. A caret constraint like `^0.1` keeps you on non-breaking releases, so review the changelog before bumping to the next minor.
+
 ## Repository structure
 
 This is the main HarmonyUI monorepo. Issues and pull requests belong here.
