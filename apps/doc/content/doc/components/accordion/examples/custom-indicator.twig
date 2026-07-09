@@ -1,0 +1,32 @@
+<twig:ui:Accordion :value="['first']">
+    <twig:ui:Accordion:Item value="first">
+        <twig:ui:Accordion:Header>
+            Can I use another icon?
+            <twig:ui:Accordion:Indicator class="data-[state=open]:rotate-45">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                    <path d="M5 12h14"/>
+                    <path d="M12 5v14"/>
+                </svg>
+            </twig:ui:Accordion:Indicator>
+        </twig:ui:Accordion:Header>
+        <twig:ui:Accordion:Panel>
+            Yes. The content of the indicator replaces the default chevron, and its
+            classes let you adjust the open-state animation.
+        </twig:ui:Accordion:Panel>
+    </twig:ui:Accordion:Item>
+    <twig:ui:Accordion:Item value="second">
+        <twig:ui:Accordion:Header>
+            Does it still track the state?
+            <twig:ui:Accordion:Indicator class="data-[state=open]:rotate-45">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                    <path d="M5 12h14"/>
+                    <path d="M12 5v14"/>
+                </svg>
+            </twig:ui:Accordion:Indicator>
+        </twig:ui:Accordion:Header>
+        <twig:ui:Accordion:Panel>
+            The custom indicator receives the same <code>data-state</code> attribute
+            as the default one.
+        </twig:ui:Accordion:Panel>
+    </twig:ui:Accordion:Item>
+</twig:ui:Accordion>

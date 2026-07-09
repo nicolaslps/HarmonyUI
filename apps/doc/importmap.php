@@ -25,14 +25,6 @@
 return [
     'app' => ['path' => './assets/app.js', 'entrypoint' => true],
     '@hotwired/stimulus' => ['version' => '3.2.2'],
-    '@zag-js/accordion' => ['version' => '1.42.0'],
-    '@zag-js/vanilla' => ['version' => '1.42.0'],
-    '@zag-js/anatomy' => ['version' => '1.42.0'],
-    '@zag-js/dom-query' => ['version' => '1.42.0'],
-    '@zag-js/utils' => ['version' => '1.42.0'],
-    '@zag-js/core' => ['version' => '1.42.0'],
-    '@zag-js/types' => ['version' => '1.42.0'],
-    '@zag-js/store' => ['version' => '1.42.0'],
     'proxy-compare' => ['version' => '3.0.1'],
     '@symfony/stimulus-bundle' => ['path' => './vendor/symfony/stimulus-bundle/assets/dist/loader.js'],
 ];

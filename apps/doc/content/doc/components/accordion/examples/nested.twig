@@ -1,0 +1,28 @@
+<twig:ui:Accordion :value="['plans']" multiple>
+    <twig:ui:Accordion:Item value="plans">
+        <twig:ui:Accordion:Header>Plans and billing</twig:ui:Accordion:Header>
+        <twig:ui:Accordion:Panel>
+            <p>Everything about subscriptions, invoices and payment methods.</p>
+            <twig:ui:Accordion class="ps-4">
+                <twig:ui:Accordion:Item value="upgrade">
+                    <twig:ui:Accordion:Header as="h4">How do I upgrade my plan?</twig:ui:Accordion:Header>
+                    <twig:ui:Accordion:Panel>
+                        Head to the billing settings and pick a new plan; the change is prorated.
+                    </twig:ui:Accordion:Panel>
+                </twig:ui:Accordion:Item>
+                <twig:ui:Accordion:Item value="invoices">
+                    <twig:ui:Accordion:Header as="h4">Where can I find my invoices?</twig:ui:Accordion:Header>
+                    <twig:ui:Accordion:Panel>
+                        Invoices are listed in the billing settings and sent by email every month.
+                    </twig:ui:Accordion:Panel>
+                </twig:ui:Accordion:Item>
+            </twig:ui:Accordion>
+        </twig:ui:Accordion:Panel>
+    </twig:ui:Accordion:Item>
+    <twig:ui:Accordion:Item value="security">
+        <twig:ui:Accordion:Header>Security</twig:ui:Accordion:Header>
+        <twig:ui:Accordion:Panel>
+            All data is encrypted at rest and in transit.
+        </twig:ui:Accordion:Panel>
+    </twig:ui:Accordion:Item>
+</twig:ui:Accordion>
