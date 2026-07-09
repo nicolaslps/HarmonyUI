@@ -16,6 +16,6 @@ proxy:
 
 env:
     clear:
-        APP_ENV: test
-        APP_DEBUG: "true"
+        APP_ENV: prod
+        APP_DEBUG: "false"
         SERVER_NAME: "staging.harmonyui.org, :80, :443"

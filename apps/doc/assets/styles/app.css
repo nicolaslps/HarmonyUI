@@ -4,8 +4,8 @@
 @import "./demo-theme.css";
 @import "./typography.css";
 
-@source "../../vendor/harmonyui/core/assets/styles/harmonyui.css";
-@source "../../vendor/harmonyui/core/config/styles/default";
+@source "../../vendor/harmonyui/ui/config/styles/default";
+@source "../../vendor/harmonyui/ui/templates";
 
 @custom-variant dark (&:where(.dark, .dark *):where(:not(.light, .light *)));
 
