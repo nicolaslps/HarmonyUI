@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use HarmonyUI\Core\Twig\ComponentStylesExtension;
+use HarmonyUI\Core\Twig\UniqueIdExtension;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use TalesFromADev\Twig\Extra\Tailwind\TailwindExtension;
 use TalesFromADev\Twig\Extra\Tailwind\TailwindRuntime;
@@ -36,4 +37,10 @@ return static function (ContainerConfigurator $container): void {
         ->set('harmonyui.twig.component_styles', ComponentStylesExtension::class)
         ->args([abstract_arg('merged component styles')])
         ->tag('twig.extension');
+
+    $services
+        ->set('harmonyui.twig.unique_id', UniqueIdExtension::class)
+        ->tag('twig.extension')
+        // Counters must not leak between requests on worker-mode runtimes.
+        ->tag('kernel.reset', ['method' => 'reset']);
 };
