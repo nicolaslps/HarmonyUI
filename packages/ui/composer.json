@@ -1,5 +1,5 @@
 {
-    "name": "harmonyui/core",
+    "name": "harmonyui/ui",
     "description": "HarmonyUI Symfony Package",
     "type": "symfony-bundle",
     "license": "MIT",
@@ -15,12 +15,12 @@
     },
     "autoload": {
         "psr-4": {
-            "HarmonyUI\\Core\\": "src/"
+            "HarmonyUI\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "HarmonyUI\\Core\\Tests\\": "tests/"
+            "HarmonyUI\\Tests\\": "tests/"
         }
     },
     "scripts": {

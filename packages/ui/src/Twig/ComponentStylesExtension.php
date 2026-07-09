@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace HarmonyUI\Core\Twig;
+namespace HarmonyUI\Twig;
 
 use InvalidArgumentException;
 use Twig\Extension\AbstractExtension;

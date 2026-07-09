@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace HarmonyUI\Core\Tests;
+namespace HarmonyUI\Tests;
 
-use HarmonyUI\Core\HarmonyUICoreBundle;
+use HarmonyUI\HarmonyUIBundle;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Bundle\TwigBundle\TwigBundle;
@@ -26,7 +26,7 @@ final class TestKernel extends Kernel
             new FrameworkBundle(),
             new TwigBundle(),
             new TwigComponentBundle(),
-            new HarmonyUICoreBundle(),
+            new HarmonyUIBundle(),
         ];
     }
 
@@ -62,11 +62,11 @@ final class TestKernel extends Kernel
 
     public function getCacheDir(): string
     {
-        return sys_get_temp_dir().'/harmonyui-core-tests/cache/'.$this->environment;
+        return sys_get_temp_dir().'/harmonyui-ui-tests/cache/'.$this->environment;
     }
 
     public function getLogDir(): string
     {
-        return sys_get_temp_dir().'/harmonyui-core-tests/log';
+        return sys_get_temp_dir().'/harmonyui-ui-tests/log';
     }
 }

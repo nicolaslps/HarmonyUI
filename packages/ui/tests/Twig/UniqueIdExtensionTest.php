@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace HarmonyUI\Core\Tests\Twig;
+namespace HarmonyUI\Tests\Twig;
 
-use HarmonyUI\Core\Twig\UniqueIdExtension;
+use HarmonyUI\Twig\UniqueIdExtension;
 use PHPUnit\Framework\TestCase;
 
 final class UniqueIdExtensionTest extends TestCase

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace HarmonyUI\Core\Tests;
+namespace HarmonyUI\Tests;
 
-use HarmonyUI\Core\HarmonyUICoreBundle;
+use HarmonyUI\HarmonyUIBundle;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 final class BundleIntegrationTest extends KernelTestCase
@@ -26,8 +26,8 @@ final class BundleIntegrationTest extends KernelTestCase
 
         $bundles = self::$kernel->getBundles();
 
-        self::assertArrayHasKey('HarmonyUICoreBundle', $bundles);
-        self::assertInstanceOf(HarmonyUICoreBundle::class, $bundles['HarmonyUICoreBundle']);
+        self::assertArrayHasKey('HarmonyUIBundle', $bundles);
+        self::assertInstanceOf(HarmonyUIBundle::class, $bundles['HarmonyUIBundle']);
         self::assertTrue(self::getContainer()->has('kernel'));
     }
 

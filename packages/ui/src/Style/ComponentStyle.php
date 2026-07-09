@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace HarmonyUI\Core\Style;
+namespace HarmonyUI\Style;
 
 use function implode;
 use function is_array;

@@ -744,7 +744,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         collect_components?: bool|Param, // Collect components instances // Default: true
  *     },
  * }
- * @psalm-type HarmonyUiCoreConfig = array{
+ * @psalm-type HarmonyUiConfig = array{
  *     theme?: scalar|Param|null, // Component style theme (a directory of config/styles/). Themes are standalone and do not inherit from each other. // Default: "default"
  *     components?: array<string, array{ // Default: []
  *         base?: scalar|Param|null, // Classes always applied to the component.
@@ -760,7 +760,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     framework?: FrameworkConfig,
  *     twig?: TwigConfig,
  *     twig_component?: TwigComponentConfig,
- *     harmony_ui_core?: HarmonyUiCoreConfig,
+ *     harmony_ui?: HarmonyUiConfig,
  *     "when@test"?: array{
  *         imports?: ImportsConfig,
  *         parameters?: ParametersConfig,

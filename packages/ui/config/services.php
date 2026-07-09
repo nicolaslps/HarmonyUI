@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use HarmonyUI\Core\Twig\ComponentStylesExtension;
-use HarmonyUI\Core\Twig\UniqueIdExtension;
+use HarmonyUI\Twig\ComponentStylesExtension;
+use HarmonyUI\Twig\UniqueIdExtension;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use TalesFromADev\Twig\Extra\Tailwind\TailwindExtension;
 use TalesFromADev\Twig\Extra\Tailwind\TailwindRuntime;

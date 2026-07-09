@@ -20,7 +20,7 @@
     </php>
 
     <testsuites>
-        <testsuite name="HarmonyUI Core Test Suite">
+        <testsuite name="HarmonyUI Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>

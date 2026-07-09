@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace HarmonyUI\Core;
+namespace HarmonyUI;
 
-use HarmonyUI\Core\Style\ComponentStyle;
+use HarmonyUI\Style\ComponentStyle;
 use LogicException;
 use Symfony\Component\AssetMapper\AssetMapper;
 use Symfony\Component\Config\Definition\Configurator\DefinitionConfigurator;
@@ -18,7 +18,7 @@ use function sprintf;
 
 use const GLOB_ONLYDIR;
 
-final class HarmonyUICoreBundle extends AbstractBundle
+final class HarmonyUIBundle extends AbstractBundle
 {
     public function getPath(): string
     {
