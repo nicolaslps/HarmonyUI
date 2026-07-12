@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./fonts.css";
 @import "../../vendor/harmonyui/ui/assets/styles/harmonyui.css";
 @import "./doc-theme.css";
 @import "./demo-theme.css";
@@ -8,6 +9,11 @@
 @source "../../vendor/harmonyui/ui/templates";
 
 @custom-variant dark (&:where(.dark, .dark *):where(:not(.light, .light *)));
+
+@theme {
+    --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    --font-mono: "JetBrains Mono Variable", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
 
 /* tempest/highlight tokens for server-side code highlighting */
 .hl-keyword { color: var(--color-rose-600); }
