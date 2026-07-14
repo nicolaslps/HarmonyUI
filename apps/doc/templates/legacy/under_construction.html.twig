@@ -1,11 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ title }}{% endblock %}
+{% block seo_title %}{{ title }}{% endblock %}
 
-{% block meta %}
-    <meta name="description" content="{{ description }}">
-    <link rel="canonical" href="{{ url(app.current_route, app.current_route_parameters) }}">
-{% endblock %}
+{% block seo_description %}{{ description }}{% endblock %}
 
 {% block body %}
     <div class="mx-auto flex w-full max-w-7xl flex-1 flex-col px-6 py-10">

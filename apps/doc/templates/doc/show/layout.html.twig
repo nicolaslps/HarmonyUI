@@ -1,12 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ page.meta.title }}{% endblock %}
+{% block seo_title %}{{ page.meta.title }} - HarmonyUI for Symfony{% endblock %}
 
-{% block meta %}
-    {% if page.meta.description %}
-        <meta name="description" content="{{ page.meta.description }}">
-    {% endif %}
-{% endblock %}
+{% block seo_description -%}
+    {{ page.meta.description ?: 'HarmonyUI documentation: accessible, extensible Twig components for Symfony, styled with Tailwind CSS.' }}
+{%- endblock %}
 
 {% block body %}
     <div class="mx-auto flex max-w-352 gap-12 px-6 py-8">
