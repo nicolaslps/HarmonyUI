@@ -1,0 +1,12 @@
+{
+    "name": "harmonyui-og",
+    "private": true,
+    "type": "module",
+    "description": "Open Graph image rendering (Satori + resvg): render.mjs on request, warm.mjs via `bin/console app:og:warm`.",
+    "dependencies": {
+        "@fontsource/inter": "^5.2.8",
+        "@resvg/resvg-js": "^2.6.2",
+        "satori": "^0.13.2",
+        "satori-html": "^0.3.2"
+    }
+}
