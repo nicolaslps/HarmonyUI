@@ -37,7 +37,9 @@ final class DocsController extends AbstractController
         if ($legacySite->isLegacy($slug)) {
             return $this->render('legacy/under_construction.html.twig', [
                 'title' => $legacySite->seoTitle($meta->title),
+                'og_title' => $meta->title,
                 'description' => $legacySite->seoDescription($meta->description),
+                'og_description' => $meta->description,
                 'legacy_url' => $legacySite->url('/docs/'.$slug),
             ]);
         }
