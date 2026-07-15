@@ -34,8 +34,8 @@
             {% block content %}{% endblock %}
         </article>
 
-        {% if page.headings|length > 1 %}
-            <aside class="hidden w-56 shrink-0 xl:block">
+        <aside class="hidden w-56 shrink-0 xl:block">
+            {% if page.headings|length > 1 %}
                 <nav class="sticky top-22" data-controller="toc" data-toc-offset-value="88">
                     <p class="mb-2 text-xs font-bold uppercase tracking-wide text-primary">On this page</p>
                     <ul class="text-sm">
@@ -54,7 +54,7 @@
                         {% endfor %}
                     </ul>
                 </nav>
-            </aside>
-        {% endif %}
+            {% endif %}
+        </aside>
     </div>
 {% endblock %}

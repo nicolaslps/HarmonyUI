@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Dto\DocPage;
 use App\Dto\DocPageMetadata;
 use App\Service\DocCatalog;
 use App\Service\DocPageRenderer;
@@ -35,9 +36,10 @@ final class DocsController extends AbstractController
 
         // Pages not rewritten yet embed the previous site instead of rendering.
         if ($legacySite->isLegacy($slug)) {
-            return $this->render('legacy/under_construction.html.twig', [
+            return $this->render('doc/show/under_construction.html.twig', [
+                'page' => new DocPage($meta, '', []),
+                'navigation' => $catalog->byCategory(),
                 'title' => $legacySite->seoTitle($meta->title),
-                'og_title' => $meta->title,
                 'description' => $legacySite->seoDescription($meta->description),
                 'og_description' => $meta->description,
                 'legacy_url' => $legacySite->url('/docs/'.$slug),
