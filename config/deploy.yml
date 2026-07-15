@@ -45,5 +45,6 @@ env:
         APP_DEBUG: "false"
         SERVER_NAME: "www.harmonyui.org, harmonyui.org, :80, :443"
         FRANKENPHP_CONFIG: "worker ./public/index.php"
+        GA4_MEASUREMENT_ID: <%= ENV.fetch("GA4_MEASUREMENT_ID", "") %>
     secret:
         - APP_SECRET
