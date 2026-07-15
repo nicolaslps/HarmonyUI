@@ -17,7 +17,18 @@
         {%- endset -%}
         {%- set seo_description = seo_description|trim -%}
         {% set seo_canonical = app.request.schemeAndHttpHost ~ app.request.baseUrl ~ app.request.pathInfo %}
-        {% set seo_og_image = absolute_url(asset('og.png')) %}
+        {# Rendered on request by /og.png (cache pre-warmed at build time by app:og:warm) #}
+        {%- set og_title -%}
+            {%- block og_title -%}
+                Modern UI component library for Symfony
+            {%- endblock -%}
+        {%- endset -%}
+        {%- set og_description -%}
+            {%- block og_description -%}
+                {{ seo_description }}
+            {%- endblock -%}
+        {%- endset -%}
+        {%- set seo_og_image = absolute_url(path('app_og_image', {title: og_title|trim, description: og_description|trim})) -%}
 
         <title>{{ seo_title }}</title>
         <meta name="description" content="{{ seo_description }}">

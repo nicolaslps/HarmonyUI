@@ -6,6 +6,8 @@
     {{ page.meta.description ?: 'HarmonyUI documentation: accessible, extensible Twig components for Symfony, styled with Tailwind CSS.' }}
 {%- endblock %}
 
+{% block og_title %}{{ page.meta.title }}{% endblock %}
+
 {% block body %}
     <div class="mx-auto flex max-w-352 gap-12 px-6 py-8">
         <aside class="hidden w-56 shrink-0 lg:block">
