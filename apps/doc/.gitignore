@@ -9,6 +9,10 @@
 /vendor/
 ###< symfony/framework-bundle ###
 
+###> og/card.mjs ###
+/og/node_modules/
+###< og/card.mjs ###
+
 ###> symfony/asset-mapper ###
 /public/assets/
 /assets/vendor/
