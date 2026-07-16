@@ -1,0 +1,19 @@
+<div class="flex w-full max-w-xl flex-col gap-4">
+    <twig:ui:Alert>
+        <twig:ux:icon name="lucide:circle-check" />
+        <twig:ui:Alert:Title>Success! Your changes have been saved</twig:ui:Alert:Title>
+        <twig:ui:Alert:Description>This is an alert with icon, title and description.</twig:ui:Alert:Description>
+    </twig:ui:Alert>
+    <twig:ui:Alert color="teal">
+        <twig:ux:icon name="lucide:circle-alert" />
+        <twig:ui:Alert:Title>Unable to process your payment.</twig:ui:Alert:Title>
+        <twig:ui:Alert:Description>
+            <p>Please verify your billing information and try again.</p>
+            <ul class="list-inside list-disc text-sm">
+                <li>Check your card details</li>
+                <li>Ensure sufficient funds</li>
+                <li>Verify billing address</li>
+            </ul>
+        </twig:ui:Alert:Description>
+    </twig:ui:Alert>
+</div>

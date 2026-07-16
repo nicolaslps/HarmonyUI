@@ -1,0 +1,15 @@
+<div class="flex w-full max-w-xl flex-col gap-3">
+    {% for color in [
+        'red', 'orange', 'amber', 'yellow', 'lime',
+        'green', 'emerald', 'teal', 'cyan', 'sky',
+        'blue', 'indigo', 'violet', 'purple', 'fuchsia',
+        'pink', 'rose',
+        'slate', 'gray', 'zinc', 'neutral', 'stone',
+        'mauve', 'olive', 'mist', 'taupe',
+    ] %}
+        <twig:ui:Alert color="{{ color }}">
+            <twig:ux:icon name="lucide:palette" />
+            <twig:ui:Alert:Title>{{ color|capitalize }}</twig:ui:Alert:Title>
+        </twig:ui:Alert>
+    {% endfor %}
+</div>

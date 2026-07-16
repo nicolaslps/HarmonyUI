@@ -21,7 +21,6 @@ final class LegacySite
 
     /** @var list<string> */
     private const array SLUGS = [
-        'components/alert',
         'components/alert-dialog',
         'components/avatar',
         'components/badge',
