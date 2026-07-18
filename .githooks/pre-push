@@ -1,0 +1,31 @@
+#!/usr/bin/env sh
+# Safety net: re-validates every commit about to be pushed,
+# in case commit-msg was bypassed (--no-verify, GUI clients, ...).
+
+hooks_dir=$(dirname "$0")
+. "$hooks_dir/check-commit-msg.sh"
+
+zero=$(git hash-object --stdin </dev/null | tr '0-9a-f' '0')
+status=0
+
+while read -r local_ref local_sha remote_ref remote_sha; do
+    [ "$local_sha" = "$zero" ] && continue # deleting a remote branch
+
+    if [ "$remote_sha" = "$zero" ]; then
+        # New branch: check commits not already on any remote
+        range=$(git rev-list "$local_sha" --not --remotes)
+    else
+        range=$(git rev-list "$remote_sha..$local_sha")
+    fi
+
+    for sha in $range; do
+        header=$(git log -1 --format=%s "$sha")
+        if ! check_commit_msg "$header"; then
+            echo "Commit $sha has an invalid message." >&2
+            print_commit_msg_help "$header"
+            status=1
+        fi
+    done
+done
+
+exit $status

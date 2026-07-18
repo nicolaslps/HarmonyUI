@@ -4,6 +4,7 @@
   "description": "Toolchain JS du monorepo HarmonyUI (Vite+).",
   "type": "module",
   "scripts": {
+    "prepare": "git config core.hooksPath .githooks",
     "lint": "vp lint",
     "lint:fix": "vp lint --fix",
     "check": "vp check",

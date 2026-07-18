@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+# Rejects commits whose message does not follow Conventional Commits.
+
+hooks_dir=$(dirname "$0")
+. "$hooks_dir/check-commit-msg.sh"
+
+header=$(head -n1 "$1")
+
+if ! check_commit_msg "$header"; then
+    print_commit_msg_help "$header"
+    exit 1
+fi
