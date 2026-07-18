@@ -1,0 +1,20 @@
+<twig:ui:Card class="w-full max-w-sm">
+    <img
+        src="{{ 'media/home-hero.png'|imagine_filter('doc_demo') }}"
+        alt="Preview of the HarmonyUI component library"
+        loading="lazy"
+        width="768"
+        height="432"
+        class="aspect-video w-full object-cover"
+    />
+    <twig:ui:Card:Header>
+        <twig:ui:Card:Title>Design without friction</twig:ui:Card:Title>
+        <twig:ui:Card:Description>Ship polished interfaces with ready-made Twig components.</twig:ui:Card:Description>
+    </twig:ui:Card:Header>
+    <twig:ui:Card:Footer>
+        <twig:ui:Button variant="outline" class="w-full">
+            Read the story
+            <twig:ux:icon name="lucide:arrow-right" data-icon="inline-end" />
+        </twig:ui:Button>
+    </twig:ui:Card:Footer>
+</twig:ui:Card>

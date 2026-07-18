@@ -25,7 +25,6 @@ final class LegacySite
         'components/avatar',
         'components/badge',
         'components/button-group',
-        'components/card',
         'components/dialog',
         'components/drawer',
         'components/dropdown-menu',
