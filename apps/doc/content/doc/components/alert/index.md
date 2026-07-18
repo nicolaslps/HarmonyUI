@@ -15,30 +15,6 @@ layout reserves a column for it automatically.
 
 ## Examples
 
-### Info
-
-Use the `info` variant for neutral, informative messages.
-
-<ComponentPreview name="info"/>
-
-### Success
-
-Use the `success` variant to confirm that an operation completed.
-
-<ComponentPreview name="success"/>
-
-### Warning
-
-Use the `warning` variant to draw attention to something that needs care.
-
-<ComponentPreview name="warning"/>
-
-### Danger
-
-Use the `danger` variant for errors and failures.
-
-<ComponentPreview name="danger"/>
-
 ### Without icon
 
 The icon column collapses when no icon is present.
@@ -68,19 +44,37 @@ and description.
 
 <ComponentPreview name="with-action-below"/>
 
-### Colors
+### Info
 
-Use the `color` prop to tint an alert with any color of the Tailwind palette.
-It overrides the base color set by the variant, from which the border,
-background and icon tints all derive. The title and description colors adapt
-to the base color too, at a lightness that keeps an accessible contrast in
-both themes.
+Use the `info` variant for neutral, informative messages.
 
-For colors outside the palette, set the underlying `--alert-color` custom
-property directly, for example `class="[--alert-color:var(--my-brand-color)]"`,
-along with `--alert-foreground` for the text color.
+<ComponentPreview name="info"/>
 
-<ComponentPreview name="colors"/>
+### Success
+
+Use the `success` variant to confirm that an operation completed.
+
+<ComponentPreview name="success"/>
+
+### Warning
+
+Use the `warning` variant to draw attention to something that needs care.
+
+<ComponentPreview name="warning"/>
+
+### Danger
+
+Use the `danger` variant for errors and failures.
+
+<ComponentPreview name="danger"/>
+
+### Custom colors
+
+Alerts are styled with plain utility classes, so recoloring one is just a
+matter of overriding the border, background and text colors. The icon
+follows the text color.
+
+<ComponentPreview name="custom-colors"/>
 
 ### RTL
 
@@ -97,7 +91,6 @@ the reading direction.
 | Prop | Type | Description |
 |---|---|---|
 | `variant` | `'default'` \| `'danger'` \| `'info'` \| `'success'` \| `'warning'` | The visual style variant. Defaults to `default` |
-| `color` | `string` | A Tailwind color name (`'red'`, `'teal'`, `'fuchsia'`, ...) used as base color instead of the variant one |
 | `as` | `string` | The HTML tag to render. Defaults to `div` |
 
 | Block | Description |
