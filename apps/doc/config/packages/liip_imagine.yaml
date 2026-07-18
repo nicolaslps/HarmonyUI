@@ -9,3 +9,10 @@ liip_imagine:
             filters:
                 downscale:
                     max: [1400, 1400]
+
+        doc_demo:
+            format: webp
+            quality: 60
+            filters:
+                downscale:
+                    max: [768, 768]
