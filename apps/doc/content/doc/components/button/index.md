@@ -94,7 +94,7 @@ To enable RTL support, set the `dir="rtl"` attribute on the root element.
 
 | Prop | Type | Description |
 |---|---|---|
-| `variant` | `'primary'` \| `'outline'` \| `'secondary'` \| `'ghost'` \| `'danger'` \| `'info'` \| `'success'` \| `'warning'` \| `'link'` | The visual style variant. Defaults to `primary` |
+| `variant` | `'primary'` \| `'outline'` \| `'secondary'` \| `'ghost'` \| `'danger'` \| `'danger-soft'` \| `'info'` \| `'info-soft'` \| `'success'` \| `'success-soft'` \| `'warning'` \| `'warning-soft'` \| `'link'` | The visual style variant. Defaults to `primary` |
 | `size` | `'md'` \| `'xs'` \| `'sm'` \| `'lg'` \| `'icon'` \| `'icon-xs'` \| `'icon-sm'` \| `'icon-lg'` | The button size. Defaults to `md` |
 | `as` | `string` | The HTML tag to render. Defaults to `button` |
 
