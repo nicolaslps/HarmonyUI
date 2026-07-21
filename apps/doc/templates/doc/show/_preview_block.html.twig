@@ -1,19 +1,22 @@
+{% import _self as macros %}
 <div class="not-prose my-6 overflow-hidden rounded-lg border border-border" data-code-source="{{ source }}">
     <div class="demo-preview flex items-center justify-center gap-4 bg-background p-8">
         {{ rendered|raw }}
     </div>
     {% set lines = source|trim("\n")|split("\n")|length %}
-    {% if lines > 4 %}
-        <div class="relative border-t border-border" data-controller="code-demo">
-            <pre class="max-h-28 select-none overflow-x-auto overflow-y-hidden bg-background p-4 text-sm leading-relaxed text-foreground" data-code-demo-target="code"><code>{{ source|highlight('twig') }}</code></pre>
-            <div class="pointer-events-none absolute inset-0 bg-linear-to-t from-background via-background/70 to-transparent" data-code-demo-target="fade"></div>
-            <div class="pointer-events-none absolute inset-0 flex items-center justify-center">
-                <twig:ui:Button type="button" variant="outline" class="pointer-events-auto shadow-sm" data-action="code-demo#show" data-code-demo-target="button">
-                    View code
-                </twig:ui:Button>
-            </div>
+    <div class="relative border-t border-border" data-controller="code-demo clipboard" data-clipboard-content-value="{{ source }}">
+        <pre class="overflow-x-auto bg-background p-4 text-sm leading-relaxed text-foreground{{ lines > 4 ? ' max-h-28 select-none overflow-y-hidden' }}" data-code-demo-target="code"><code>{{ source|highlight('twig') }}</code></pre>
+        <div class="pointer-events-none absolute inset-0 bg-linear-to-t from-background via-background/70 to-transparent{{ lines <= 4 ? ' hidden' }}" data-code-demo-target="fade"></div>
+        <div class="pointer-events-none absolute inset-0 flex items-center justify-center{{ lines <= 4 ? ' hidden' }}">
+            <twig:ui:Button type="button" variant="outline" class="pointer-events-auto shadow-sm" data-action="code-demo#show" data-code-demo-target="button">
+                View code
+            </twig:ui:Button>
         </div>
-    {% else %}
-        <pre class="overflow-x-auto border-t border-border bg-background p-4 text-sm leading-relaxed text-foreground"><code>{{ source|highlight('twig') }}</code></pre>
-    {% endif %}
+        <div class="absolute top-2 right-2{{ lines > 4 ? ' hidden' }}" data-code-demo-target="copy">
+            <twig:ui:Button type="button" variant="outline" size="icon-xs" class="shadow-sm" data-action="clipboard#copy">
+                <twig:ux:icon name="lucide:copy" data-clipboard-target="icon" />
+                <twig:ux:icon name="lucide:check" class="hidden" data-clipboard-target="check" />
+            </twig:ui:Button>
+        </div>
+    </div>
 </div>
