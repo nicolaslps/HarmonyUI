@@ -43,8 +43,6 @@ final class LegacySite
         'components/tabs',
         'components/textarea',
         'components/tooltip',
-        'overview/getting-started',
-        'overview/installation',
     ];
 
     public function __construct(
