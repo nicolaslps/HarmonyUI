@@ -25,10 +25,12 @@ final class OgWarmCommand extends Command
 {
     // templates/base.html.twig
     private const string HOME_TITLE = 'Modern UI component library for Symfony';
+
     private const string HOME_DESCRIPTION = 'Build stunning Symfony applications with HarmonyUI. Modern component library featuring beautiful Twig components, Tailwind CSS styling and Stimulus controllers. Free, open source and developer friendly.';
 
     // templates/doc/components/index.html.twig
     private const string COMPONENTS_TITLE = 'Components';
+
     private const string COMPONENTS_DESCRIPTION = 'Browse every HarmonyUI component: accessible, extensible Twig components for Symfony, styled with Tailwind CSS and powered by Stimulus.';
 
     // templates/doc/show/layout.html.twig

@@ -3,7 +3,7 @@
     <div class="demo-preview flex items-center justify-center gap-4 bg-background p-8">
         {{ rendered|raw }}
     </div>
-    {% set lines = source|trim("\n")|split("\n")|length %}
+    {% set lines = source|trim('\n')|split('\n')|length %}
     <div class="relative border-t border-border" data-controller="code-demo clipboard" data-clipboard-content-value="{{ source }}">
         <pre class="overflow-x-auto bg-background p-4 text-sm leading-relaxed text-foreground{{ lines > 4 ? ' max-h-28 select-none overflow-y-hidden' }}" data-code-demo-target="code"><code>{{ source|highlight('twig') }}</code></pre>
         <div class="pointer-events-none absolute inset-0 bg-linear-to-t from-background via-background/70 to-transparent{{ lines <= 4 ? ' hidden' }}" data-code-demo-target="fade"></div>

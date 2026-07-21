@@ -38,8 +38,8 @@ final class OgImageController extends AbstractController
     #[Route('/og.png', name: 'app_og_image', methods: ['GET'])]
     public function image(Request $request): Response
     {
-        $title = mb_substr(trim($request->query->getString('title')), 0, 200);
-        $description = mb_substr(trim($request->query->getString('description')), 0, 500);
+        $title = mb_substr(trim((string) $request->query->getString('title')), 0, 200);
+        $description = mb_substr(trim((string) $request->query->getString('description')), 0, 500);
 
         if ('' === $title) {
             $title = self::DEFAULT_TITLE;

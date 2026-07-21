@@ -10,6 +10,8 @@ use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
+use function sprintf;
+
 final class ImageController extends AbstractController
 {
     private const array EXTENSIONS = ['avif', 'webp', 'png', 'jpg', 'jpeg', 'svg'];

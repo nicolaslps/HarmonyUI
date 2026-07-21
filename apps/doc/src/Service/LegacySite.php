@@ -14,9 +14,10 @@ use function rtrim;
  * their Markdown body; remove a slug once its page is rewritten. The SEO
  * helpers reproduce the tags the old site served.
  */
-final class LegacySite
+final readonly class LegacySite
 {
     private const string TITLE_SUFFIX = ' - Symfony Component | HarmonyUI - Modern UI Component Library for Symfony';
+
     private const string DESCRIPTION_SUFFIX = ' Free Twig component for Symfony with TailwindCSS styling and Stimulus controllers. Copy-paste ready examples and full documentation.';
 
     /** @var list<string> */
@@ -45,7 +46,7 @@ final class LegacySite
     ];
 
     public function __construct(
-        private readonly string $legacyHost = 'https://old.harmonyui.org',
+        private string $legacyHost = 'https://old.harmonyui.org',
     ) {
     }
 

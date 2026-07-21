@@ -19,11 +19,12 @@ final class LegacyController extends AbstractController
     {
         return $this->redirectToRoute('app_docs_components', [], Response::HTTP_MOVED_PERMANENTLY);
     }
+
     #[Route('/docs/overview/installation', name: 'app_legacy_installation')]
     public function installation(): Response
     {
         return $this->redirectToRoute('app_docs_show', [
-            'slug' => 'overview/getting-started'
+            'slug' => 'overview/getting-started',
         ], Response::HTTP_MOVED_PERMANENTLY);
     }
 }
