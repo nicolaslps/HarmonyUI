@@ -23,7 +23,6 @@ final class LegacySite
     private const array SLUGS = [
         'components/alert-dialog',
         'components/avatar',
-        'components/badge',
         'components/button-group',
         'components/dialog',
         'components/drawer',
