@@ -4,18 +4,15 @@ declare(strict_types=1);
 
 namespace App\Twig;
 
-use App\Highlight\DocTwigLanguage;
 use Tempest\Highlight\Highlighter;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 
 final class CodeHighlightExtension extends AbstractExtension
 {
-    private readonly Highlighter $highlighter;
-
-    public function __construct()
-    {
-        $this->highlighter = new Highlighter()->addLanguage(new DocTwigLanguage());
+    public function __construct(
+        private readonly Highlighter $highlighter,
+    ) {
     }
 
     public function getFilters(): array

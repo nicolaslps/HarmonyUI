@@ -34,6 +34,11 @@ services:
     League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension: ~
     League\CommonMark\Extension\GithubFlavoredMarkdownExtension: ~
     League\CommonMark\Extension\FrontMatter\FrontMatterExtension: ~
+    App\Highlight\HighlightedCodeBlockExtension: ~
+
+    Tempest\Highlight\Highlighter:
+        calls:
+            - [addLanguage, ['@App\Highlight\DocTwigLanguage']]
 
     League\CommonMark\Environment\Environment:
         arguments:
@@ -42,6 +47,7 @@ services:
             - [addExtension, ['@League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension']]
             - [addExtension, ['@League\CommonMark\Extension\GithubFlavoredMarkdownExtension']]
             - [addExtension, ['@League\CommonMark\Extension\FrontMatter\FrontMatterExtension']]
+            - [addExtension, ['@App\Highlight\HighlightedCodeBlockExtension']]
 
     League\CommonMark\Parser\MarkdownParserInterface:
         class: League\CommonMark\Parser\MarkdownParser
