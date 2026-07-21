@@ -27,3 +27,15 @@
 .hl-generic { color: var(--color-slate-800); }
 .hl-injection { color: var(--color-sky-700); }
 .hl-comment { color: var(--color-slate-400); font-style: italic; }
+
+.dark .hl-keyword { color: var(--color-rose-400); }
+.dark .hl-type { color: var(--color-sky-400); }
+.dark .hl-property { color: var(--color-violet-400); }
+.dark .hl-attribute { color: var(--color-amber-400); }
+.dark .hl-value { color: var(--color-emerald-400); }
+.dark .hl-literal,
+.dark .hl-number { color: var(--color-amber-300); }
+.dark .hl-variable,
+.dark .hl-generic { color: var(--color-slate-200); }
+.dark .hl-injection { color: var(--color-sky-400); }
+.dark .hl-comment { color: var(--color-slate-500); }
