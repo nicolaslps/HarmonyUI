@@ -5,7 +5,7 @@ priority: 0
 ---
 
 Built on the native [`<details>` and `<summary>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
-HTML elements — exclusive mode relies on the `name` attribute — enhanced by a small
+HTML elements, with exclusive mode relying on the `name` attribute, enhanced by a small
 Stimulus controller for arrow-key navigation, disabled items and `change` events.
 
 ## Usage
@@ -49,8 +49,8 @@ the Stimulus controller ignores items belonging to a nested instance.
 
 ### Borders
 
-Wrap the accordion in a border by adding `rounded-lg border px-4` to the root.
-Items already draw a separator between each other by default.
+Wrap the accordion in a border by adding `rounded-lg border` to the root, then
+`border-b px-4 last:border-b-0` to each item.
 
 <ComponentPreview name="borders"/>
 
