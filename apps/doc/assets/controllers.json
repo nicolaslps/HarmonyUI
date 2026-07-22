@@ -4,6 +4,10 @@
             "accordion": {
                 "enabled": true,
                 "fetch": "eager"
+            },
+            "avatar": {
+                "enabled": true,
+                "fetch": "eager"
             }
         }
     },
