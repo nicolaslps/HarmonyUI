@@ -1,0 +1,13 @@
+{%- props open = false, id = null -%}
+{%- set _hui_dialog_id = id ?? hui_id('dialog') -%}
+<div
+    id="{{ _hui_dialog_id }}"
+    class="{{ hui('dialog').apply({}, attributes.render('class'))|tailwind_merge }}"
+    {{ attributes.defaults({
+        'data-slot': 'dialog',
+        'data-controller': 'hui-dialog',
+        'data-hui-dialog-open-value': open ? 'true' : 'false',
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</div>

@@ -14,10 +14,18 @@
                 "name": "hui-avatar",
                 "fetch": "eager",
                 "enabled": true
+            },
+            "dialog": {
+                "main": "controllers/dialog_controller.js",
+                "name": "hui-dialog",
+                "fetch": "eager",
+                "enabled": true
             }
         },
         "importmap": {
-            "@hotwired/stimulus": "^3.0.0"
+            "@hotwired/stimulus": "^3.0.0",
+            "@zag-js/dialog": "^1.42.0",
+            "@zag-js/vanilla": "^1.42.0"
         }
     }
 }

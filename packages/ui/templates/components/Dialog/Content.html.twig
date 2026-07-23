@@ -1,0 +1,23 @@
+<div
+    class="{{ hui('dialog-backdrop').apply({}) }}"
+    data-scope="dialog"
+    data-part="backdrop"
+    hidden
+></div>
+<div
+    class="{{ hui('dialog-positioner').apply({}) }}"
+    data-scope="dialog"
+    data-part="positioner"
+>
+    <div
+        class="{{ hui('dialog-content').apply({}, attributes.render('class'))|tailwind_merge }}"
+        {{ attributes.defaults({
+            'data-slot': 'dialog-content',
+            'data-scope': 'dialog',
+            'data-part': 'content',
+            hidden: true,
+        }) }}
+    >
+        {%- block content %}{% endblock -%}
+    </div>
+</div>
