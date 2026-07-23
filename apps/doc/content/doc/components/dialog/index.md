@@ -20,13 +20,13 @@ attributes, so a trigger can live inside the `Dialog` or anywhere else on the pa
 
 <ComponentPreview name="multiple-triggers"/>
 
-### Remote trigger
+### Detached triggers
 
 Give the dialog an explicit `id` and point a `command="--show-modal"` button at it with
 `commandfor`, from anywhere on the page. `Dialog:Trigger` uses the same attributes under the hood,
 so it's a single API regardless of where the trigger lives.
 
-<ComponentPreview name="remote-trigger"/>
+<ComponentPreview name="detached-triggers"/>
 
 ## API Reference
 
