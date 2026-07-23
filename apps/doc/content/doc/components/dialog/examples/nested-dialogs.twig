@@ -1,0 +1,29 @@
+<twig:ui:Dialog>
+    <twig:ui:Dialog:Trigger>
+        <twig:ui:Button variant="outline" {{ ...dialog_trigger_attrs }}>Edit profile</twig:ui:Button>
+    </twig:ui:Dialog:Trigger>
+    <twig:ui:Dialog:Content class="h-64 max-w-md">
+        <p class="font-medium">Edit profile</p>
+        <p class="text-muted-foreground">Update your account details.</p>
+
+        <twig:ui:Dialog>
+            <twig:ui:Dialog:Trigger>
+                <twig:ui:Button variant="danger" class="mt-auto justify-self-start" {{ ...dialog_trigger_attrs }}>Delete account</twig:ui:Button>
+            </twig:ui:Dialog:Trigger>
+            <twig:ui:Dialog:Content class="h-64 max-w-md">
+                <p class="font-medium">Delete account</p>
+                <p class="text-muted-foreground">This action cannot be undone.</p>
+
+                <twig:ui:Dialog>
+                    <twig:ui:Dialog:Trigger>
+                        <twig:ui:Button variant="danger" class="mt-auto justify-self-start" {{ ...dialog_trigger_attrs }}>Yes, I'm sure</twig:ui:Button>
+                    </twig:ui:Dialog:Trigger>
+                    <twig:ui:Dialog:Content class="h-64 max-w-md">
+                        <p class="font-medium">Final confirmation</p>
+                        <p class="text-muted-foreground">Really, there's no going back from this.</p>
+                    </twig:ui:Dialog:Content>
+                </twig:ui:Dialog>
+            </twig:ui:Dialog:Content>
+        </twig:ui:Dialog>
+    </twig:ui:Dialog:Content>
+</twig:ui:Dialog>

@@ -2,12 +2,14 @@
     class="{{ hui('dialog-backdrop').apply({}) }}"
     data-scope="dialog"
     data-part="backdrop"
+    data-owner="{{ _hui_dialog_id }}"
     hidden
 ></div>
 <div
     class="{{ hui('dialog-positioner').apply({}) }}"
     data-scope="dialog"
     data-part="positioner"
+    data-owner="{{ _hui_dialog_id }}"
 >
     <div
         class="{{ hui('dialog-content').apply({}, attributes.render('class'))|tailwind_merge }}"
@@ -15,6 +17,7 @@
             'data-slot': 'dialog-content',
             'data-scope': 'dialog',
             'data-part': 'content',
+            'data-owner': _hui_dialog_id,
             hidden: true,
         }) }}
     >

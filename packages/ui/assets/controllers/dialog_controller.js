@@ -13,6 +13,8 @@ export default class extends ZagController {
             defaultOpen: this.openValue,
         });
 
+        this.portalParts();
+
         this.onCommand = this.onCommand.bind(this);
         this.element.addEventListener("command", this.onCommand);
 
@@ -25,6 +27,24 @@ export default class extends ZagController {
         this.element.removeEventListener("command", this.onCommand);
         this.unsubscribe?.();
         this.machine.stop();
+
+        if (!this.element.isConnected) {
+            this.part("backdrop")?.remove();
+            this.part("positioner")?.remove();
+        }
+    }
+
+    portalParts() {
+        const backdrop = this.part("backdrop");
+        const positioner = this.part("positioner");
+
+        if (backdrop) {
+            document.body.append(backdrop);
+        }
+
+        if (positioner) {
+            document.body.append(positioner);
+        }
     }
 
     onCommand(event) {

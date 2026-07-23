@@ -28,6 +28,15 @@ so it's a single API regardless of where the trigger lives.
 
 <ComponentPreview name="detached-triggers"/>
 
+### Nested dialogs
+
+A `Dialog` can be opened from inside another `Dialog:Content`, no extra wiring needed: each
+`Dialog` is an independent instance, and escape, outside clicks, and focus trapping all apply to
+whichever one is on top. The parent dialog scales down and its backdrop darkens for every level of
+nesting, so the stack stays legible.
+
+<ComponentPreview name="nested-dialogs"/>
+
 ## API Reference
 
 ### `<twig:ui:Dialog>`
