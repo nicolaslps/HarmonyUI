@@ -8,6 +8,10 @@
             "avatar": {
                 "enabled": true,
                 "fetch": "eager"
+            },
+            "dialog": {
+                "enabled": true,
+                "fetch": "eager"
             }
         }
     },

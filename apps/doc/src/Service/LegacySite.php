@@ -24,7 +24,6 @@ final readonly class LegacySite
     private const array SLUGS = [
         'components/alert-dialog',
         'components/button-group',
-        'components/dialog',
         'components/drawer',
         'components/dropdown-menu',
         'components/field',
