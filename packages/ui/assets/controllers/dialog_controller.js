@@ -11,6 +11,16 @@ export default class extends ZagController {
         this.machine = new VanillaMachine(dialog.machine, {
             id: this.element.id,
             defaultOpen: this.openValue,
+            onEscapeKeyDown: (event) => {
+                if (!this.requestClose()) {
+                    event.preventDefault();
+                }
+            },
+            onInteractOutside: (event) => {
+                if (!this.requestClose()) {
+                    event.preventDefault();
+                }
+            },
         });
 
         this.portalParts();
@@ -52,9 +62,13 @@ export default class extends ZagController {
 
         if (event.command === "--show-modal") {
             api.setOpen(true);
-        } else if (event.command === "--close") {
+        } else if (event.command === "--close" && this.requestClose()) {
             api.setOpen(false);
         }
+    }
+
+    requestClose() {
+        return this.element.dispatchEvent(new CustomEvent("hui:dialog:beforeclose", { bubbles: true, cancelable: true }));
     }
 
     render() {
