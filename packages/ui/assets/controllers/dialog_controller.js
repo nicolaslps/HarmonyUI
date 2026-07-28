@@ -62,13 +62,15 @@ export default class extends ZagController {
 
         if (event.command === "--show-modal") {
             api.setOpen(true);
-        } else if (event.command === "--close" && this.requestClose()) {
+        } else if (event.command === "--close" && this.requestClose(event.source)) {
             api.setOpen(false);
         }
     }
 
-    requestClose() {
-        return this.element.dispatchEvent(new CustomEvent("hui:dialog:beforeclose", { bubbles: true, cancelable: true }));
+    requestClose(source = null) {
+        return this.element.dispatchEvent(
+            new CustomEvent("hui:dialog:beforeclose", { bubbles: true, cancelable: true, detail: { source } }),
+        );
     }
 
     render() {
