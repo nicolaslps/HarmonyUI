@@ -37,6 +37,14 @@ nesting, so the stack stays legible.
 
 <ComponentPreview name="nested-dialogs"/>
 
+### Close confirmation
+
+Escape, an outside click, and the `--close` command all dispatch a cancelable
+`hui:dialog:beforeclose` event on the dialog element first. Call `event.preventDefault()` on it to
+keep the dialog open, for example to show a nested confirm dialog instead.
+
+<ComponentPreview name="close-confirmation"/>
+
 ## API Reference
 
 ### `<twig:ui:Dialog>`
@@ -49,6 +57,10 @@ nesting, so the stack stays legible.
 | Block | Description |
 |---|---|
 | `content` | The dialog structure, typically one or more `Dialog:Trigger` and a `Dialog:Content` |
+
+| Event | Description |
+|---|---|
+| `hui:dialog:beforeclose` | Cancelable. Dispatched before escape, an outside click, or `--close` dismiss the dialog. Call `event.preventDefault()` to keep it open |
 
 ### `<twig:ui:Dialog:Trigger>`
 

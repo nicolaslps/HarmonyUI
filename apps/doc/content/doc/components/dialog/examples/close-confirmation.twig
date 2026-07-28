@@ -1,0 +1,41 @@
+<div
+    data-controller="dialog-confirm-close"
+    data-dialog-confirm-close-confirm-dialog-value="discard-dialog"
+    data-dialog-confirm-close-close-trigger-value="edit-save"
+    data-dialog-confirm-close-discard-value="discard-confirm"
+>
+    <twig:ui:Dialog id="edit-dialog">
+        <twig:ui:Dialog:Trigger>
+            <twig:ui:Button variant="outline" {{ ...dialog_trigger_attrs }}>Edit profile</twig:ui:Button>
+        </twig:ui:Dialog:Trigger>
+        <twig:ui:Dialog:Content class="h-64 max-w-md">
+            <p class="font-medium">Edit profile</p>
+            <p class="text-muted-foreground">Closing now discards your changes.</p>
+
+            <div class="mt-auto flex justify-end gap-2">
+                <twig:ui:Button variant="outline" command="--show-modal" commandfor="discard-dialog">
+                    Cancel
+                </twig:ui:Button>
+                <twig:ui:Button id="edit-save" command="--close" commandfor="edit-dialog">
+                    Save changes
+                </twig:ui:Button>
+            </div>
+        </twig:ui:Dialog:Content>
+    </twig:ui:Dialog>
+</div>
+
+<twig:ui:Dialog id="discard-dialog">
+    <twig:ui:Dialog:Content class="h-64 max-w-md">
+        <p class="font-medium">Discard changes?</p>
+        <p class="text-muted-foreground">Your edits haven't been saved yet.</p>
+
+        <div class="mt-auto flex justify-end gap-2">
+            <twig:ui:Button variant="outline" command="--close" commandfor="discard-dialog">
+                Go back
+            </twig:ui:Button>
+            <twig:ui:Button variant="danger" id="discard-confirm" command="--close" commandfor="discard-dialog">
+                Discard
+            </twig:ui:Button>
+        </div>
+    </twig:ui:Dialog:Content>
+</twig:ui:Dialog>
