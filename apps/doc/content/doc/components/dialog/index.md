@@ -81,6 +81,13 @@ from the `Dialog` root; target it by `data-owner` (the dialog's `id`) instead.
 |---|---|---|
 | `open` | `boolean` | Whether the dialog is open on initial render. Defaults to `false` |
 | `id` | `string` | The dialog's DOM id, used as the `commandfor` target. Defaults to an auto-generated value |
+| `role` | `'dialog' \| 'alertdialog'` | The content part's ARIA role. Use `alertdialog` for interruptive confirmations. Defaults to `'dialog'` |
+| `preventScroll` | `boolean` | Whether to lock body scroll while the dialog is open. Defaults to `true` |
+| `closeOnInteractOutside` | `boolean` | Whether a pointer interaction outside `Dialog:Content` closes the dialog. Defaults to `true` |
+| `closeOnEscape` | `boolean` | Whether pressing escape closes the dialog. Defaults to `true` |
+
+For an interruptive confirmation that can only be dismissed through an explicit action, use
+[`AlertDialog`](/docs/components/alert-dialog), a preset over these four props.
 
 | Block | Description |
 |---|---|
