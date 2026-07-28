@@ -1,4 +1,4 @@
-{%- props open = false, id = null -%}
+{%- props open = false, id = null, role = 'dialog', preventScroll = true, closeOnInteractOutside = true, closeOnEscape = true -%}
 {%- set _hui_dialog_id = id ?? hui_id('dialog') -%}
 {{ provide('dialog_id', _hui_dialog_id) }}
 <div
@@ -8,6 +8,10 @@
         'data-slot': 'dialog',
         'data-controller': 'hui-dialog',
         'data-hui-dialog-open-value': open ? 'true' : 'false',
+        'data-hui-dialog-role-value': role,
+        'data-hui-dialog-prevent-scroll-value': preventScroll ? 'true' : 'false',
+        'data-hui-dialog-close-on-interact-outside-value': closeOnInteractOutside ? 'true' : 'false',
+        'data-hui-dialog-close-on-escape-value': closeOnEscape ? 'true' : 'false',
     }) }}
 >
     {%- block content %}{% endblock -%}

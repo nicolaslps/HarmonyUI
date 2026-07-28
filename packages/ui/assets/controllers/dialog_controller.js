@@ -5,12 +5,20 @@ import ZagController from "./zag_base.js";
 export default class extends ZagController {
     static values = {
         open: Boolean,
+        role: { type: String, default: "dialog" },
+        preventScroll: { type: Boolean, default: true },
+        closeOnInteractOutside: { type: Boolean, default: true },
+        closeOnEscape: { type: Boolean, default: true },
     };
 
     connect() {
         this.machine = new VanillaMachine(dialog.machine, {
             id: this.element.id,
             defaultOpen: this.openValue,
+            role: this.roleValue,
+            preventScroll: this.preventScrollValue,
+            closeOnInteractOutside: this.closeOnInteractOutsideValue,
+            closeOnEscape: this.closeOnEscapeValue,
             onEscapeKeyDown: (event) => {
                 if (!this.requestClose()) {
                     event.preventDefault();
