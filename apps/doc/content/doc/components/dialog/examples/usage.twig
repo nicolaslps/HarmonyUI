@@ -1,9 +1,19 @@
-<twig:ui:Dialog class="rounded-lg border border-dashed border-border p-4">
+<twig:ui:Dialog id="usage-dialog" class="rounded-lg border border-dashed border-border p-4">
     <p class="mb-2 text-xs font-medium text-muted-foreground">Internal trigger</p>
     <twig:ui:Dialog:Trigger>
         <twig:ui:Button variant="outline" {{ ...dialog_trigger_attrs }} class="w-full">Open</twig:ui:Button>
     </twig:ui:Dialog:Trigger>
     <twig:ui:Dialog:Content>
-        <p>This is a dialog.</p>
+        <twig:ui:Dialog:Close />
+        <twig:ui:Dialog:Header>
+            <twig:ui:Dialog:Title>Edit profile</twig:ui:Dialog:Title>
+            <twig:ui:Dialog:Description>
+                Make changes to your profile here. Click save when you're done.
+            </twig:ui:Dialog:Description>
+        </twig:ui:Dialog:Header>
+        <twig:ui:Dialog:Footer>
+            <twig:ui:Button variant="outline" command="--close" commandfor="usage-dialog">Cancel</twig:ui:Button>
+            <twig:ui:Button command="--close" commandfor="usage-dialog">Save changes</twig:ui:Button>
+        </twig:ui:Dialog:Footer>
     </twig:ui:Dialog:Content>
 </twig:ui:Dialog>

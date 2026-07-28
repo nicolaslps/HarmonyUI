@@ -93,6 +93,69 @@ Only useful when the trigger is nested inside the `Dialog`; a remote trigger set
 
 Renders the backdrop, positioner and content parts of the dialog.
 
+| Prop | Type | Description |
+|---|---|---|
+| `as` | `string` | The element to render the content part as. Defaults to `div` |
+
 | Block | Description |
 |---|---|
 | `content` | The dialog content |
+
+### `<twig:ui:Dialog:Header>`
+
+Lays out a title and description stacked at the top of the dialog.
+
+| Prop | Type | Description |
+|---|---|---|
+| `as` | `string` | The element to render. Defaults to `div` |
+
+| Block | Description |
+|---|---|
+| `content` | Typically a `Dialog:Title` and a `Dialog:Description` |
+
+### `<twig:ui:Dialog:Title>`
+
+The dialog's accessible name. Its `id` is wired to the content's `aria-labelledby` automatically.
+
+| Prop | Type | Description |
+|---|---|---|
+| `as` | `string` | The element to render. Defaults to `div` |
+
+| Block | Description |
+|---|---|
+| `content` | The title text |
+
+### `<twig:ui:Dialog:Description>`
+
+The dialog's accessible description. Its `id` is wired to the content's `aria-describedby`
+automatically.
+
+| Prop | Type | Description |
+|---|---|---|
+| `as` | `string` | The element to render. Defaults to `div` |
+
+| Block | Description |
+|---|---|
+| `content` | The description text |
+
+### `<twig:ui:Dialog:Footer>`
+
+Right-aligns actions at the bottom of the dialog.
+
+| Prop | Type | Description |
+|---|---|---|
+| `as` | `string` | The element to render. Defaults to `div` |
+
+| Block | Description |
+|---|---|
+| `content` | Typically one or more `Button` elements |
+
+### `<twig:ui:Dialog:Close>`
+
+Exposes a `dialog_close_attrs` variable (`command="--close"`, `commandfor="<dialog id>"`) to spread
+onto a custom dismiss element, same mechanism as `Dialog:Trigger`. Defaults to a ghost icon button
+with an `x` icon, positioned in the top-right corner of `Dialog:Content`.
+
+| Block | Description |
+|---|---|
+| `content` | The dismiss element. Defaults to a `Button` with `{{ ...dialog_close_attrs }}` |
