@@ -1,6 +1,7 @@
-<twig:ui:Dialog>
+<twig:ui:Dialog class="rounded-lg border border-dashed border-border p-4">
+    <p class="mb-2 text-xs font-medium text-muted-foreground">Internal trigger</p>
     <twig:ui:Dialog:Trigger>
-        <twig:ui:Button variant="outline" {{ ...dialog_trigger_attrs }}>Open</twig:ui:Button>
+        <twig:ui:Button variant="outline" {{ ...dialog_trigger_attrs }} class="w-full">Open</twig:ui:Button>
     </twig:ui:Dialog:Trigger>
     <twig:ui:Dialog:Content>
         <p>This is a dialog.</p>

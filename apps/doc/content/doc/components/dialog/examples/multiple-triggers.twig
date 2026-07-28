@@ -1,10 +1,13 @@
-<twig:ui:Dialog>
-    <twig:ui:Dialog:Trigger>
-        <twig:ui:Button variant="outline" {{ ...dialog_trigger_attrs }}>Open from A</twig:ui:Button>
-    </twig:ui:Dialog:Trigger>
-    <twig:ui:Dialog:Trigger>
-        <twig:ui:Button variant="outline" {{ ...dialog_trigger_attrs }}>Open from B</twig:ui:Button>
-    </twig:ui:Dialog:Trigger>
+<twig:ui:Dialog class="rounded-lg border border-dashed border-border p-4">
+    <p class="mb-2 text-xs font-medium text-muted-foreground">Internal triggers</p>
+    <div class="flex gap-2">
+        <twig:ui:Dialog:Trigger>
+            <twig:ui:Button variant="outline" {{ ...dialog_trigger_attrs }}>Open from A</twig:ui:Button>
+        </twig:ui:Dialog:Trigger>
+        <twig:ui:Dialog:Trigger>
+            <twig:ui:Button variant="outline" {{ ...dialog_trigger_attrs }}>Open from B</twig:ui:Button>
+        </twig:ui:Dialog:Trigger>
+    </div>
     <twig:ui:Dialog:Content>
         <p>This is a dialog.</p>
     </twig:ui:Dialog:Content>
