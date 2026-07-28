@@ -37,6 +37,18 @@ nesting, so the stack stays legible.
 
 <ComponentPreview name="nested-dialogs"/>
 
+### No close button
+
+<ComponentPreview name="no-close-button"/>
+
+### Custom close button
+
+Override `Dialog:Close`'s `content` block to render your own dismiss element instead of the
+default ghost icon button. Spread `dialog_close_attrs` onto it to keep the same
+`--close`/`commandfor` wiring.
+
+<ComponentPreview name="custom-close-button"/>
+
 ### Close confirmation
 
 Escape, an outside click, and the `--close` command all dispatch a cancelable
