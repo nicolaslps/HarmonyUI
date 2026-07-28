@@ -1,0 +1,13 @@
+{%- props as = 'div' -%}
+{%- set _hui_dialog_id = inject('dialog_id') -%}
+<{{ as }}
+    class="{{ hui('dialog-title').apply({}, attributes.render('class'))|tailwind_merge }}"
+    {{ attributes.defaults({
+        'data-slot': 'dialog-title',
+        'data-scope': 'dialog',
+        'data-part': 'title',
+        'data-owner': _hui_dialog_id,
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</{{ as }}>

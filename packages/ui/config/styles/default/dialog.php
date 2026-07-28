@@ -27,4 +27,19 @@ return [
             'data-[has-nested=dialog]:translate-y-[calc(1.25rem*var(--nested-layer-count,0))]',
         ],
     ),
+    'dialog-header' => new ComponentStyle(
+        base: 'flex flex-col gap-1',
+    ),
+    'dialog-title' => new ComponentStyle(
+        base: 'text-base leading-snug font-medium text-popover-foreground',
+    ),
+    'dialog-description' => new ComponentStyle(
+        base: 'text-sm text-muted-foreground',
+    ),
+    'dialog-footer' => new ComponentStyle(
+        base: 'flex justify-end gap-2',
+    ),
+    'dialog-close' => new ComponentStyle(
+        base: 'absolute top-3 right-3 text-muted-foreground',
+    ),
 ];

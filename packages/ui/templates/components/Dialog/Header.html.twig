@@ -1,0 +1,9 @@
+{%- props as = 'div' -%}
+<{{ as }}
+    class="{{ hui('dialog-header').apply({}, attributes.render('class'))|tailwind_merge }}"
+    {{ attributes.defaults({
+        'data-slot': 'dialog-header',
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</{{ as }}>

@@ -1,0 +1,17 @@
+{%- set _hui_dialog_id = inject('dialog_id') -%}
+{%- set dialog_close_attrs = {
+    command: '--close',
+    commandfor: _hui_dialog_id,
+    type: 'button',
+} -%}
+{%- block content -%}
+    <twig:ui:Button
+        variant="ghost"
+        size="icon-sm"
+        {{ ...dialog_close_attrs }}
+        class="{{ hui('dialog-close').apply({}) }}"
+        aria-label="Close"
+    >
+        <twig:ux:icon name="lucide:x" class="size-4" />
+    </twig:ui:Button>
+{%- endblock -%}

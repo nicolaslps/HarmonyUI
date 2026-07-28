@@ -89,5 +89,7 @@ export default class extends ZagController {
         }
 
         this.spreadPart("content", api.getContentProps());
+        this.spreadPart("title", api.getTitleProps());
+        this.spreadPart("description", api.getDescriptionProps());
     }
 }
