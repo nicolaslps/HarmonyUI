@@ -45,6 +45,22 @@ keep the dialog open, for example to show a nested confirm dialog instead.
 
 <ComponentPreview name="close-confirmation"/>
 
+### Scrolling inside
+
+Cap `Dialog:Content` with a `max-h-*` and split it into a fixed header/footer around an
+`overflow-y-auto` region, so the dialog stays fully on screen and only its content scrolls.
+
+<ComponentPreview name="scroll-inside"/>
+
+### Scrolling outside
+
+For content that should keep growing instead, make the positioner itself scrollable so the page
+scrolls around the dialog and it can extend past the viewport instead of being clipped. The
+positioner is portaled to `<body>` on connect, so it can't be targeted with an ancestor selector
+from the `Dialog` root; target it by `data-owner` (the dialog's `id`) instead.
+
+<ComponentPreview name="scroll-outside"/>
+
 ## API Reference
 
 ### `<twig:ui:Dialog>`

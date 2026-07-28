@@ -1,0 +1,52 @@
+<style>
+    [data-owner="scroll-outside-dialog"][data-part="positioner"] {
+        overflow-y: auto;
+        align-items: safe center;
+    }
+</style>
+
+<twig:ui:Dialog id="scroll-outside-dialog">
+    <twig:ui:Dialog:Trigger>
+        <twig:ui:Button variant="outline" {{ ...dialog_trigger_attrs }}>View changelog</twig:ui:Button>
+    </twig:ui:Dialog:Trigger>
+    <twig:ui:Dialog:Content class="my-4 max-w-md">
+        <p class="font-medium">Changelog</p>
+
+        <div class="space-y-3 text-muted-foreground">
+            <p><span class="font-medium text-popover-foreground">v1.20.0</span> Added a <code>--toggle</code> command so a single trigger can open and close the same dialog.</p>
+            <p><span class="font-medium text-popover-foreground">v1.19.0</span> Improved focus return to the trigger that opened the dialog, even across nested levels.</p>
+            <p><span class="font-medium text-popover-foreground">v1.18.0</span> Added a data attribute hook for styling the dialog while its close transition plays out.</p>
+            <p><span class="font-medium text-popover-foreground">v1.17.0</span> Fixed a scroll-lock issue where the page could jump when a dialog opened on a short viewport.</p>
+            <p><span class="font-medium text-popover-foreground">v1.16.0</span> Backdrop darkening now accounts for every level of nesting instead of just the first.</p>
+            <p><span class="font-medium text-popover-foreground">v1.15.0</span> Added an escape-key override so a single dialog can opt out of dismissing on escape.</p>
+            <p><span class="font-medium text-popover-foreground">v1.14.0</span> Content is announced to screen readers as soon as it becomes visible, not on open start.</p>
+            <p><span class="font-medium text-popover-foreground">v1.13.0</span> Outside clicks are now ignored while a nested dialog is open, matching native modal behavior.</p>
+            <p><span class="font-medium text-popover-foreground">v1.12.0</span> Added a way to disable the transition entirely for users who prefer reduced motion.</p>
+            <p><span class="font-medium text-popover-foreground">v1.11.0</span> The backdrop now forwards clicks correctly when a parent element has its own click handler.</p>
+            <p><span class="font-medium text-popover-foreground">v1.10.0</span> Added support for opening a dialog directly from a keyboard shortcut, without a visible trigger.</p>
+            <p><span class="font-medium text-popover-foreground">v1.9.0</span> Fixed the initial focus target when the dialog contains no focusable element.</p>
+            <p><span class="font-medium text-popover-foreground">v1.8.0</span> Tightened the type definitions around the trigger attributes for stricter editors.</p>
+            <p><span class="font-medium text-popover-foreground">v1.7.0</span> Nested dialogs now restore the parent's scale and position in a single frame on close.</p>
+            <p><span class="font-medium text-popover-foreground">v1.6.0</span> Added a changelog page, because apparently we needed one long enough to prove a point.</p>
+            <p><span class="font-medium text-popover-foreground">v1.5.0</span> Outside clicks are now ignored while a nested dialog is open, matching native modal behavior.</p>
+            <p><span class="font-medium text-popover-foreground">v1.4.0</span> Added nested dialog support with automatic stacking.</p>
+            <p><span class="font-medium text-popover-foreground">v1.3.0</span> Introduced the close confirmation event, cancelable from userland.</p>
+            <p><span class="font-medium text-popover-foreground">v1.2.0</span> Detached triggers can now open a dialog from anywhere on the page.</p>
+            <p><span class="font-medium text-popover-foreground">v1.1.0</span> Multiple triggers can share a single dialog instance.</p>
+            <p><span class="font-medium text-popover-foreground">v1.0.0</span> Initial release, built on the Zag.js dialog machine.</p>
+            <p><span class="font-medium text-popover-foreground">v0.9.0</span> Migrated from a custom focus trap to the native command/commandfor attributes.</p>
+            <p><span class="font-medium text-popover-foreground">v0.8.0</span> Added support for nested backdrop darkening.</p>
+            <p><span class="font-medium text-popover-foreground">v0.7.0</span> Fixed a memory leak when a dialog was opened and closed in rapid succession.</p>
+            <p><span class="font-medium text-popover-foreground">v0.6.0</span> Added the first pass at reduced-motion support for the backdrop fade.</p>
+            <p><span class="font-medium text-popover-foreground">v0.5.0</span> Positioner now accounts for the scrollbar width to avoid a layout shift on open.</p>
+            <p><span class="font-medium text-popover-foreground">v0.4.0</span> Added support for a custom id so a trigger anywhere on the page can target the dialog.</p>
+            <p><span class="font-medium text-popover-foreground">v0.3.0</span> Escape now closes only the topmost dialog instead of the entire stack.</p>
+            <p><span class="font-medium text-popover-foreground">v0.2.0</span> Added the backdrop and basic open and close animations.</p>
+            <p><span class="font-medium text-popover-foreground">v0.1.0</span> First internal preview of the dialog component.</p>
+        </div>
+
+        <div class="mt-auto flex justify-end">
+            <twig:ui:Button command="--close" commandfor="scroll-outside-dialog">Close</twig:ui:Button>
+        </div>
+    </twig:ui:Dialog:Content>
+</twig:ui:Dialog>

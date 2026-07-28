@@ -1,0 +1,46 @@
+<twig:ui:Dialog id="scroll-inside-dialog">
+    <twig:ui:Dialog:Trigger>
+        <twig:ui:Button variant="outline" {{ ...dialog_trigger_attrs }}>View terms</twig:ui:Button>
+    </twig:ui:Dialog:Trigger>
+    <twig:ui:Dialog:Content class="grid-rows-[auto_1fr_auto] max-h-[26rem] max-w-md gap-0 overflow-hidden p-0">
+        <div class="border-b border-foreground/10 p-4">
+            <p class="font-medium">Terms of service</p>
+        </div>
+
+        <div class="overflow-y-auto p-4 text-muted-foreground">
+            <p class="mb-3">
+                By using this service, you agree to use it only for its intended purpose and to
+                respect the rights of other users.
+            </p>
+            <p class="mb-3">
+                We may update these terms from time to time. Continued use of the service after a
+                change means you accept the revised terms.
+            </p>
+            <p class="mb-3">
+                Your account is yours to manage. Keep your credentials private and let us know
+                immediately if you suspect unauthorized access.
+            </p>
+            <p class="mb-3">
+                We collect the minimum data required to operate the service and never sell it to
+                third parties.
+            </p>
+            <p class="mb-3">
+                The service is provided as is, without warranties of any kind, express or implied.
+            </p>
+            <p class="mb-3">
+                We may suspend or terminate access if these terms are violated, with notice
+                whenever reasonably possible.
+            </p>
+            <p>
+                Questions about these terms can be sent to our support team at any time.
+            </p>
+        </div>
+
+        <div class="flex justify-end gap-2 border-t border-foreground/10 p-4">
+            <twig:ui:Button variant="outline" command="--close" commandfor="scroll-inside-dialog">
+                Decline
+            </twig:ui:Button>
+            <twig:ui:Button command="--close" commandfor="scroll-inside-dialog">Accept</twig:ui:Button>
+        </div>
+    </twig:ui:Dialog:Content>
+</twig:ui:Dialog>
