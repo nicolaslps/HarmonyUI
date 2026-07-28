@@ -10,7 +10,7 @@
         <twig:ui:Button variant="outline" {{ ...dialog_trigger_attrs }}>View changelog</twig:ui:Button>
     </twig:ui:Dialog:Trigger>
     <twig:ui:Dialog:Content class="my-4 max-w-md">
-        <p class="font-medium">Changelog</p>
+        <twig:ui:Dialog:Title>Changelog</twig:ui:Dialog:Title>
 
         <div class="space-y-3 text-muted-foreground">
             <p><span class="font-medium text-popover-foreground">v1.20.0</span> Added a <code>--toggle</code> command so a single trigger can open and close the same dialog.</p>
@@ -45,8 +45,10 @@
             <p><span class="font-medium text-popover-foreground">v0.1.0</span> First internal preview of the dialog component.</p>
         </div>
 
-        <div class="mt-auto flex justify-end">
-            <twig:ui:Button command="--close" commandfor="scroll-outside-dialog">Close</twig:ui:Button>
-        </div>
+        <twig:ui:Dialog:Footer class="mt-auto">
+            <twig:ui:Dialog:Close>
+                <twig:ui:Button {{ ...dialog_close_attrs }}>Close</twig:ui:Button>
+            </twig:ui:Dialog:Close>
+        </twig:ui:Dialog:Footer>
     </twig:ui:Dialog:Content>
 </twig:ui:Dialog>

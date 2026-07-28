@@ -3,9 +3,10 @@
         <twig:ui:Button variant="outline" {{ ...dialog_trigger_attrs }}>View terms</twig:ui:Button>
     </twig:ui:Dialog:Trigger>
     <twig:ui:Dialog:Content class="grid-rows-[auto_1fr_auto] max-h-[26rem] max-w-md gap-0 overflow-hidden p-0">
-        <div class="border-b border-foreground/10 p-4">
-            <p class="font-medium">Terms of service</p>
-        </div>
+        <twig:ui:Dialog:Close />
+        <twig:ui:Dialog:Header class="border-b border-foreground/10 p-4">
+            <twig:ui:Dialog:Title>Terms of service</twig:ui:Dialog:Title>
+        </twig:ui:Dialog:Header>
 
         <div class="overflow-y-auto p-4 text-muted-foreground">
             <p class="mb-3">
@@ -36,11 +37,11 @@
             </p>
         </div>
 
-        <div class="flex justify-end gap-2 border-t border-foreground/10 p-4">
+        <twig:ui:Dialog:Footer class="border-t border-foreground/10 p-4">
             <twig:ui:Button variant="outline" command="--close" commandfor="scroll-inside-dialog">
                 Decline
             </twig:ui:Button>
             <twig:ui:Button command="--close" commandfor="scroll-inside-dialog">Accept</twig:ui:Button>
-        </div>
+        </twig:ui:Dialog:Footer>
     </twig:ui:Dialog:Content>
 </twig:ui:Dialog>

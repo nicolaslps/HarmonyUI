@@ -5,8 +5,19 @@
 
     <twig:ui:Dialog id="detached-example" class="rounded-lg border border-dashed border-border p-4">
         <p class="text-xs font-medium text-muted-foreground">No trigger inside, opened remotely</p>
-        <twig:ui:Dialog:Content>
-            <p>Opened from a button outside the Dialog.</p>
+        <twig:ui:Dialog:Content class="max-w-md">
+            <twig:ui:Dialog:Close />
+            <twig:ui:Dialog:Header>
+                <twig:ui:Dialog:Title>Session expiring</twig:ui:Dialog:Title>
+                <twig:ui:Dialog:Description>
+                    This dialog was opened from a button outside it, using its <code>id</code> as
+                    <code>commandfor</code>.
+                </twig:ui:Dialog:Description>
+            </twig:ui:Dialog:Header>
+
+            <twig:ui:Dialog:Footer class="mt-auto">
+                <twig:ui:Button command="--close" commandfor="detached-example">Stay signed in</twig:ui:Button>
+            </twig:ui:Dialog:Footer>
         </twig:ui:Dialog:Content>
     </twig:ui:Dialog>
 </div>

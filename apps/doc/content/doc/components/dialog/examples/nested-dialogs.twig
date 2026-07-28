@@ -1,29 +1,53 @@
-<twig:ui:Dialog>
+<twig:ui:Dialog id="nested-edit-dialog">
     <twig:ui:Dialog:Trigger>
         <twig:ui:Button variant="outline" {{ ...dialog_trigger_attrs }}>Edit profile</twig:ui:Button>
     </twig:ui:Dialog:Trigger>
     <twig:ui:Dialog:Content class="h-64 max-w-md">
-        <p class="font-medium">Edit profile</p>
-        <p class="text-muted-foreground">Update your account details.</p>
+        <twig:ui:Dialog:Close />
+        <twig:ui:Dialog:Header>
+            <twig:ui:Dialog:Title>Edit profile</twig:ui:Dialog:Title>
+            <twig:ui:Dialog:Description>Update your account details.</twig:ui:Dialog:Description>
+        </twig:ui:Dialog:Header>
 
-        <twig:ui:Dialog>
-            <twig:ui:Dialog:Trigger>
-                <twig:ui:Button variant="danger" class="mt-auto justify-self-start" {{ ...dialog_trigger_attrs }}>Delete account</twig:ui:Button>
-            </twig:ui:Dialog:Trigger>
-            <twig:ui:Dialog:Content class="h-64 max-w-md">
-                <p class="font-medium">Delete account</p>
-                <p class="text-muted-foreground">This action cannot be undone.</p>
+        <twig:ui:Dialog:Footer class="mt-auto">
+            <twig:ui:Dialog id="nested-delete-dialog">
+                <twig:ui:Dialog:Trigger>
+                    <twig:ui:Button variant="danger" {{ ...dialog_trigger_attrs }}>Delete account</twig:ui:Button>
+                </twig:ui:Dialog:Trigger>
+                <twig:ui:Dialog:Content class="h-64 max-w-md">
+                    <twig:ui:Dialog:Close />
+                    <twig:ui:Dialog:Header>
+                        <twig:ui:Dialog:Title>Delete account</twig:ui:Dialog:Title>
+                        <twig:ui:Dialog:Description>This action cannot be undone.</twig:ui:Dialog:Description>
+                    </twig:ui:Dialog:Header>
 
-                <twig:ui:Dialog>
-                    <twig:ui:Dialog:Trigger>
-                        <twig:ui:Button variant="danger" class="mt-auto justify-self-start" {{ ...dialog_trigger_attrs }}>Yes, I'm sure</twig:ui:Button>
-                    </twig:ui:Dialog:Trigger>
-                    <twig:ui:Dialog:Content class="h-64 max-w-md">
-                        <p class="font-medium">Final confirmation</p>
-                        <p class="text-muted-foreground">Really, there's no going back from this.</p>
-                    </twig:ui:Dialog:Content>
-                </twig:ui:Dialog>
-            </twig:ui:Dialog:Content>
-        </twig:ui:Dialog>
+                    <twig:ui:Dialog:Footer class="mt-auto">
+                        <twig:ui:Dialog id="nested-final-dialog">
+                            <twig:ui:Dialog:Trigger>
+                                <twig:ui:Button variant="danger" {{ ...dialog_trigger_attrs }}>Yes, I'm sure</twig:ui:Button>
+                            </twig:ui:Dialog:Trigger>
+                            <twig:ui:Dialog:Content class="h-64 max-w-md">
+                                <twig:ui:Dialog:Close />
+                                <twig:ui:Dialog:Header>
+                                    <twig:ui:Dialog:Title>Final confirmation</twig:ui:Dialog:Title>
+                                    <twig:ui:Dialog:Description>
+                                        Really, there's no going back from this.
+                                    </twig:ui:Dialog:Description>
+                                </twig:ui:Dialog:Header>
+
+                                <twig:ui:Dialog:Footer class="mt-auto">
+                                    <twig:ui:Button variant="outline" command="--close" commandfor="nested-final-dialog">
+                                        Cancel
+                                    </twig:ui:Button>
+                                    <twig:ui:Button variant="danger" command="--close" commandfor="nested-final-dialog">
+                                        Delete account
+                                    </twig:ui:Button>
+                                </twig:ui:Dialog:Footer>
+                            </twig:ui:Dialog:Content>
+                        </twig:ui:Dialog>
+                    </twig:ui:Dialog:Footer>
+                </twig:ui:Dialog:Content>
+            </twig:ui:Dialog>
+        </twig:ui:Dialog:Footer>
     </twig:ui:Dialog:Content>
 </twig:ui:Dialog>

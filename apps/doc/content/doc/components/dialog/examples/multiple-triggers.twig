@@ -1,4 +1,4 @@
-<twig:ui:Dialog class="rounded-lg border border-dashed border-border p-4">
+<twig:ui:Dialog id="multiple-triggers-dialog" class="rounded-lg border border-dashed border-border p-4">
     <p class="mb-2 text-xs font-medium text-muted-foreground">Internal triggers</p>
     <div class="flex gap-2">
         <twig:ui:Dialog:Trigger>
@@ -8,7 +8,18 @@
             <twig:ui:Button variant="outline" {{ ...dialog_trigger_attrs }}>Open from B</twig:ui:Button>
         </twig:ui:Dialog:Trigger>
     </div>
-    <twig:ui:Dialog:Content>
-        <p>This is a dialog.</p>
+    <twig:ui:Dialog:Content class="max-w-md">
+        <twig:ui:Dialog:Close />
+        <twig:ui:Dialog:Header>
+            <twig:ui:Dialog:Title>Invite members</twig:ui:Dialog:Title>
+            <twig:ui:Dialog:Description>Both buttons above open this same dialog instance.</twig:ui:Dialog:Description>
+        </twig:ui:Dialog:Header>
+
+        <twig:ui:Dialog:Footer class="mt-auto">
+            <twig:ui:Button variant="outline" command="--close" commandfor="multiple-triggers-dialog">
+                Cancel
+            </twig:ui:Button>
+            <twig:ui:Button command="--close" commandfor="multiple-triggers-dialog">Send invite</twig:ui:Button>
+        </twig:ui:Dialog:Footer>
     </twig:ui:Dialog:Content>
 </twig:ui:Dialog>
