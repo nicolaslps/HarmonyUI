@@ -1,0 +1,18 @@
+<twig:ui:AlertDialog id="delete-account-dialog">
+    <twig:ui:Dialog:Trigger>
+        <twig:ui:Button variant="outline" {{ ...dialog_trigger_attrs }}>Delete account</twig:ui:Button>
+    </twig:ui:Dialog:Trigger>
+    <twig:ui:Dialog:Content>
+        <twig:ui:Dialog:Header>
+            <twig:ui:Dialog:Title>Are you absolutely sure?</twig:ui:Dialog:Title>
+            <twig:ui:Dialog:Description>
+                This action cannot be undone. This will permanently delete your account and remove
+                your data from our servers.
+            </twig:ui:Dialog:Description>
+        </twig:ui:Dialog:Header>
+        <twig:ui:Dialog:Footer>
+            <twig:ui:Button variant="outline" command="--close" commandfor="delete-account-dialog">Cancel</twig:ui:Button>
+            <twig:ui:Button variant="danger" command="--close" commandfor="delete-account-dialog">Continue</twig:ui:Button>
+        </twig:ui:Dialog:Footer>
+    </twig:ui:Dialog:Content>
+</twig:ui:AlertDialog>

@@ -22,7 +22,6 @@ final readonly class LegacySite
 
     /** @var list<string> */
     private const array SLUGS = [
-        'components/alert-dialog',
         'components/button-group',
         'components/drawer',
         'components/dropdown-menu',
