@@ -89,6 +89,15 @@ stay fully interactive while the dialog is open.
 
 <ComponentPreview name="non-modal"/>
 
+### Right-to-left
+
+Set `dir="rtl"` to flip the close button, footer button order, and text alignment. Backdrop and
+positioner are portaled to the end of `<body>` on connect, so they can't inherit `dir` from a
+locale-scoped subtree the way a regular in-place element would: pass it explicitly whenever the
+page's `<html dir>` doesn't already match.
+
+<ComponentPreview name="rtl"/>
+
 ## Focus management
 
 By default, opening a `Dialog` focuses `Dialog:Content` itself rather than the first focusable
@@ -121,6 +130,7 @@ collide with each other:
 | `closeOnEscape` | `boolean` | Whether pressing escape closes the dialog. Defaults to `true` |
 | `modal` | `boolean` | Whether the dialog traps focus inside itself. Defaults to `true`. Doesn't affect `preventScroll` or `closeOnInteractOutside`, which stay controlled by their own props |
 | `ariaLabel` | `string` | Accessible name for `Dialog:Content` when it doesn't render a `Dialog:Title`. Defaults to `null` |
+| `dir` | `'ltr' \| 'rtl'` | Text direction applied to every dialog part. Defaults to the page's `<html dir>`, useful when the dialog is portaled out of a locale-scoped subtree that isn't reflected on `<html>` |
 | `as` | `string` | The element to render the root wrapper as. Defaults to `div` |
 
 For an interruptive confirmation that can only be dismissed through an explicit action, use

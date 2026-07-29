@@ -1,0 +1,17 @@
+<twig:ui:Dialog id="rtl-example" dir="rtl">
+    <twig:ui:Dialog:Trigger>
+        <twig:ui:Button variant="outline" {{ ...dialog_trigger_attrs }}>حذف الحساب</twig:ui:Button>
+    </twig:ui:Dialog:Trigger>
+    <twig:ui:Dialog:Content class="max-w-md">
+        <twig:ui:Dialog:Close />
+        <twig:ui:Dialog:Header>
+            <twig:ui:Dialog:Title>تأكيد الحذف</twig:ui:Dialog:Title>
+            <twig:ui:Dialog:Description>لا يمكن التراجع عن هذا الإجراء بعد تأكيده.</twig:ui:Dialog:Description>
+        </twig:ui:Dialog:Header>
+
+        <twig:ui:Dialog:Footer class="mt-auto">
+            <twig:ui:Button variant="outline" command="--close" commandfor="rtl-example">إلغاء</twig:ui:Button>
+            <twig:ui:Button variant="danger" command="--close" commandfor="rtl-example">حذف</twig:ui:Button>
+        </twig:ui:Dialog:Footer>
+    </twig:ui:Dialog:Content>
+</twig:ui:Dialog>

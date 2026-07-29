@@ -53,6 +53,6 @@ return [
         base: 'flex justify-end gap-2',
     ),
     'dialog-close' => new ComponentStyle(
-        base: 'absolute top-3 right-3 text-muted-foreground',
+        base: 'absolute top-3 ltr:right-3 rtl:left-3 text-muted-foreground',
     ),
 ];

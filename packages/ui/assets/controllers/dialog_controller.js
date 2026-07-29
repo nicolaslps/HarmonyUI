@@ -11,6 +11,7 @@ export default class extends ZagController {
         closeOnEscape: { type: Boolean, default: true },
         modal: { type: Boolean, default: true },
         ariaLabel: { type: String, default: "" },
+        dir: { type: String, default: "" },
     };
 
     connect() {
@@ -23,6 +24,7 @@ export default class extends ZagController {
             closeOnEscape: this.closeOnEscapeValue,
             modal: this.modalValue,
             "aria-label": this.ariaLabelValue || undefined,
+            dir: this.dirValue || document.documentElement.dir || undefined,
             initialFocusEl: () => this.part("content")?.querySelector("[data-autofocus],[autofocus]") ?? this.part("content"),
             finalFocusEl: () => document.querySelector(`[data-dialog-final-focus="${this.element.id}"]`) ?? undefined,
             onEscapeKeyDown: (event) => {

@@ -1,4 +1,4 @@
-{%- props open = false, id = null, role = 'dialog', preventScroll = true, closeOnInteractOutside = true, closeOnEscape = true, modal = true, ariaLabel = null, as = 'div' -%}
+{%- props open = false, id = null, role = 'dialog', preventScroll = true, closeOnInteractOutside = true, closeOnEscape = true, modal = true, ariaLabel = null, dir = null, persistentElements = null, as = 'div' -%}
 {%- set _hui_dialog_id = id ?? hui_id('dialog') -%}
 {{ provide('dialog_id', _hui_dialog_id) }}
 {%- set _hui_dialog_attrs = {
@@ -10,10 +10,9 @@
     'data-hui-dialog-close-on-interact-outside-value': closeOnInteractOutside ? 'true' : 'false',
     'data-hui-dialog-close-on-escape-value': closeOnEscape ? 'true' : 'false',
     'data-hui-dialog-modal-value': modal ? 'true' : 'false',
+    'data-hui-dialog-aria-label-value': ariaLabel ?? '',
+    'data-hui-dialog-dir-value': dir ?? '',
 } -%}
-{%- if ariaLabel is not null -%}
-    {%- set _hui_dialog_attrs = _hui_dialog_attrs|merge({'data-hui-dialog-aria-label-value': ariaLabel}) -%}
-{%- endif -%}
 <{{ as }}
     id="{{ _hui_dialog_id }}"
     class="{{ hui('dialog').apply({}, attributes.render('class'))|tailwind_merge }}"
