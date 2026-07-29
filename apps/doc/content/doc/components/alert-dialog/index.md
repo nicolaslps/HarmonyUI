@@ -8,6 +8,9 @@ A thin preset over [`Dialog`](/docs/components/dialog): `role="alertdialog"`, an
 `closeOnInteractOutside`/`closeOnEscape` forced to `false` so the user has to pick an explicit
 action to dismiss it. Everything inside is regular `Dialog:*` subcomponents.
 
+The "Continue" button in the example below only dispatches `--close`. In a real alert dialog it
+should perform the destructive action first (e.g. submit a form) and only close on success.
+
 ## Usage
 
 <ComponentPreview name="usage"/>
@@ -20,6 +23,7 @@ action to dismiss it. Everything inside is regular `Dialog:*` subcomponents.
 |---|---|---|
 | `open` | `boolean` | Whether the dialog is open on initial render. Defaults to `false` |
 | `id` | `string` | The dialog's DOM id, used as the `commandfor` target. Defaults to an auto-generated value |
+| `ariaLabel` | `string` | Accessible name for the content when it doesn't render a `Dialog:Title`. Defaults to `null` |
 
 | Block | Description |
 |---|---|

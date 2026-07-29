@@ -1,4 +1,4 @@
-{%- props id = null, open = false -%}
-<twig:ui:Dialog :id="id" :open="open" role="alertdialog" :closeOnInteractOutside="false" :closeOnEscape="false" {{ ...attributes }}>
+{%- props id = null, open = false, ariaLabel = null -%}
+<twig:ui:Dialog :id="id" :open="open" role="alertdialog" :closeOnInteractOutside="false" :closeOnEscape="false" :ariaLabel="ariaLabel" {{ ...attributes }}>
     {{ block(outerBlocks.content) }}
 </twig:ui:Dialog>
