@@ -49,6 +49,14 @@ default ghost icon button. Spread `dialog_close_attrs` onto it to keep the same
 
 <ComponentPreview name="custom-close-button"/>
 
+### Sizes
+
+There's no `size` prop: pick a `max-w-*` (or, for a full-screen dialog, `h-*`/`w-*` plus
+`max-w-none`) and pass it as `class` on `Dialog:Content`. `tailwind_merge` takes care of dropping
+the default `max-w-sm`.
+
+<ComponentPreview name="sizes"/>
+
 ### Close confirmation
 
 Escape, an outside click, and the `--close` command all dispatch a cancelable
@@ -72,6 +80,14 @@ positioner is portaled to `<body>` on connect, so it can't be targeted with an a
 from the `Dialog` root; target it by `data-owner` (the dialog's `id`) instead.
 
 <ComponentPreview name="scroll-outside"/>
+
+### Non-modal
+
+Set `modal="false"` to stop trapping focus inside the dialog. `preventScroll` and
+`closeOnInteractOutside` aren't tied to it, so set them too if you want the rest of the page to
+stay fully interactive while the dialog is open.
+
+<ComponentPreview name="non-modal"/>
 
 ## Focus management
 

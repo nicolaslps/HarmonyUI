@@ -1,0 +1,55 @@
+<div class="flex flex-wrap gap-2 rounded-lg border border-dashed border-border p-4">
+    <twig:ui:Dialog id="size-medium-dialog">
+        <twig:ui:Dialog:Trigger>
+            <twig:ui:Button variant="outline" {{ ...dialog_trigger_attrs }}>Medium</twig:ui:Button>
+        </twig:ui:Dialog:Trigger>
+        <twig:ui:Dialog:Content class="max-w-md">
+            <twig:ui:Dialog:Close />
+            <twig:ui:Dialog:Header>
+                <twig:ui:Dialog:Title>Medium dialog</twig:ui:Dialog:Title>
+                <twig:ui:Dialog:Description>
+                    Just <code class="text-foreground">class="max-w-md"</code> on
+                    <code class="text-foreground">Dialog:Content</code>, nothing else.
+                </twig:ui:Dialog:Description>
+            </twig:ui:Dialog:Header>
+        </twig:ui:Dialog:Content>
+    </twig:ui:Dialog>
+
+    <twig:ui:Dialog id="size-large-dialog">
+        <twig:ui:Dialog:Trigger>
+            <twig:ui:Button variant="outline" {{ ...dialog_trigger_attrs }}>Large</twig:ui:Button>
+        </twig:ui:Dialog:Trigger>
+        <twig:ui:Dialog:Content class="max-w-2xl">
+            <twig:ui:Dialog:Close />
+            <twig:ui:Dialog:Header>
+                <twig:ui:Dialog:Title>Large dialog</twig:ui:Dialog:Title>
+                <twig:ui:Dialog:Description>
+                    <code class="text-foreground">class="max-w-2xl"</code> instead.
+                    <code class="text-foreground">tailwind_merge</code> drops the default
+                    <code class="text-foreground">max-w-sm</code> automatically.
+                </twig:ui:Dialog:Description>
+            </twig:ui:Dialog:Header>
+        </twig:ui:Dialog:Content>
+    </twig:ui:Dialog>
+
+    <twig:ui:Dialog id="size-fullscreen-dialog">
+        <twig:ui:Dialog:Trigger>
+            <twig:ui:Button variant="outline" {{ ...dialog_trigger_attrs }}>Full screen</twig:ui:Button>
+        </twig:ui:Dialog:Trigger>
+        <twig:ui:Dialog:Content class="fixed inset-0 h-dvh w-dvw max-w-none rounded-none">
+            <twig:ui:Dialog:Close />
+            <twig:ui:Dialog:Header>
+                <twig:ui:Dialog:Title>Full screen dialog</twig:ui:Dialog:Title>
+                <twig:ui:Dialog:Description>
+                    The positioner that centers <code class="text-foreground">Dialog:Content</code>
+                    has its own <code class="text-foreground">p-4</code>, which a size class alone
+                    can't reach, so <code class="text-foreground">fixed inset-0</code> takes the
+                    content out of that layout entirely and pins it to the viewport instead.
+                    <code class="text-foreground">h-dvh w-dvw</code> on top of that make sure it's
+                    sized against the dynamic viewport, not the static one, so it doesn't get cut
+                    off or leave a gap when mobile Safari's address bar shows or hides.
+                </twig:ui:Dialog:Description>
+            </twig:ui:Dialog:Header>
+        </twig:ui:Dialog:Content>
+    </twig:ui:Dialog>
+</div>
