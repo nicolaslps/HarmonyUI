@@ -13,18 +13,31 @@ return [
             'fixed inset-0 z-[calc(50_+_var(--layer-index,0))] pointer-events-auto',
             'bg-[rgb(0_0_0/var(--hui-backdrop-alpha,0.4))]',
             'data-[has-nested=dialog]:[--hui-backdrop-alpha:calc(0.4_+_var(--nested-layer-count,0)*0.1)]',
+            'opacity-100 transition-[display,opacity] transition-discrete duration-200 ease-spring',
+            'starting:opacity-0',
+            'data-[state=closed]:opacity-0 data-[state=closed]:duration-100 data-[state=closed]:ease-in',
+            'motion-reduce:duration-150 motion-reduce:ease-out',
         ],
     ),
     'dialog-positioner' => new ComponentStyle(
-        base: 'fixed inset-0 z-[calc(50_+_var(--layer-index,0))] flex items-center justify-center p-4 pointer-events-auto'
+        base: [
+            'fixed inset-0 z-[calc(50_+_var(--layer-index,0))] flex items-center justify-center p-4 pointer-events-auto',
+            'transition-[display] transition-discrete duration-200',
+            'motion-reduce:duration-150',
+        ],
     ),
     'dialog-content' => new ComponentStyle(
         base: [
             'relative grid w-full max-w-sm gap-4 rounded-xl bg-popover p-4 text-sm text-popover-foreground',
             'ring-1 ring-foreground/10 outline-none',
-            'transition-transform duration-100 ease-out',
+            'opacity-100 scale-100',
+            'transition-[display,opacity,scale,translate] transition-discrete duration-200 ease-spring',
+            'starting:opacity-0 starting:scale-95',
+            'data-[state=closed]:opacity-0 data-[state=closed]:scale-95 data-[state=closed]:duration-100 data-[state=closed]:ease-in',
             'data-[has-nested=dialog]:scale-[calc(1_-_0.1*var(--nested-layer-count,0))]',
             'data-[has-nested=dialog]:translate-y-[calc(1.25rem*var(--nested-layer-count,0))]',
+            'motion-reduce:duration-150 motion-reduce:ease-out',
+            'motion-reduce:scale-100 motion-reduce:starting:scale-100 motion-reduce:data-[state=closed]:scale-100',
         ],
     ),
     'dialog-header' => new ComponentStyle(
