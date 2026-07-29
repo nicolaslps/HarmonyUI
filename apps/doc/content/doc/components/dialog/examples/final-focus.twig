@@ -1,0 +1,22 @@
+<div class="flex flex-wrap items-center gap-2 rounded-lg border border-dashed border-border p-4">
+    <twig:ui:Dialog id="final-focus-dialog">
+        <twig:ui:Dialog:Trigger>
+            <twig:ui:Button variant="outline" {{ ...dialog_trigger_attrs }}>Rename item</twig:ui:Button>
+        </twig:ui:Dialog:Trigger>
+        <twig:ui:Dialog:Content>
+            <twig:ui:Dialog:Header>
+                <twig:ui:Dialog:Title>Rename item</twig:ui:Dialog:Title>
+                <twig:ui:Dialog:Description>
+                    Closing this sends focus to "Next item" instead of back to the "Rename item"
+                    trigger, because it carries
+                    <code class="text-foreground">data-dialog-final-focus="final-focus-dialog"</code>.
+                </twig:ui:Dialog:Description>
+            </twig:ui:Dialog:Header>
+            <twig:ui:Dialog:Footer>
+                <twig:ui:Button variant="outline" command="--close" commandfor="final-focus-dialog">Cancel</twig:ui:Button>
+                <twig:ui:Button command="--close" commandfor="final-focus-dialog">Save</twig:ui:Button>
+            </twig:ui:Dialog:Footer>
+        </twig:ui:Dialog:Content>
+    </twig:ui:Dialog>
+    <twig:ui:Button variant="ghost" data-dialog-final-focus="final-focus-dialog">Next item</twig:ui:Button>
+</div>

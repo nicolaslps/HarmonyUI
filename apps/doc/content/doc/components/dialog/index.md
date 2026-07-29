@@ -73,6 +73,24 @@ from the `Dialog` root; target it by `data-owner` (the dialog's `id`) instead.
 
 <ComponentPreview name="scroll-outside"/>
 
+## Focus management
+
+By default, opening a `Dialog` focuses `Dialog:Content` itself rather than the first focusable
+element inside it, so a leading `Dialog:Close` button (or a destructive footer action) never
+grabs focus by accident. To focus a specific element instead, add `autofocus` (or `data-autofocus`)
+to it, no matter where it sits in the markup:
+
+<ComponentPreview name="initial-focus"/>
+
+Closing the dialog returns focus to whatever had it before the dialog opened, typically the
+trigger. To send focus somewhere else instead, set `data-dialog-final-focus` **to the dialog's
+`id`** on the element that should receive it, anywhere on the page (not necessarily inside
+`Dialog:Content`, which is hidden once closed). Scoping it by `id` rather than just marking an
+element means several dialogs on the same page, each with their own final-focus target, never
+collide with each other:
+
+<ComponentPreview name="final-focus"/>
+
 ## API Reference
 
 ### `<twig:ui:Dialog>`
