@@ -1,18 +1,23 @@
-{%- props open = false, id = null, role = 'dialog', preventScroll = true, closeOnInteractOutside = true, closeOnEscape = true -%}
+{%- props open = false, id = null, role = 'dialog', preventScroll = true, closeOnInteractOutside = true, closeOnEscape = true, modal = true, ariaLabel = null -%}
 {%- set _hui_dialog_id = id ?? hui_id('dialog') -%}
 {{ provide('dialog_id', _hui_dialog_id) }}
+{%- set _hui_dialog_attrs = {
+    'data-slot': 'dialog',
+    'data-controller': 'hui-dialog',
+    'data-hui-dialog-open-value': open ? 'true' : 'false',
+    'data-hui-dialog-role-value': role,
+    'data-hui-dialog-prevent-scroll-value': preventScroll ? 'true' : 'false',
+    'data-hui-dialog-close-on-interact-outside-value': closeOnInteractOutside ? 'true' : 'false',
+    'data-hui-dialog-close-on-escape-value': closeOnEscape ? 'true' : 'false',
+    'data-hui-dialog-modal-value': modal ? 'true' : 'false',
+} -%}
+{%- if ariaLabel is not null -%}
+    {%- set _hui_dialog_attrs = _hui_dialog_attrs|merge({'data-hui-dialog-aria-label-value': ariaLabel}) -%}
+{%- endif -%}
 <div
     id="{{ _hui_dialog_id }}"
     class="{{ hui('dialog').apply({}, attributes.render('class'))|tailwind_merge }}"
-    {{ attributes.defaults({
-        'data-slot': 'dialog',
-        'data-controller': 'hui-dialog',
-        'data-hui-dialog-open-value': open ? 'true' : 'false',
-        'data-hui-dialog-role-value': role,
-        'data-hui-dialog-prevent-scroll-value': preventScroll ? 'true' : 'false',
-        'data-hui-dialog-close-on-interact-outside-value': closeOnInteractOutside ? 'true' : 'false',
-        'data-hui-dialog-close-on-escape-value': closeOnEscape ? 'true' : 'false',
-    }) }}
+    {{ attributes.defaults(_hui_dialog_attrs) }}
 >
     {%- block content %}{% endblock -%}
 </div>

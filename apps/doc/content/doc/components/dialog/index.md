@@ -85,9 +85,11 @@ from the `Dialog` root; target it by `data-owner` (the dialog's `id`) instead.
 | `preventScroll` | `boolean` | Whether to lock body scroll while the dialog is open. Defaults to `true` |
 | `closeOnInteractOutside` | `boolean` | Whether a pointer interaction outside `Dialog:Content` closes the dialog. Defaults to `true` |
 | `closeOnEscape` | `boolean` | Whether pressing escape closes the dialog. Defaults to `true` |
+| `modal` | `boolean` | Whether the dialog traps focus inside itself. Defaults to `true`. Doesn't affect `preventScroll` or `closeOnInteractOutside`, which stay controlled by their own props |
+| `ariaLabel` | `string` | Accessible name for `Dialog:Content` when it doesn't render a `Dialog:Title`. Defaults to `null` |
 
 For an interruptive confirmation that can only be dismissed through an explicit action, use
-[`AlertDialog`](/docs/components/alert-dialog), a preset over these four props.
+[`AlertDialog`](/docs/components/alert-dialog), a preset over these props.
 
 | Block | Description |
 |---|---|
