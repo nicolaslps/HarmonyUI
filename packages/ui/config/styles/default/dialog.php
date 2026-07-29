@@ -10,7 +10,7 @@ return [
     ),
     'dialog-backdrop' => new ComponentStyle(
         base: [
-            'fixed inset-0 z-[calc(50_+_var(--layer-index,0))] pointer-events-auto',
+            'fixed inset-y-0 left-0 right-[calc(-1*var(--scrollbar-width,0px))] z-[calc(50_+_var(--layer-index,0))] pointer-events-auto',
             'bg-[rgb(0_0_0/var(--hui-backdrop-alpha,0.4))]',
             'data-[has-nested=dialog]:[--hui-backdrop-alpha:calc(0.4_+_var(--nested-layer-count,0)*0.1)]',
             'opacity-100 transition-[display,opacity] transition-discrete duration-200 ease-spring',
