@@ -121,6 +121,7 @@ collide with each other:
 | `closeOnEscape` | `boolean` | Whether pressing escape closes the dialog. Defaults to `true` |
 | `modal` | `boolean` | Whether the dialog traps focus inside itself. Defaults to `true`. Doesn't affect `preventScroll` or `closeOnInteractOutside`, which stay controlled by their own props |
 | `ariaLabel` | `string` | Accessible name for `Dialog:Content` when it doesn't render a `Dialog:Title`. Defaults to `null` |
+| `as` | `string` | The element to render the root wrapper as. Defaults to `div` |
 
 For an interruptive confirmation that can only be dismissed through an explicit action, use
 [`AlertDialog`](/docs/components/alert-dialog), a preset over these props.
