@@ -1,0 +1,26 @@
+<twig:ui:Button variant="outline" id="methods-show">Show with JavaScript</twig:ui:Button>
+
+<twig:ui:Dialog id="methods-dialog">
+    <twig:ui:Dialog:Content class="max-w-md">
+        <twig:ui:Dialog:Header>
+            <twig:ui:Dialog:Title>Controlled with JavaScript</twig:ui:Dialog:Title>
+            <twig:ui:Dialog:Description>
+                This dialog has no Dialog:Trigger or Dialog:Close. It's opened and closed by
+                calling show() and hide() directly on the dialog element.
+            </twig:ui:Dialog:Description>
+        </twig:ui:Dialog:Header>
+        <twig:ui:Dialog:Footer>
+            <twig:ui:Button id="methods-hide">Hide with JavaScript</twig:ui:Button>
+        </twig:ui:Dialog:Footer>
+    </twig:ui:Dialog:Content>
+</twig:ui:Dialog>
+
+<script>
+    document.getElementById('methods-show').addEventListener('click', () => {
+        document.getElementById('methods-dialog').show();
+    });
+
+    document.getElementById('methods-hide').addEventListener('click', () => {
+        document.getElementById('methods-dialog').hide();
+    });
+</script>

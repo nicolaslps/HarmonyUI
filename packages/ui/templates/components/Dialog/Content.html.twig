@@ -12,6 +12,7 @@
     data-scope="dialog"
     data-part="positioner"
     data-owner="{{ _hui_dialog_id }}"
+    hidden
 >
     <{{ as }}
         class="{{ hui('dialog-content').apply({}, attributes.render('class'))|tailwind_merge }}"

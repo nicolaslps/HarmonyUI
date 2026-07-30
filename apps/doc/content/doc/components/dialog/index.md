@@ -20,13 +20,21 @@ attributes, so a trigger can live inside the `Dialog` or anywhere else on the pa
 
 <ComponentPreview name="multiple-triggers"/>
 
-### Detached triggers
+### Command triggers
 
 Give the dialog an explicit `id` and point a `command="--show-modal"` button at it with
 `commandfor`, from anywhere on the page. `Dialog:Trigger` uses the same attributes under the hood,
 so it's a single API regardless of where the trigger lives.
 
 <ComponentPreview name="detached-triggers"/>
+
+### JavaScript triggers
+
+Every `Dialog` element exposes `show()`/`hide()` methods, no `command`/`commandfor` trigger needed.
+`hide()` still dispatches the cancelable `hui:dialog:beforeclose` event, same as escape, an outside
+click, or a `--close` trigger.
+
+<ComponentPreview name="methods"/>
 
 ### Nested dialogs
 
@@ -122,7 +130,7 @@ collide with each other:
 
 | Prop | Type | Description |
 |---|---|---|
-| `open` | `boolean` | Whether the dialog is open on initial render. Defaults to `false` |
+| `open` | `boolean` | Whether the dialog is open on initial render. Use `show()`/`hide()` to control it dynamically afterwards. Defaults to `false` |
 | `id` | `string` | The dialog's DOM id, used as the `commandfor` target. Defaults to an auto-generated value |
 | `role` | `'dialog' \| 'alertdialog'` | The content part's ARIA role. Use `alertdialog` for interruptive confirmations. Defaults to `'dialog'` |
 | `preventScroll` | `boolean` | Whether to lock body scroll while the dialog is open. Defaults to `true` |
@@ -139,6 +147,11 @@ For an interruptive confirmation that can only be dismissed through an explicit 
 | Block | Description |
 |---|---|
 | `content` | The dialog structure, typically one or more `Dialog:Trigger` and a `Dialog:Content` |
+
+| Method | Description |
+|---|---|
+| `show()` | Shows the dialog. |
+| `hide()` | Hides the dialog. |
 
 | Event | Description |
 |---|---|

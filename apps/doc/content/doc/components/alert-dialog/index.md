@@ -21,7 +21,7 @@ should perform the destructive action first (e.g. submit a form) and only close 
 
 | Prop | Type | Description |
 |---|---|---|
-| `open` | `boolean` | Whether the dialog is open on initial render. Defaults to `false` |
+| `open` | `boolean` | Whether the dialog is open. Renders as a native `open` attribute on the root element, toggling it dynamically opens or closes the dialog, see [`Dialog`](/docs/components/dialog#api-reference). Defaults to `false` |
 | `id` | `string` | The dialog's DOM id, used as the `commandfor` target. Defaults to an auto-generated value |
 | `ariaLabel` | `string` | Accessible name for the content when it doesn't render a `Dialog:Title`. Defaults to `null` |
 

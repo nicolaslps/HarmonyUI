@@ -44,12 +44,17 @@ export default class extends ZagController {
         this.onCommand = this.onCommand.bind(this);
         this.element.addEventListener("command", this.onCommand);
 
+        this.element.show = this.show.bind(this);
+        this.element.hide = this.hide.bind(this);
+
         this.unsubscribe = this.machine.subscribe(() => this.render());
         this.machine.start();
         this.render();
     }
 
     disconnect() {
+        delete this.element.show;
+        delete this.element.hide;
         this.element.removeEventListener("command", this.onCommand);
         this.unsubscribe?.();
         this.machine.stop();
@@ -71,6 +76,18 @@ export default class extends ZagController {
         if (positioner) {
             document.body.append(positioner);
         }
+    }
+
+    show() {
+        dialog.connect(this.machine.service, normalizeProps).setOpen(true);
+    }
+
+    hide() {
+        if (!this.requestClose()) {
+            return;
+        }
+
+        dialog.connect(this.machine.service, normalizeProps).setOpen(false);
     }
 
     onCommand(event) {
