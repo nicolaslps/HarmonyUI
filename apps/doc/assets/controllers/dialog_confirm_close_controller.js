@@ -8,21 +8,32 @@ export default class extends Controller {
     };
 
     connect() {
-        this.element.addEventListener('hui:dialog:beforeclose', this.onBeforeClose);
+        this.element.addEventListener('hui:dialog:cancel', this.onCancel);
+        this.closeTriggerElement?.addEventListener('click', this.onCloseTriggerClick);
         this.discardElement?.addEventListener('click', this.onDiscard);
     }
 
     disconnect() {
-        this.element.removeEventListener('hui:dialog:beforeclose', this.onBeforeClose);
+        this.element.removeEventListener('hui:dialog:cancel', this.onCancel);
+        this.closeTriggerElement?.removeEventListener('click', this.onCloseTriggerClick);
         this.discardElement?.removeEventListener('click', this.onDiscard);
+    }
+
+    get closeTriggerElement() {
+        return document.getElementById(this.closeTriggerValue);
     }
 
     get discardElement() {
         return document.getElementById(this.discardValue);
     }
 
-    onBeforeClose = (event) => {
-        if (event.detail?.source?.id === this.closeTriggerValue) {
+    onCloseTriggerClick = () => {
+        this.skipConfirm = true;
+    };
+
+    onCancel = (event) => {
+        if (this.skipConfirm) {
+            this.skipConfirm = false;
             return;
         }
 
@@ -33,6 +44,6 @@ export default class extends Controller {
     };
 
     onDiscard = () => {
-        document.getElementById(this.closeTriggerValue)?.click();
+        this.closeTriggerElement?.click();
     };
 }

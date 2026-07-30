@@ -31,7 +31,7 @@ so it's a single API regardless of where the trigger lives.
 ### JavaScript triggers
 
 Every `Dialog` element exposes `show()`/`hide()` methods, no `command`/`commandfor` trigger needed.
-`hide()` still dispatches the cancelable `hui:dialog:beforeclose` event, same as escape, an outside
+`hide()` still dispatches the cancelable `hui:dialog:cancel` event, same as escape, an outside
 click, or a `--close` trigger.
 
 <ComponentPreview name="methods"/>
@@ -68,10 +68,17 @@ the default `max-w-sm`.
 ### Close confirmation
 
 Escape, an outside click, and the `--close` command all dispatch a cancelable
-`hui:dialog:beforeclose` event on the dialog element first. Call `event.preventDefault()` on it to
+`hui:dialog:cancel` event on the dialog element first. Call `event.preventDefault()` on it to
 keep the dialog open, for example to show a nested confirm dialog instead.
 
 <ComponentPreview name="close-confirmation"/>
+
+### Events
+
+Open your browser console to see `hui:dialog:open`, `hui:dialog:close`, and `hui:dialog:cancel`
+logged as you open, close, or dismiss the dialog.
+
+<ComponentPreview name="events"/>
 
 ### Scrolling inside
 
@@ -155,7 +162,9 @@ For an interruptive confirmation that can only be dismissed through an explicit 
 
 | Event | Description |
 |---|---|
-| `hui:dialog:beforeclose` | Cancelable. Dispatched before escape, an outside click, or `--close` dismiss the dialog. Call `event.preventDefault()` to keep it open |
+| `hui:dialog:cancel` | Cancelable. Dispatched before escape, an outside click, `--close`, or `hide()` dismiss the dialog. Call `event.preventDefault()` to keep it open |
+| `hui:dialog:open` | Dispatched after the dialog opens, however it was triggered |
+| `hui:dialog:close` | Dispatched after the dialog closes, however it was triggered |
 
 ### `<twig:ui:Dialog:Trigger>`
 

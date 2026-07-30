@@ -28,12 +28,12 @@ export default class extends ZagController {
             initialFocusEl: () => this.part("content")?.querySelector("[data-autofocus],[autofocus]") ?? this.part("content"),
             finalFocusEl: () => document.querySelector(`[data-dialog-final-focus="${this.element.id}"]`) ?? undefined,
             onEscapeKeyDown: (event) => {
-                if (!this.requestClose()) {
+                if (!this.dispatchCancel()) {
                     event.preventDefault();
                 }
             },
             onInteractOutside: (event) => {
-                if (!this.requestClose()) {
+                if (!this.dispatchCancel()) {
                     event.preventDefault();
                 }
             },
@@ -47,6 +47,7 @@ export default class extends ZagController {
         this.element.show = this.show.bind(this);
         this.element.hide = this.hide.bind(this);
 
+        this.wasOpen = this.openValue;
         this.unsubscribe = this.machine.subscribe(() => this.render());
         this.machine.start();
         this.render();
@@ -83,7 +84,7 @@ export default class extends ZagController {
     }
 
     hide() {
-        if (!this.requestClose()) {
+        if (!this.dispatchCancel()) {
             return;
         }
 
@@ -95,19 +96,22 @@ export default class extends ZagController {
 
         if (event.command === "--show-modal") {
             api.setOpen(true);
-        } else if (event.command === "--close" && this.requestClose(event.source)) {
+        } else if (event.command === "--close" && this.dispatchCancel()) {
             api.setOpen(false);
         }
     }
 
-    requestClose(source = null) {
-        return this.element.dispatchEvent(
-            new CustomEvent("hui:dialog:beforeclose", { bubbles: true, cancelable: true, detail: { source } }),
-        );
+    dispatchCancel() {
+        return this.element.dispatchEvent(new CustomEvent("hui:dialog:cancel", { bubbles: true, cancelable: true }));
     }
 
     render() {
         const api = dialog.connect(this.machine.service, normalizeProps);
+
+        if (api.open !== this.wasOpen) {
+            this.wasOpen = api.open;
+            this.element.dispatchEvent(new CustomEvent(api.open ? "hui:dialog:open" : "hui:dialog:close", { bubbles: true }));
+        }
 
         for (const trigger of document.querySelectorAll(`[command="--show-modal"][commandfor="${this.element.id}"]`)) {
             trigger.setAttribute("aria-expanded", String(api.open));
