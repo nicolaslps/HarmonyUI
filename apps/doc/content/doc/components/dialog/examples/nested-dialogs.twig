@@ -1,48 +1,59 @@
-<twig:ui:Dialog id="nested-edit-dialog">
+<twig:ui:Dialog id="nested-root-dialog">
     <twig:ui:Dialog:Trigger>
-        <twig:ui:Button variant="outline" {{ ...dialog_trigger_attrs }}>Edit profile</twig:ui:Button>
+        <twig:ui:Button variant="outline" {{ ...dialog_trigger_attrs }}>Open settings</twig:ui:Button>
     </twig:ui:Dialog:Trigger>
     <twig:ui:Dialog:Content class="h-64 max-w-md">
         <twig:ui:Dialog:Close />
         <twig:ui:Dialog:Header>
-            <twig:ui:Dialog:Title>Edit profile</twig:ui:Dialog:Title>
-            <twig:ui:Dialog:Description>Update your account details.</twig:ui:Dialog:Description>
+            <twig:ui:Dialog:Title>Workspace settings</twig:ui:Dialog:Title>
+            <twig:ui:Dialog:Description>
+                A dialog can open other dialogs, to any depth.
+            </twig:ui:Dialog:Description>
         </twig:ui:Dialog:Header>
 
         <twig:ui:Dialog:Footer class="mt-auto">
-            <twig:ui:Dialog id="nested-delete-dialog">
+            <twig:ui:Dialog id="nested-changelog-dialog">
                 <twig:ui:Dialog:Trigger>
-                    <twig:ui:Button variant="danger" {{ ...dialog_trigger_attrs }}>Delete account</twig:ui:Button>
+                    <twig:ui:Button variant="outline" {{ ...dialog_trigger_attrs }}>View changelog</twig:ui:Button>
                 </twig:ui:Dialog:Trigger>
                 <twig:ui:Dialog:Content class="h-64 max-w-md">
                     <twig:ui:Dialog:Close />
                     <twig:ui:Dialog:Header>
-                        <twig:ui:Dialog:Title>Delete account</twig:ui:Dialog:Title>
-                        <twig:ui:Dialog:Description>This action cannot be undone.</twig:ui:Dialog:Description>
+                        <twig:ui:Dialog:Title>Changelog</twig:ui:Dialog:Title>
+                        <twig:ui:Dialog:Description>
+                            You're all caught up, no new updates today. This dialog stops here, one level
+                            deep.
+                        </twig:ui:Dialog:Description>
+                    </twig:ui:Dialog:Header>
+                </twig:ui:Dialog:Content>
+            </twig:ui:Dialog>
+
+            <twig:ui:Dialog id="nested-integrations-dialog">
+                <twig:ui:Dialog:Trigger>
+                    <twig:ui:Button variant="outline" {{ ...dialog_trigger_attrs }}>Manage integrations</twig:ui:Button>
+                </twig:ui:Dialog:Trigger>
+                <twig:ui:Dialog:Content class="h-64 max-w-md">
+                    <twig:ui:Dialog:Close />
+                    <twig:ui:Dialog:Header>
+                        <twig:ui:Dialog:Title>Integrations</twig:ui:Dialog:Title>
+                        <twig:ui:Dialog:Description>
+                            Connect external services to your workspace.
+                        </twig:ui:Dialog:Description>
                     </twig:ui:Dialog:Header>
 
                     <twig:ui:Dialog:Footer class="mt-auto">
-                        <twig:ui:Dialog id="nested-final-dialog">
+                        <twig:ui:Dialog id="nested-integration-detail-dialog">
                             <twig:ui:Dialog:Trigger>
-                                <twig:ui:Button variant="danger" {{ ...dialog_trigger_attrs }}>Yes, I'm sure</twig:ui:Button>
+                                <twig:ui:Button variant="outline" {{ ...dialog_trigger_attrs }}>Configure Slack</twig:ui:Button>
                             </twig:ui:Dialog:Trigger>
                             <twig:ui:Dialog:Content class="h-64 max-w-md">
                                 <twig:ui:Dialog:Close />
                                 <twig:ui:Dialog:Header>
-                                    <twig:ui:Dialog:Title>Final confirmation</twig:ui:Dialog:Title>
+                                    <twig:ui:Dialog:Title>Slack integration</twig:ui:Dialog:Title>
                                     <twig:ui:Dialog:Description>
-                                        Really, there's no going back from this.
+                                        A third dialog, nested two levels deep inside the first.
                                     </twig:ui:Dialog:Description>
                                 </twig:ui:Dialog:Header>
-
-                                <twig:ui:Dialog:Footer class="mt-auto">
-                                    <twig:ui:Button variant="outline" command="--close" commandfor="nested-final-dialog">
-                                        Cancel
-                                    </twig:ui:Button>
-                                    <twig:ui:Button variant="danger" command="--close" commandfor="nested-final-dialog">
-                                        Delete account
-                                    </twig:ui:Button>
-                                </twig:ui:Dialog:Footer>
                             </twig:ui:Dialog:Content>
                         </twig:ui:Dialog>
                     </twig:ui:Dialog:Footer>
