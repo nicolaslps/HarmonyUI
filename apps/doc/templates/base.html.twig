@@ -56,6 +56,25 @@
         <meta name="twitter:site" content="@_nicolaslps">
         <meta name="twitter:creator" content="@_nicolaslps">
 
+        <script>
+            (() => {
+                try {
+                    const ls = localStorage;
+
+                    if (JSON.parse(ls.getItem('harmonyui:theme-picker') || '{}').mode === 'dark') {
+                        document.documentElement.classList.add('dark');
+                    }
+
+                    const css = ls.getItem('harmonyui:theme-css');
+                    if (css) {
+                        const style = document.createElement('style');
+                        style.textContent = css;
+                        document.head.append(style);
+                    }
+                } catch {}
+            })();
+        </script>
+
         {% block stylesheets %}
         {% endblock %}
 
