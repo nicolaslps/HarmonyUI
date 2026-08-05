@@ -8,6 +8,9 @@
 @source "../../vendor/harmonyui/ui/config/styles/default";
 @source "../../vendor/harmonyui/ui/templates";
 
+@source inline("bg-{slate,gray,zinc,neutral,stone,mauve,mist,olive,taupe}-{50,100,200,300,400,500,600,700,800,900,950}");
+@source inline("bg-{red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose}-{50,100,200,300,400,500,600,700,800,900,950}");
+
 @custom-variant dark (&:where(.dark, .dark *):where(:not(.light, .light *)));
 
 @theme {
