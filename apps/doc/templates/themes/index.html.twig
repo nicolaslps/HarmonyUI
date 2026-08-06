@@ -1,0 +1,166 @@
+{% extends 'base.html.twig' %}
+
+{% block seo_title %}Themes - HarmonyUI{% endblock %}
+{% block seo_description %}Pick a primary color.{% endblock %}
+
+{% set primaries = [
+    {
+        name: 'neutral',
+        swatch: 'bg-zinc-800',
+        border: 'data-active:border-zinc-800',
+        light: {accent: 'var(--color-zinc-800)', content: 'var(--color-zinc-800)', foreground: 'var(--color-white)'},
+        dark: {accent: 'var(--color-white)', content: 'var(--color-white)', foreground: 'var(--color-zinc-800)'},
+    },
+    {
+        name: 'red',
+        swatch: 'bg-red-500',
+        border: 'data-active:border-red-500',
+        light: {accent: 'var(--color-red-500)', content: 'var(--color-red-600)', foreground: 'var(--color-white)'},
+        dark: {accent: 'var(--color-red-500)', content: 'var(--color-red-400)', foreground: 'var(--color-white)'},
+    },
+    {
+        name: 'orange',
+        swatch: 'bg-orange-500',
+        border: 'data-active:border-orange-500',
+        light: {accent: 'var(--color-orange-500)', content: 'var(--color-orange-600)', foreground: 'var(--color-white)'},
+        dark: {accent: 'var(--color-orange-400)', content: 'var(--color-orange-400)', foreground: 'var(--color-orange-950)'},
+    },
+    {
+        name: 'amber',
+        swatch: 'bg-amber-400',
+        border: 'data-active:border-amber-400',
+        light: {accent: 'var(--color-amber-400)', content: 'var(--color-amber-600)', foreground: 'var(--color-amber-950)'},
+        dark: {accent: 'var(--color-amber-400)', content: 'var(--color-amber-400)', foreground: 'var(--color-amber-950)'},
+    },
+    {
+        name: 'yellow',
+        swatch: 'bg-yellow-400',
+        border: 'data-active:border-yellow-400',
+        light: {accent: 'var(--color-yellow-400)', content: 'var(--color-yellow-600)', foreground: 'var(--color-yellow-950)'},
+        dark: {accent: 'var(--color-yellow-400)', content: 'var(--color-yellow-400)', foreground: 'var(--color-yellow-950)'},
+    },
+    {
+        name: 'lime',
+        swatch: 'bg-lime-400',
+        border: 'data-active:border-lime-400',
+        light: {accent: 'var(--color-lime-400)', content: 'var(--color-lime-600)', foreground: 'var(--color-lime-900)'},
+        dark: {accent: 'var(--color-lime-400)', content: 'var(--color-lime-400)', foreground: 'var(--color-lime-950)'},
+    },
+    {
+        name: 'green',
+        swatch: 'bg-green-600',
+        border: 'data-active:border-green-600',
+        light: {accent: 'var(--color-green-600)', content: 'var(--color-green-600)', foreground: 'var(--color-white)'},
+        dark: {accent: 'var(--color-green-600)', content: 'var(--color-green-400)', foreground: 'var(--color-white)'},
+    },
+    {
+        name: 'emerald',
+        swatch: 'bg-emerald-600',
+        border: 'data-active:border-emerald-600',
+        light: {accent: 'var(--color-emerald-600)', content: 'var(--color-emerald-600)', foreground: 'var(--color-white)'},
+        dark: {accent: 'var(--color-emerald-600)', content: 'var(--color-emerald-400)', foreground: 'var(--color-white)'},
+    },
+    {
+        name: 'teal',
+        swatch: 'bg-teal-600',
+        border: 'data-active:border-teal-600',
+        light: {accent: 'var(--color-teal-600)', content: 'var(--color-teal-600)', foreground: 'var(--color-white)'},
+        dark: {accent: 'var(--color-teal-600)', content: 'var(--color-teal-400)', foreground: 'var(--color-white)'},
+    },
+    {
+        name: 'cyan',
+        swatch: 'bg-cyan-600',
+        border: 'data-active:border-cyan-600',
+        light: {accent: 'var(--color-cyan-600)', content: 'var(--color-cyan-600)', foreground: 'var(--color-white)'},
+        dark: {accent: 'var(--color-cyan-600)', content: 'var(--color-cyan-400)', foreground: 'var(--color-white)'},
+    },
+    {
+        name: 'sky',
+        swatch: 'bg-sky-600',
+        border: 'data-active:border-sky-600',
+        light: {accent: 'var(--color-sky-600)', content: 'var(--color-sky-600)', foreground: 'var(--color-white)'},
+        dark: {accent: 'var(--color-sky-600)', content: 'var(--color-sky-400)', foreground: 'var(--color-white)'},
+    },
+    {
+        name: 'blue',
+        swatch: 'bg-blue-500',
+        border: 'data-active:border-blue-500',
+        light: {accent: 'var(--color-blue-500)', content: 'var(--color-blue-600)', foreground: 'var(--color-white)'},
+        dark: {accent: 'var(--color-blue-500)', content: 'var(--color-blue-400)', foreground: 'var(--color-white)'},
+    },
+    {
+        name: 'indigo',
+        swatch: 'bg-indigo-500',
+        border: 'data-active:border-indigo-500',
+        light: {accent: 'var(--color-indigo-500)', content: 'var(--color-indigo-600)', foreground: 'var(--color-white)'},
+        dark: {accent: 'var(--color-indigo-500)', content: 'var(--color-indigo-300)', foreground: 'var(--color-white)'},
+    },
+    {
+        name: 'violet',
+        swatch: 'bg-violet-500',
+        border: 'data-active:border-violet-500',
+        light: {accent: 'var(--color-violet-500)', content: 'var(--color-violet-600)', foreground: 'var(--color-white)'},
+        dark: {accent: 'var(--color-violet-500)', content: 'var(--color-violet-400)', foreground: 'var(--color-white)'},
+    },
+    {
+        name: 'purple',
+        swatch: 'bg-purple-500',
+        border: 'data-active:border-purple-500',
+        light: {accent: 'var(--color-purple-500)', content: 'var(--color-purple-600)', foreground: 'var(--color-white)'},
+        dark: {accent: 'var(--color-purple-500)', content: 'var(--color-purple-300)', foreground: 'var(--color-white)'},
+    },
+    {
+        name: 'fuchsia',
+        swatch: 'bg-fuchsia-600',
+        border: 'data-active:border-fuchsia-600',
+        light: {accent: 'var(--color-fuchsia-600)', content: 'var(--color-fuchsia-600)', foreground: 'var(--color-white)'},
+        dark: {accent: 'var(--color-fuchsia-600)', content: 'var(--color-fuchsia-400)', foreground: 'var(--color-white)'},
+    },
+    {
+        name: 'pink',
+        swatch: 'bg-pink-600',
+        border: 'data-active:border-pink-600',
+        light: {accent: 'var(--color-pink-600)', content: 'var(--color-pink-600)', foreground: 'var(--color-white)'},
+        dark: {accent: 'var(--color-pink-600)', content: 'var(--color-pink-400)', foreground: 'var(--color-white)'},
+    },
+    {
+        name: 'rose',
+        swatch: 'bg-rose-500',
+        border: 'data-active:border-rose-500',
+        light: {accent: 'var(--color-rose-500)', content: 'var(--color-rose-500)', foreground: 'var(--color-white)'},
+        dark: {accent: 'var(--color-rose-500)', content: 'var(--color-rose-400)', foreground: 'var(--color-white)'},
+    },
+] %}
+
+{% set bases = [
+    {name: 'slate', swatch: 'bg-slate-500', border: 'data-active:border-slate-500'},
+    {name: 'gray', swatch: 'bg-gray-500', border: 'data-active:border-gray-500'},
+    {name: 'zinc', swatch: 'bg-zinc-500', border: 'data-active:border-zinc-500'},
+    {name: 'neutral', swatch: 'bg-neutral-500', border: 'data-active:border-neutral-500'},
+    {name: 'stone', swatch: 'bg-stone-500', border: 'data-active:border-stone-500'},
+    {name: 'mauve', swatch: 'bg-mauve-500', border: 'data-active:border-mauve-500'},
+    {name: 'mist', swatch: 'bg-mist-500', border: 'data-active:border-mist-500'},
+    {name: 'olive', swatch: 'bg-olive-500', border: 'data-active:border-olive-500'},
+    {name: 'taupe', swatch: 'bg-taupe-500', border: 'data-active:border-taupe-500'},
+] %}
+
+{% set radii = [
+    {name: 'None', value: '0rem'},
+    {name: 'Small', value: '0.45rem'},
+    {name: 'Medium', value: '0.625rem'},
+    {name: 'Large', value: '0.875rem'},
+] %}
+
+{% block body %}
+    <div
+        class="mx-auto flex max-w-4xl flex-col items-center gap-10 px-6 py-16"
+        data-controller="theme-picker"
+        data-theme-picker-primaries-value="{{ primaries|json_encode|e('html_attr') }}"
+    >
+        {{ include('themes/_header.html.twig') }}
+        {{ include('themes/_mobile_picker.html.twig') }}
+        {{ include('themes/_desktop_picker.html.twig') }}
+        {{ include('themes/_actions.html.twig') }}
+        {{ include('themes/_preview.html.twig') }}
+    </div>
+{% endblock %}

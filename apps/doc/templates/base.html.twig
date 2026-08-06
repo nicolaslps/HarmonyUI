@@ -61,11 +61,11 @@
                 try {
                     const ls = localStorage;
 
-                    if (JSON.parse(ls.getItem('harmonyui:theme-picker') || '{}').mode === 'dark') {
+                    if (ls.getItem('theme') === 'dark') {
                         document.documentElement.classList.add('dark');
                     }
 
-                    const css = ls.getItem('harmonyui:theme-css');
+                    const css = ls.getItem('theme_css');
                     if (css) {
                         const style = document.createElement('style');
                         style.textContent = css;
@@ -102,8 +102,8 @@
         <script src="https://cdn.jsdelivr.net/npm/frankenphp-hot-reload/+esm" type="module"></script>
         {% endif %}
     </head>
-    <body class="bg-background text-foreground">
-        <div class="relative z-10 flex min-h-svh flex-col bg-background shadow-page">
+    <body class="bg-neutral-white text-black dark:bg-neutral-900 dark:text-neutral-50">
+        <div class="relative z-10 flex min-h-svh flex-col shadow-page bg-neutral-50 dark:bg-neutral-950">
             {{ include('_navbar.html.twig') }}
             {% block body %}{% endblock %}
         </div>

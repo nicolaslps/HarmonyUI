@@ -1,0 +1,55 @@
+<div class="flex flex-wrap items-center justify-center gap-4">
+    <twig:ui:Button
+        variant="ghost"
+        data-action="click->theme-picker#reset"
+    >
+        <twig:ux:icon name="lucide:rotate-ccw" data-icon="inline-start" />
+        Reset
+    </twig:ui:Button>
+
+    <span class="hidden h-6 w-px bg-neutral-200 sm:block dark:bg-neutral-800"></span>
+
+    <twig:ui:Button
+        variant="outline"
+        data-theme-picker-target="modeToggleButton"
+        data-action="click->theme-picker#toggleMode"
+    >
+        <twig:ux:icon name="lucide:sun" class="hidden" data-theme-picker-target="modeLightIcon" data-icon="inline-start" />
+        <twig:ux:icon name="lucide:moon" data-theme-picker-target="modeDarkIcon" data-icon="inline-start" />
+        <span data-theme-picker-target="modeLabel">Dark</span>
+    </twig:ui:Button>
+
+    <span class="hidden h-6 w-px bg-neutral-200 sm:block dark:bg-neutral-800"></span>
+
+    <twig:ui:Dialog id="theme-snippet-dialog">
+        <twig:ui:Dialog:Trigger>
+            <twig:ui:Button {{ ...dialog_trigger_attrs }}>
+                <twig:ux:icon name="lucide:sparkles" data-icon="inline-start" />
+                Generate theme
+            </twig:ui:Button>
+        </twig:ui:Dialog:Trigger>
+        <twig:ui:Dialog:Content class="max-w-2xl">
+            <twig:ui:Dialog:Close />
+            <twig:ui:Dialog:Header>
+                <twig:ui:Dialog:Title>Your theme</twig:ui:Dialog:Title>
+                <twig:ui:Dialog:Description>
+                    Paste this into your app's CSS, next to HarmonyUI's import. That's the
+                    only step needed.
+                </twig:ui:Dialog:Description>
+            </twig:ui:Dialog:Header>
+            <pre class="max-h-96 overflow-auto rounded-lg border border-neutral-200 bg-neutral-100 p-4 text-xs leading-relaxed text-neutral-900 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-50"><code data-theme-picker-target="snippetCode"></code></pre>
+            <twig:ui:Dialog:Footer class="mt-auto">
+                <twig:ui:Button
+                    data-controller="clipboard"
+                    data-clipboard-content-value=""
+                    data-theme-picker-target="snippetCopyButton"
+                    data-action="clipboard#copy"
+                >
+                    <twig:ux:icon name="lucide:copy" data-clipboard-target="icon" data-icon="inline-start" />
+                    <twig:ux:icon name="lucide:check" class="hidden" data-clipboard-target="check" data-icon="inline-start" />
+                    Copy snippet
+                </twig:ui:Button>
+            </twig:ui:Dialog:Footer>
+        </twig:ui:Dialog:Content>
+    </twig:ui:Dialog>
+</div>

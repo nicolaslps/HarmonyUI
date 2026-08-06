@@ -1,0 +1,40 @@
+<div class="grid w-full max-w-md grid-cols-3 gap-3 lg:hidden">
+    <label class="flex flex-col gap-1.5">
+        <span class="text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase">Base</span>
+        <select
+            class="w-full rounded-lg border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900 px-2.5 py-2 text-sm text-neutral-900 dark:text-neutral-50 outline-none focus-visible:border-accent focus-visible:ring-3 focus-visible:ring-accent/30"
+            data-theme-picker-target="baseSelect"
+            data-action="change->theme-picker#setBase"
+        >
+            {% for base in bases %}
+                <option value="{{ base.name }}">{{ base.name|capitalize }}</option>
+            {% endfor %}
+        </select>
+    </label>
+
+    <label class="flex flex-col gap-1.5">
+        <span class="text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase">Primary</span>
+        <select
+            class="w-full rounded-lg border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900 px-2.5 py-2 text-sm text-neutral-900 dark:text-neutral-50 outline-none focus-visible:border-accent focus-visible:ring-3 focus-visible:ring-accent/30"
+            data-theme-picker-target="primarySelect"
+            data-action="change->theme-picker#setPrimary"
+        >
+            {% for primary in primaries %}
+                <option value="{{ primary.name }}">{{ primary.name|capitalize }}</option>
+            {% endfor %}
+        </select>
+    </label>
+
+    <label class="flex flex-col gap-1.5">
+        <span class="text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase">Radius</span>
+        <select
+            class="w-full rounded-lg border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900 px-2.5 py-2 text-sm text-neutral-900 dark:text-neutral-50 outline-none focus-visible:border-accent focus-visible:ring-3 focus-visible:ring-accent/30"
+            data-theme-picker-target="radiusSelect"
+            data-action="change->theme-picker#setRadius"
+        >
+            {% for radius in radii %}
+                <option value="{{ radius.value }}">{{ radius.name }}</option>
+            {% endfor %}
+        </select>
+    </label>
+</div>

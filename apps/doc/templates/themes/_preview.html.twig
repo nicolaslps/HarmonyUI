@@ -1,0 +1,72 @@
+<div class="grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="flex flex-col gap-3 rounded-lg border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900 p-4">
+        <span class="text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase">Buttons</span>
+        <div class="flex flex-wrap gap-2">
+            <twig:ui:Button size="sm">Primary</twig:ui:Button>
+            <twig:ui:Button variant="secondary" size="sm">Secondary</twig:ui:Button>
+            <twig:ui:Button variant="outline" size="sm">Outline</twig:ui:Button>
+            <twig:ui:Button variant="ghost" size="sm">Ghost</twig:ui:Button>
+            <twig:ui:Button variant="danger" size="sm">Danger</twig:ui:Button>
+        </div>
+    </div>
+
+    <div class="flex flex-col gap-3 rounded-lg border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900 p-4">
+        <span class="text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase">Badges &amp; avatar</span>
+        <div class="flex flex-wrap items-center gap-2">
+            <twig:ui:Badge>Default</twig:ui:Badge>
+            <twig:ui:Badge variant="secondary">Secondary</twig:ui:Badge>
+            <twig:ui:Badge variant="success">Success</twig:ui:Badge>
+            <twig:ui:Badge variant="danger">Danger</twig:ui:Badge>
+            <twig:ui:Avatar>
+                <twig:ui:Avatar:Image src="https://github.com/nicolaslps.png" alt="@nicolaslps" />
+                <twig:ui:Avatar:Fallback>NL</twig:ui:Avatar:Fallback>
+                <twig:ui:Avatar:Badge class="bg-success" />
+            </twig:ui:Avatar>
+        </div>
+    </div>
+
+    <div class="flex flex-col gap-3 rounded-lg border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900 p-4">
+        <span class="text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase">Alert</span>
+        <twig:ui:Alert>
+            <twig:ux:icon name="lucide:circle-check" />
+            <twig:ui:Alert:Title>Saved</twig:ui:Alert:Title>
+            <twig:ui:Alert:Description>Your changes have been saved.</twig:ui:Alert:Description>
+        </twig:ui:Alert>
+    </div>
+
+    <twig:ui:Card>
+        <twig:ui:Card:Header>
+            <twig:ui:Card:Title>Upgrade your plan</twig:ui:Card:Title>
+            <twig:ui:Card:Description>Unlock advanced analytics and unlimited projects.</twig:ui:Card:Description>
+        </twig:ui:Card:Header>
+        <twig:ui:Card:Footer class="flex-col gap-2">
+            <twig:ui:Button class="w-full" size="sm">Upgrade</twig:ui:Button>
+            <twig:ui:Button variant="outline" class="w-full" size="sm">Compare plans</twig:ui:Button>
+        </twig:ui:Card:Footer>
+    </twig:ui:Card>
+
+    <div class="sm:col-span-2">
+        <twig:ui:Accordion class="rounded-lg border border-neutral-200 dark:border-neutral-800" :value="['theming']">
+            <twig:ui:Accordion:Item value="theming" class="border-b border-neutral-200 px-4 last:border-b-0 dark:border-neutral-800">
+                <twig:ui:Accordion:Header>How does theming work?</twig:ui:Accordion:Header>
+                <twig:ui:Accordion:Panel>
+                    Primary sets <code>--color-accent</code> (and its dark-mode variant),
+                    picked from Tailwind's own palette. Base gray works by reassigning
+                    Tailwind's <code>--color-zinc-*</code> variables, since every
+                    HarmonyUI component is hardcoded to zinc under the hood, so no
+                    component class ever changes. Radius drives the whole rounded-* scale
+                    from a single <code>--radius</code> variable.
+                </twig:ui:Accordion:Panel>
+            </twig:ui:Accordion:Item>
+            <twig:ui:Accordion:Item value="override" class="border-b border-neutral-200 px-4 last:border-b-0 dark:border-neutral-800">
+                <twig:ui:Accordion:Header>Can I customize further?</twig:ui:Accordion:Header>
+                <twig:ui:Accordion:Panel>
+                    Yes. Every token is a plain CSS custom property compiled by your own
+                    Tailwind build. Override any of them by hand for a fully custom look.
+                    This is unsupported: we won't triage GitHub issues about visual bugs
+                    caused by hand-edited tokens.
+                </twig:ui:Accordion:Panel>
+            </twig:ui:Accordion:Item>
+        </twig:ui:Accordion>
+    </div>
+</div>

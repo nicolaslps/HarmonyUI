@@ -1,0 +1,61 @@
+<div class="hidden w-full max-w-3xl flex-col items-center gap-8 lg:flex">
+    <div class="flex flex-col items-center gap-3">
+        <span class="text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase">Base</span>
+        <div class="flex flex-wrap justify-center gap-2 max-w-lg">
+            {% for base in bases %}
+                <twig:ui:Button
+                    variant="outline"
+                    size="lg"
+                    class="gap-2 px-3 data-active:ring-1 data-active:ring-neutral-100 {{ base.border }}"
+                    data-theme-picker-target="baseSwatch"
+                    data-base="{{ base.name }}"
+                    data-action="click->theme-picker#setBase"
+                    aria-pressed="false"
+                >
+                    <span class="aspect-square size-3.5 shrink-0 rounded-sm {{ base.swatch }}"></span>
+                    {{ base.name|capitalize }}
+                </twig:ui:Button>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="flex flex-col items-center gap-3">
+        <span class="text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase">Primary</span>
+        <div class="grid max-w-7xl grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-6">
+            {% for primary in primaries %}
+                <twig:ui:Button
+                    variant="outline"
+                    size="lg"
+                    class="justify-start gap-2 px-3.5 data-active:ring-1 data-active:ring-neutral-100 {{ primary.border }}"
+                    data-theme-picker-target="primarySwatch"
+                    data-primary="{{ primary.name }}"
+                    data-action="click->theme-picker#setPrimary"
+                    aria-pressed="false"
+                >
+                    <span class="aspect-square size-3.5 shrink-0 rounded-sm {{ primary.swatch }}"></span>
+                    {{ primary.name|capitalize }}
+                </twig:ui:Button>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="flex flex-col items-center gap-3">
+        <span class="text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase">Radius</span>
+        <div class="flex flex-wrap justify-center gap-2">
+            {% for radius in radii %}
+                <twig:ui:Button
+                    variant="outline"
+                    size="sm"
+                    class="px-4 data-active:border-accent data-active:ring-1 data-active:ring-accent/30"
+                    style="border-radius: {{ radius.value }}"
+                    data-theme-picker-target="radiusButton"
+                    data-radius-value="{{ radius.value }}"
+                    data-action="click->theme-picker#setRadius"
+                    aria-pressed="false"
+                >
+                    {{ radius.name }}
+                </twig:ui:Button>
+            {% endfor %}
+        </div>
+    </div>
+</div>
