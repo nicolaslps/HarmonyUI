@@ -1,11 +1,11 @@
-<div class="not-prose relative my-6 overflow-hidden rounded-lg border border-border" data-controller="clipboard" data-clipboard-content-value="{{ source }}">
+<div class="not-prose relative my-6 overflow-hidden rounded-lg border border-neutral-200 dark:border-neutral-800" data-controller="clipboard" data-clipboard-content-value="{{ source }}">
     {% if language %}
-        <div class="flex items-center border-b border-border bg-muted/40 px-4 py-1.5">
-            <span class="text-xs font-medium text-muted-foreground">{{ language }}</span>
+        <div class="flex items-center border-b border-neutral-200 bg-neutral-100/40 px-4 py-1.5 dark:border-neutral-800 dark:bg-neutral-800/40">
+            <span class="text-xs font-medium text-neutral-500 dark:text-neutral-400">{{ language }}</span>
         </div>
     {% endif %}
     <div class="relative">
-        <pre class="overflow-x-auto bg-background p-4 text-sm leading-relaxed text-foreground"><code>{{ highlighted|raw }}</code></pre>
+        <pre class="overflow-x-auto bg-white p-4 text-sm leading-relaxed text-neutral-950 dark:bg-neutral-900 dark:text-neutral-50"><code>{{ highlighted|raw }}</code></pre>
         <div class="absolute top-2 right-2">
             <twig:ui:Button type="button" variant="outline" size="icon-xs" class="shadow-sm" data-action="clipboard#copy">
                 <twig:ux:icon name="lucide:copy" data-clipboard-target="icon" />

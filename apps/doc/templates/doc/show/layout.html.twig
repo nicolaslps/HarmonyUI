@@ -14,12 +14,12 @@
             <nav class="sticky top-22 space-y-6">
                 {% for category, pages in navigation %}
                     <div>
-                        <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">{{ category }}</p>
+                        <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-neutral-400 dark:text-neutral-500">{{ category }}</p>
                         <ul class="space-y-1 text-sm">
                             {% for item in pages %}
                                 <li>
                                     <a href="{{ path('app_docs_show', {slug: item.slug}) }}"
-                                       class="{{ item.slug == page.meta.slug ? 'font-semibold text-slate-900' : 'text-slate-600 hover:text-slate-900' }}">
+                                       class="{{ item.slug == page.meta.slug ? 'font-semibold text-neutral-900 dark:text-neutral-50' : 'text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-50' }}">
                                         {{ item.title }}
                                     </a>
                                 </li>
@@ -37,7 +37,7 @@
         <aside class="hidden w-56 shrink-0 xl:block">
             {% if page.headings|length > 1 %}
                 <nav class="sticky top-22" data-controller="toc" data-toc-offset-value="88">
-                    <p class="mb-2 text-xs font-bold uppercase tracking-wide text-primary">On this page</p>
+                    <p class="mb-2 text-xs font-bold uppercase tracking-wide text-neutral-950 dark:text-neutral-50">On this page</p>
                     <ul class="text-sm">
                         {% for heading in page.headings %}
                             <li>
@@ -46,7 +46,7 @@
                                     variant="link"
                                     href="#{{ heading.id }}"
                                     data-toc-target="link"
-                                    class="text-muted-foreground font-normal whitespace-normal hover:text-foreground data-active:text-foreground data-active:font-bold {{ heading.level == 3 ? 'pl-7' : heading.level == 2 ? 'pl-5' : 'pl-3' }}"
+                                    class="text-neutral-500 dark:text-neutral-400 font-normal whitespace-normal hover:text-neutral-950 dark:hover:text-neutral-50 data-active:text-neutral-950 dark:data-active:text-neutral-50 data-active:font-bold {{ heading.level == 3 ? 'pl-7' : heading.level == 2 ? 'pl-5' : 'pl-3' }}"
                                 >
                                     {{ heading.text }}
                                 </twig:ui:Button>

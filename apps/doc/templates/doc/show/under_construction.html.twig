@@ -8,16 +8,16 @@
 
 {% block content %}
     <header class="not-prose">
-        <p class="text-sm font-semibold uppercase tracking-wide text-primary">Currently under construction</p>
-        <h1 class="mt-2 text-3xl font-black tracking-tight text-foreground sm:text-4xl">This page is being rewritten</h1>
-        <p class="mt-4 text-base leading-7 text-muted-foreground">
+        <p class="text-sm font-semibold uppercase tracking-wide text-neutral-950 dark:text-neutral-50">Currently under construction</p>
+        <h1 class="mt-2 text-3xl font-black tracking-tight text-neutral-950 sm:text-4xl dark:text-neutral-50">This page is being rewritten</h1>
+        <p class="mt-4 text-base leading-7 text-neutral-500 dark:text-neutral-400">
             The new documentation for this page is not ready yet. In the meantime, here is the page from the previous version of the site.
-            You can also <a href="{{ legacy_url }}" target="_blank" rel="noopener" class="font-medium text-primary underline underline-offset-4">open it in a new tab</a>.
+            You can also <a href="{{ legacy_url }}" target="_blank" rel="noopener" class="font-medium underline underline-offset-4 text-neutral-950 dark:text-neutral-50">open it in a new tab</a>.
         </p>
     </header>
 
     <iframe src="{{ legacy_url }}"
             title="Previous version of this page"
             loading="lazy"
-            class="not-prose mt-8 h-[70svh] w-full rounded-lg border border-slate-200 bg-white"></iframe>
+            class="not-prose mt-8 h-[70svh] w-full rounded-lg border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900"></iframe>
 {% endblock %}
