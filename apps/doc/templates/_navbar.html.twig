@@ -1,6 +1,6 @@
-<header class="sticky top-0 z-50 bg-background/80 backdrop-blur">
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur dark:bg-neutral-900/80">
     <nav class="mx-auto flex h-14 max-w-352 items-center justify-between px-6">
-        <a href="{{ path('app_home') }}" class="flex items-center gap-2 text-base font-bold text-foreground">
+        <a href="{{ path('app_home') }}" class="flex items-center gap-2 text-base font-bold text-neutral-950 dark:text-neutral-50">
             <twig:ux:icon name="harmonyui" class="size-6" />
             HarmonyUI
         </a>
@@ -8,15 +8,15 @@
         <ul class="flex items-center gap-6 text-sm">
             <li>
                 <a href="{{ path('app_docs_components') }}"
-                   class="text-muted-foreground hover:text-foreground">Components</a>
+                   class="text-neutral-500 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-50">Components</a>
             </li>
             <li>
                 <a href="{{ path('app_themes') }}"
-                   class="text-muted-foreground hover:text-foreground">Themes</a>
+                   class="text-neutral-500 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-50">Themes</a>
             </li>
             <li>
                 <a href="https://github.com/nicolaslps/harmonyui" target="_blank" rel="noopener noreferrer"
-                   class="text-muted-foreground hover:text-foreground" aria-label="GitHub">
+                   class="text-neutral-500 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-50" aria-label="GitHub">
                     <twig:ux:icon name="github" class="size-4.5" />
                 </a>
             </li>
