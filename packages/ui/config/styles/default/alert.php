@@ -8,7 +8,7 @@ return [
     'alert' => new ComponentStyle(
         base: [
             "@container/alert relative grid w-full items-start gap-x-2 gap-y-0.5 rounded-xl border px-3.5 py-3 text-start text-sm",
-            "has-[>svg]:grid-cols-[calc(var(--spacing)*4)_1fr] has-data-[slot=alert-action]:grid-cols-[1fr_auto] has-[>svg]:has-data-[slot=alert-action]:grid-cols-[calc(var(--spacing)*4)_1fr_auto]",
+            "has-[>svg]:grid-cols-[--spacing(4)_1fr] has-data-[slot=alert-action]:grid-cols-[1fr_auto] has-[>svg]:has-data-[slot=alert-action]:grid-cols-[--spacing(4)_1fr_auto]",
             "border-(--alert-border) bg-(--alert-bg)",
             "[&>svg]:h-lh [&>svg]:w-4 [&>svg]:text-(--alert-icon)",
         ],
