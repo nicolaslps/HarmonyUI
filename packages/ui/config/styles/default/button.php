@@ -9,8 +9,7 @@ return [
         base: [
             "group/button",
             "inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none cursor-pointer",
-            "focus-visible:border-neutral-900 focus-visible:ring-3 focus-visible:ring-neutral-900/50",
-            "dark:focus-visible:border-neutral-100 dark:focus-visible:ring-neutral-100/50",
+            "focus-visible:border-neutral-500 focus-visible:ring-3 focus-visible:ring-neutral-500/40",
             "active:not-aria-[haspopup]:translate-y-px",
             "disabled:pointer-events-none disabled:opacity-50",
             "aria-invalid:border-red-600 aria-invalid:ring-3 aria-invalid:ring-red-600/20",
