@@ -1,7 +1,14 @@
-{%- props variant = 'default', as = 'div' -%}
+{%- props variant = null, color = null, as = 'div' -%}
+{%- set variantColors = {
+    'danger': 'red',
+    'info': 'blue',
+    'success': 'green',
+    'warning': 'yellow',
+} -%}
+{%- set color = variantColors[variant] ?? color ?? 'neutral' -%}
 {%- set style = hui('alert') -%}
 <{{ as }}
-    class="{{ style.apply({variant: variant}, attributes.render('class'))|tailwind_merge }}"
+    class="{{ style.apply({color: color}, attributes.render('class'))|tailwind_merge }}"
     {{ attributes.defaults({
         'data-slot': 'alert',
         role: 'alert',

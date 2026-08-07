@@ -68,13 +68,13 @@ Use the `danger` variant for errors and failures.
 
 <ComponentPreview name="danger"/>
 
-### Custom colors
+### Colors
 
-Alerts are styled with plain utility classes, so recoloring one is just a
-matter of overriding the border, background and text colors. The icon
-follows the text color.
+The `variant` prop covers the common cases, but any Tailwind color works
+through the `color` prop, such as `color="purple"`. The border, background,
+heading, text and icon all adapt automatically, in both light and dark mode.
 
-<ComponentPreview name="custom-colors"/>
+<ComponentPreview name="colors"/>
 
 ### RTL
 
@@ -90,7 +90,8 @@ the reading direction.
 
 | Prop | Type | Description |
 |---|---|---|
-| `variant` | `'default'` \| `'danger'` \| `'info'` \| `'success'` \| `'warning'` | The visual style variant. Defaults to `default` |
+| `variant` | `'danger'` \| `'info'` \| `'success'` \| `'warning'` | Shortcut for a common `color`. Overrides `color` when set |
+| `color` | `string` | Any Tailwind color name, such as `'purple'` or `'cyan'`. Defaults to `'neutral'` |
 | `as` | `string` | The HTML tag to render. Defaults to `div` |
 
 | Block | Description |
