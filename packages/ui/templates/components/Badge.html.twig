@@ -1,7 +1,7 @@
-{%- props variant = 'default', size = 'md', as = 'span' -%}
+{%- props variant = 'soft', size = 'md', color = null, as = 'span' -%}
 {%- set style = hui('badge') -%}
 <{{ as }}
-    class="{{ style.apply({variant: variant, size: size}, attributes.render('class'))|tailwind_merge }}"
+    class="{{ style.apply({variant: variant, size: size, color: color}, attributes.render('class'))|tailwind_merge }}"
     {{ attributes.defaults({
         'data-slot': 'badge',
     }) }}

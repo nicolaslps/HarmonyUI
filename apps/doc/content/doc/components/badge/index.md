@@ -12,41 +12,22 @@ priority: 0
 
 ## Examples
 
-### Secondary
+### Soft
 
-Use the `secondary` variant for a lower-emphasis, neutral label.
+<ComponentPreview name="soft"/>
 
-<ComponentPreview name="secondary"/>
+### Solid
+
+Use the `solid` variant for a stronger, high-emphasis label.
+
+<ComponentPreview name="solid"/>
 
 ### Outline
 
 Use the `outline` variant when the badge should blend into the background.
+The `color` prop tints the border and text.
 
 <ComponentPreview name="outline"/>
-
-### Info
-
-Use the `info` variant for neutral, informative labels.
-
-<ComponentPreview name="info"/>
-
-### Success
-
-Use the `success` variant to indicate a positive or completed state.
-
-<ComponentPreview name="success"/>
-
-### Warning
-
-Use the `warning` variant to draw attention to something that needs care.
-
-<ComponentPreview name="warning"/>
-
-### Danger
-
-Use the `danger` variant for errors and failed states.
-
-<ComponentPreview name="danger"/>
 
 ### Sizes
 
@@ -65,13 +46,6 @@ Set `as="a"` to render the badge as a link.
 
 <ComponentPreview name="as-link"/>
 
-### Custom colors
-
-Badges are styled with plain utility classes, so recoloring one is just a
-matter of overriding the border, background and text colors.
-
-<ComponentPreview name="custom-colors"/>
-
 ### RTL
 
 Set `dir="rtl"` on a wrapping element to render badges for right-to-left
@@ -85,7 +59,8 @@ languages.
 
 | Prop | Type | Description |
 |---|---|---|
-| `variant` | `'default'` \| `'secondary'` \| `'outline'` \| `'danger'` \| `'info'` \| `'success'` \| `'warning'` | The visual style variant. Defaults to `default` |
+| `variant` | `'soft'` \| `'solid'` \| `'outline'` | The visual style variant. Defaults to `soft` |
+| `color` | `string` | Any Tailwind color name, such as `'purple'` or `'cyan'`. Defaults to `'neutral'` |
 | `size` | `'sm'` \| `'md'` \| `'lg'` | The size of the badge. Defaults to `md` |
 | `as` | `string` | The HTML tag to render. Defaults to `span` |
 
