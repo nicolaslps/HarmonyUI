@@ -10,7 +10,8 @@ return [
     ),
     'accordion-item' => new ComponentStyle(
         base: [
-            "not-last:border-b not-last:border-neutral-200 dark:not-last:border-neutral-800",
+            "not-last:border-b not-last:border-neutral-200",
+            "dark:not-last:border-neutral-800",
             "[interpolate-size:allow-keywords]",
             "details-content:h-0 details-content:overflow-clip details-content:opacity-0",
             "details-content:transition-[height,opacity,content-visibility] details-content:transition-discrete details-content:duration-spring details-content:ease-spring",
@@ -27,14 +28,16 @@ return [
             "transition-[color,background-color,border-color,box-shadow] duration-150 ease-out",
             "list-none [&::-webkit-details-marker]:hidden",
             "hover:underline",
-            "active:bg-neutral-100/50 dark:active:bg-neutral-800/50",
+            "active:bg-neutral-100/50",
+            "dark:active:bg-neutral-800/50",
             "focus-visible:border-neutral-500 focus-visible:ring-3 focus-visible:ring-neutral-500/40",
             "aria-disabled:pointer-events-none aria-disabled:opacity-50",
         ],
     ),
     'accordion-indicator' => new ComponentStyle(
         base: [
-            "pointer-events-none ms-auto size-4 shrink-0 translate-y-0.5 text-neutral-500 dark:text-neutral-400 transition-transform duration-spring ease-spring",
+            "pointer-events-none ms-auto size-4 shrink-0 translate-y-0.5 text-neutral-500 transition-transform duration-spring ease-spring",
+            "dark:text-neutral-400",
             "data-[state=open]:rotate-180",
             "motion-reduce:transition-none",
         ],
@@ -42,7 +45,8 @@ return [
     'accordion-panel' => new ComponentStyle(
         base: [
             "pb-2.5 text-sm",
-            "[&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-neutral-950 dark:[&_a]:hover:text-neutral-50",
+            "[&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-neutral-950",
+            "dark:[&_a]:hover:text-neutral-50",
             "[&_p:not(:last-child)]:mb-4",
         ],
     ),

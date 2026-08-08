@@ -28,9 +28,10 @@ return [
     ),
     'dialog-content' => new ComponentStyle(
         base: [
-            'relative grid w-full max-w-sm gap-4 rounded-xl bg-white p-4 text-sm text-neutral-950 dark:bg-neutral-900 dark:text-neutral-50',
-            'ring-1 ring-neutral-950/10 outline-none dark:ring-white/15',
-            'dark:data-[has-nested=dialog]:ring-white/25',
+            'relative grid w-full max-w-sm gap-4 rounded-xl bg-white p-4 text-sm text-neutral-950',
+            'dark:bg-neutral-900 dark:text-neutral-50',
+            'ring-1 ring-neutral-950/10 outline-none',
+            'dark:ring-white/15 dark:data-[has-nested=dialog]:ring-white/25',
             'opacity-100 scale-100',
             'transition-[display,opacity,scale,translate] transition-discrete duration-200 ease-spring',
             'starting:opacity-0 starting:scale-95',
@@ -45,15 +46,24 @@ return [
         base: 'flex flex-col gap-1',
     ),
     'dialog-title' => new ComponentStyle(
-        base: 'text-base leading-snug font-medium text-neutral-950 dark:text-neutral-50',
+        base: [
+            'text-base leading-snug font-medium text-neutral-950',
+            'dark:text-neutral-50',
+        ],
     ),
     'dialog-description' => new ComponentStyle(
-        base: 'text-sm text-neutral-500 dark:text-neutral-400',
+        base: [
+            'text-sm text-neutral-500',
+            'dark:text-neutral-400',
+        ],
     ),
     'dialog-footer' => new ComponentStyle(
         base: 'flex justify-end gap-2',
     ),
     'dialog-close' => new ComponentStyle(
-        base: 'absolute top-3 ltr:right-3 rtl:left-3 text-neutral-500 dark:text-neutral-400',
+        base: [
+            'absolute top-3 ltr:right-3 rtl:left-3 text-neutral-500',
+            'dark:text-neutral-400',
+        ],
     ),
 ];
