@@ -7,7 +7,8 @@ use HarmonyUI\Style\ComponentStyle;
 return [
     'card' => new ComponentStyle(
         base: [
-            "group/card flex flex-col gap-(--card-spacing) overflow-hidden rounded-xl bg-card py-(--card-spacing) text-sm text-card-foreground ring-1 ring-foreground/10",
+            "group/card flex flex-col gap-(--card-spacing) overflow-hidden rounded-xl bg-white py-(--card-spacing) text-sm text-neutral-950 ring-1 ring-neutral-950/10",
+            "dark:bg-neutral-900 dark:text-neutral-50 dark:ring-white/10",
             "has-data-[slot=card-footer]:pb-0 has-[>img:first-child]:pt-0",
             "*:[img:first-child]:rounded-t-xl *:[img:last-child]:rounded-b-xl",
         ],
@@ -32,7 +33,10 @@ return [
         base: "text-base leading-snug font-medium group-data-[size=sm]/card:text-sm",
     ),
     'card-description' => new ComponentStyle(
-        base: "text-sm text-muted-foreground",
+        base: [
+            "text-sm text-neutral-500",
+            "dark:text-neutral-400",
+        ],
     ),
     'card-action' => new ComponentStyle(
         base: "col-start-2 row-span-2 row-start-1 self-start justify-self-end",
@@ -41,6 +45,9 @@ return [
         base: "px-(--card-spacing)",
     ),
     'card-footer' => new ComponentStyle(
-        base: "flex items-center rounded-b-xl border-t bg-muted/50 p-(--card-spacing)",
+        base: [
+            "flex items-center rounded-b-xl border-t border-neutral-950/10 bg-neutral-100/50 p-(--card-spacing)",
+            "dark:border-white/10 dark:bg-neutral-800/50",
+        ],
     ),
 ];
