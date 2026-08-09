@@ -1,24 +1,24 @@
 <section class="grid items-center gap-8 py-16 lg:grid-cols-[1fr_2fr] lg:gap-14 lg:py-24">
     <div class="max-w-md">
-        <p class="text-sm font-semibold tracking-widest text-muted-foreground uppercase">
+        <p class="text-sm font-semibold tracking-widest text-neutral-600 dark:text-neutral-400 uppercase">
             Solo founders &amp; indie makers
         </p>
-        <h2 class="mt-4 text-3xl font-semibold tracking-tighter text-balance text-foreground sm:text-4xl">
+        <h2 class="mt-4 text-3xl font-semibold tracking-tighter text-balance text-neutral-950 dark:text-neutral-50 sm:text-4xl">
             Ship like a full team.
         </h2>
-        <p class="mt-5 text-lg leading-8 text-muted-foreground">
+        <p class="mt-5 text-lg leading-8 text-neutral-600 dark:text-neutral-400">
             No designer, no problem. The default preset looks polished from the first
             render, and every component carries its own accessibility, keyboard
             navigation and interactions, so you spend your nights on the product,
             not the dropdown.
         </p>
-        <a href="{{ path('app_docs_show', {slug: 'overview/getting-started'}) }}" class="mt-7 inline-flex items-center gap-2 font-medium text-foreground hover:underline">
+        <a href="{{ path('app_docs_show', {slug: 'overview/getting-started'}) }}" class="mt-7 inline-flex items-center gap-2 font-medium text-neutral-950 dark:text-neutral-50 hover:underline">
             Start with the default preset
             <twig:ux:icon name="lucide:arrow-right" class="size-4" />
         </a>
     </div>
 
-    <div class="relative overflow-hidden rounded-2xl bg-muted">
+    <div class="relative overflow-hidden rounded-2xl bg-neutral-100 dark:bg-neutral-800">
         <img src="{{ 'media/home-solo.png'|imagine_filter('home_bg') }}" alt="" class="absolute inset-0 h-full w-full object-cover" loading="lazy">
         <div class="relative flex items-center justify-center p-4 py-12 sm:p-10 lg:p-14 lg:py-20">
             <div class="w-full max-w-3xl overflow-hidden rounded-2xl border-8 border-white/30 bg-white bg-clip-padding shadow-2xl backdrop-blur-md">

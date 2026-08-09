@@ -1,5 +1,5 @@
 <section class="grid items-center gap-8 py-16 lg:grid-cols-[2fr_1fr] lg:gap-14 lg:py-24">
-    <div class="relative order-last overflow-hidden rounded-2xl bg-muted lg:order-first">
+    <div class="relative order-last overflow-hidden rounded-2xl bg-neutral-100 dark:bg-neutral-800 lg:order-first">
         <img src="{{ 'media/home-companies.png'|imagine_filter('home_bg') }}" alt="" class="absolute inset-0 h-full w-full object-cover" loading="lazy">
         <div class="relative flex items-center justify-center p-4 py-12 sm:p-10 lg:p-14 lg:py-20">
             <div class="w-full max-w-3xl overflow-hidden rounded-2xl border-8 border-white/30 bg-white bg-clip-padding shadow-2xl backdrop-blur-md">
@@ -33,18 +33,18 @@
     </div>
 
     <div class="max-w-md lg:justify-self-end">
-        <p class="text-sm font-semibold tracking-widest text-muted-foreground uppercase">
+        <p class="text-sm font-semibold tracking-widest text-neutral-600 dark:text-neutral-400 uppercase">
             Small &amp; growing companies
         </p>
-        <h2 class="mt-4 text-3xl font-semibold tracking-tighter text-balance text-foreground sm:text-4xl">
+        <h2 class="mt-4 text-3xl font-semibold tracking-tighter text-balance text-neutral-950 dark:text-neutral-50 sm:text-4xl">
             A design system, without the design-system team.
         </h2>
-        <p class="mt-5 text-lg leading-8 text-muted-foreground">
+        <p class="mt-5 text-lg leading-8 text-neutral-600 dark:text-neutral-400">
             Declare your brand once, in tokens, variants and themes, and every
             developer plays from the same sheet. Add a variant in config, and it
             exists everywhere, instantly. New pages stay consistent by construction.
         </p>
-        <a href="{{ path('app_docs_show', {slug: 'overview/theming'}) }}" class="mt-7 inline-flex items-center gap-2 font-medium text-foreground hover:underline">
+        <a href="{{ path('app_docs_show', {slug: 'overview/theming'}) }}" class="mt-7 inline-flex items-center gap-2 font-medium text-neutral-950 dark:text-neutral-50 hover:underline">
             See how theming works
             <twig:ux:icon name="lucide:arrow-right" class="size-4" />
         </a>

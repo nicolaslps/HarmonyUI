@@ -1,23 +1,23 @@
 <section class="grid items-center gap-8 py-16 lg:grid-cols-[1fr_2fr] lg:gap-14 lg:py-24">
     <div class="max-w-md">
-        <p class="text-sm font-semibold tracking-widest text-muted-foreground uppercase">
+        <p class="text-sm font-semibold tracking-widest text-neutral-600 dark:text-neutral-400 uppercase">
             Agencies &amp; studios
         </p>
-        <h2 class="mt-4 text-3xl font-semibold tracking-tighter text-balance text-foreground sm:text-4xl">
+        <h2 class="mt-4 text-3xl font-semibold tracking-tighter text-balance text-neutral-950 dark:text-neutral-50 sm:text-4xl">
             One foundation, every client.
         </h2>
-        <p class="mt-5 text-lg leading-8 text-muted-foreground">
+        <p class="mt-5 text-lg leading-8 text-neutral-600 dark:text-neutral-400">
             Ship every project on the same battle-tested components and give each
             client its own preset. Nothing lives in your repo, nothing is forked,
             so a five-year-old app updates as easily as the one you started yesterday.
         </p>
-        <a href="{{ path('app_docs_components') }}" class="mt-7 inline-flex items-center gap-2 font-medium text-foreground hover:underline">
+        <a href="{{ path('app_docs_components') }}" class="mt-7 inline-flex items-center gap-2 font-medium text-neutral-950 dark:text-neutral-50 hover:underline">
             Browse the component library
             <twig:ux:icon name="lucide:arrow-right" class="size-4" />
         </a>
     </div>
 
-    <div class="relative overflow-hidden rounded-2xl bg-muted">
+    <div class="relative overflow-hidden rounded-2xl bg-neutral-100 dark:bg-neutral-800">
         <img src="{{ 'media/home-agencies.png'|imagine_filter('home_bg') }}" alt="" class="absolute inset-0 h-full w-full object-cover" loading="lazy">
         <div class="relative flex items-center justify-center p-4 py-12 sm:p-10 lg:p-14 lg:py-20">
             <div class="grid w-full max-w-3xl gap-4 sm:grid-cols-3 lg:gap-5">
