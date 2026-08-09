@@ -12,41 +12,49 @@ priority: 0
 
 ## Examples
 
-### Primary
+### Solid
 
-<ComponentPreview name="primary"/>
+<ComponentPreview name="solid"/>
+
+### Soft
+
+<ComponentPreview name="soft"/>
 
 ### Outline
 
 <ComponentPreview name="outline"/>
 
-### Secondary
-
-<ComponentPreview name="secondary"/>
-
 ### Ghost
 
 <ComponentPreview name="ghost"/>
 
+### Link
+
+<ComponentPreview name="link"/>
+
+### Danger
+
+`color="danger"` is a shortcut for `color="red"`.
+
+<ComponentPreview name="danger"/>
+
 ### Info
+
+`color="info"` is a shortcut for `color="blue"`.
 
 <ComponentPreview name="info"/>
 
 ### Success
 
+`color="success"` is a shortcut for `color="green"`.
+
 <ComponentPreview name="success"/>
 
 ### Warning
 
+`color="warning"` is a shortcut for `color="amber"`.
+
 <ComponentPreview name="warning"/>
-
-### Danger
-
-<ComponentPreview name="danger"/>
-
-### Link
-
-<ComponentPreview name="link"/>
 
 ### Size
 
@@ -94,7 +102,8 @@ To enable RTL support, set the `dir="rtl"` attribute on the root element.
 
 | Prop | Type | Description |
 |---|---|---|
-| `variant` | `'primary'` \| `'outline'` \| `'secondary'` \| `'ghost'` \| `'danger'` \| `'danger-soft'` \| `'info'` \| `'info-soft'` \| `'success'` \| `'success-soft'` \| `'warning'` \| `'warning-soft'` \| `'link'` | The visual style variant. Defaults to `primary` |
+| `variant` | `'solid'` \| `'soft'` \| `'outline'` \| `'ghost'` \| `'link'` | The visual style variant. Defaults to `solid` |
+| `color` | `string` | Any Tailwind color name, such as `'purple'` or `'cyan'`, or a preset shortcut: `'danger'`, `'info'`, `'success'`, `'warning'`. Only affects the `solid` and `soft` variants. Defaults to `'neutral'` |
 | `size` | `'md'` \| `'xs'` \| `'sm'` \| `'lg'` \| `'icon'` \| `'icon-xs'` \| `'icon-sm'` \| `'icon-lg'` | The button size. Defaults to `md` |
 | `as` | `string` | The HTML tag to render. Defaults to `button` |
 

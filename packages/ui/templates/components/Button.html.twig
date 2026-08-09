@@ -1,7 +1,14 @@
-{%- props variant = 'primary', size = 'md', as = 'button' -%}
+{%- props variant = 'solid', size = 'md', color = null, as = 'button' -%}
+{%- set colorAliases = {
+    'danger': 'red',
+    'info': 'blue',
+    'success': 'green',
+    'warning': 'amber',
+} -%}
+{%- set color = colorAliases[color] ?? color ?? 'neutral' -%}
 {%- set style = hui('button') -%}
 <{{ as }}
-    class="{{ style.apply({variant: variant, size: size}, attributes.render('class'))|tailwind_merge }}"
+    class="{{ style.apply({variant: variant, size: size, color: color}, attributes.render('class'))|tailwind_merge }}"
     {{ attributes.defaults({
         'data-slot': 'button',
     }) }}

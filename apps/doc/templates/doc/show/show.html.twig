@@ -12,7 +12,7 @@
 
     <nav class="not-prose mt-12 flex justify-between pt-6">
         {% if previous %}
-            <twig:ui:Button as="a" variant="secondary" href="{{ path('app_docs_show', {slug: previous.slug}) }}">
+            <twig:ui:Button as="a" variant="soft" href="{{ path('app_docs_show', {slug: previous.slug}) }}">
                 <twig:ux:icon name="lucide:arrow-left" data-icon="inline-start" />
                 {{ previous.title }}
             </twig:ui:Button>
@@ -20,7 +20,7 @@
             <span></span>
         {% endif %}
         {% if next %}
-            <twig:ui:Button as="a" variant="secondary" href="{{ path('app_docs_show', {slug: next.slug}) }}">
+            <twig:ui:Button as="a" variant="soft" href="{{ path('app_docs_show', {slug: next.slug}) }}">
                 {{ next.title }}
                 <twig:ux:icon name="lucide:arrow-right" data-icon="inline-end" />
             </twig:ui:Button>
