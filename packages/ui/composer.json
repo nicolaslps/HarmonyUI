@@ -10,9 +10,6 @@
         "twig/html-extra": "^3.12",
         "tales-from-a-dev/twig-tailwind-extra": "^1.2"
     },
-    "suggest": {
-        "symfony/stimulus-bundle": "To auto-register the HarmonyUI Stimulus controllers (interactive components)"
-    },
     "autoload": {
         "psr-4": {
             "HarmonyUI\\": "src/"

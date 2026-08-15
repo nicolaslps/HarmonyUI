@@ -6,7 +6,6 @@ namespace HarmonyUI;
 
 use HarmonyUI\Style\ComponentStyle;
 use LogicException;
-use Symfony\Component\AssetMapper\AssetMapper;
 use Symfony\Component\Config\Definition\Configurator\DefinitionConfigurator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
@@ -59,16 +58,6 @@ final class HarmonyUIBundle extends AbstractBundle
         $builder->prependExtensionConfig($this->extensionAlias, [
             'components' => $this->loadStyles($builder, dirname(__DIR__).'/config/styles/'.$this->resolveTheme($builder)),
         ]);
-
-        if ($builder->hasExtension('framework') && class_exists(AssetMapper::class)) {
-            $builder->prependExtensionConfig('framework', [
-                'asset_mapper' => [
-                    'paths' => [
-                        dirname(__DIR__).'/assets' => '@harmonyui',
-                    ],
-                ],
-            ]);
-        }
 
         if ($builder->hasExtension('twig')) {
             $builder->prependExtensionConfig('twig', [

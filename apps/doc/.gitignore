@@ -13,10 +13,13 @@
 /og/node_modules/
 ###< og/card.mjs ###
 
-###> symfony/asset-mapper ###
-/public/assets/
-/assets/vendor/
-###< symfony/asset-mapper ###
+###> symfony/reprise ###
+/public/build/
+###< symfony/reprise ###
+
+###> node ###
+/node_modules/
+###< node ###
 
 ###> phpunit/phpunit ###
 /phpunit.xml

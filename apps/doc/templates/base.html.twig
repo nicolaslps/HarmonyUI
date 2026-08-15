@@ -76,10 +76,11 @@
         </script>
 
         {% block stylesheets %}
+            {{ reprise_entry_link_tags('styles') }}
         {% endblock %}
 
         {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
+            {{ reprise_entry_script_tags('app') }}
         {% endblock %}
 
         {% if app.environment == 'prod' and not app.debug %}

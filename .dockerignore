@@ -2,6 +2,7 @@
 **/vendor/
 **/node_modules/
 **/var/
+**/public/build/
 **/.git/
 **/.idea/
 **/.env.local
