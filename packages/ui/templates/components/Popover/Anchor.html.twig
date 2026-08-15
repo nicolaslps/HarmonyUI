@@ -1,0 +1,13 @@
+{%- props as = 'span' -%}
+{%- set _hui_popover_id = inject('popover_id') -%}
+<{{ as }}
+    class="{{ hui('popover-anchor').apply({}, attributes.render('class'))|tailwind_merge }}"
+    {{ attributes.defaults({
+        'data-slot': 'popover-anchor',
+        'data-scope': 'popover',
+        'data-part': 'anchor',
+        'data-owner': _hui_popover_id,
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</{{ as }}>

@@ -1,0 +1,26 @@
+{%- props open = false, id = null, modal = false, portalled = true, autoFocus = true, closeOnInteractOutside = true, closeOnEscape = true, placement = 'bottom', offset = 6, shouldFlip = true, sameWidth = false, ariaLabel = null, dir = null, as = 'div' -%}
+{%- set _hui_popover_id = id ?? hui_id('popover') -%}
+{{ provide('popover_id', _hui_popover_id) }}
+{%- set _hui_popover_attrs = {
+    'data-slot': 'popover',
+    'data-controller': 'hui-popover',
+    'data-hui-popover-open-value': open ? 'true' : 'false',
+    'data-hui-popover-modal-value': modal ? 'true' : 'false',
+    'data-hui-popover-portalled-value': portalled ? 'true' : 'false',
+    'data-hui-popover-auto-focus-value': autoFocus ? 'true' : 'false',
+    'data-hui-popover-close-on-interact-outside-value': closeOnInteractOutside ? 'true' : 'false',
+    'data-hui-popover-close-on-escape-value': closeOnEscape ? 'true' : 'false',
+    'data-hui-popover-placement-value': placement,
+    'data-hui-popover-offset-value': offset,
+    'data-hui-popover-should-flip-value': shouldFlip ? 'true' : 'false',
+    'data-hui-popover-same-width-value': sameWidth ? 'true' : 'false',
+    'data-hui-popover-aria-label-value': ariaLabel ?? '',
+    'data-hui-popover-dir-value': dir ?? '',
+} -%}
+<{{ as }}
+    id="{{ _hui_popover_id }}"
+    class="{{ hui('popover').apply({}, attributes.render('class'))|tailwind_merge }}"
+    {{ attributes.defaults(_hui_popover_attrs) }}
+>
+    {%- block content %}{% endblock -%}
+</{{ as }}>

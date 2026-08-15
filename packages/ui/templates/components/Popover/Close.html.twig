@@ -1,0 +1,18 @@
+{%- set _hui_popover_id = inject('popover_id') -%}
+{%- set popover_close_attrs = {
+    'data-scope': 'popover',
+    'data-part': 'close-trigger',
+    'data-owner': _hui_popover_id,
+    type: 'button',
+} -%}
+{%- block content -%}
+    <twig:ui:Button
+        variant="ghost"
+        size="icon-sm"
+        {{ ...popover_close_attrs }}
+        class="{{ hui('popover-close').apply({}) }}"
+        aria-label="Close"
+    >
+        <twig:ux:icon name="lucide:x" class="size-4" />
+    </twig:ui:Button>
+{%- endblock -%}

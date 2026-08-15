@@ -11,6 +11,7 @@ return [
             "inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none cursor-pointer",
             "focus-visible:border-neutral-500 focus-visible:ring-3 focus-visible:ring-neutral-500/40",
             "active:not-aria-[haspopup]:translate-y-px",
+            "aria-expanded:scale-[0.97]",
             "disabled:pointer-events-none disabled:opacity-50",
             "aria-invalid:border-red-600 aria-invalid:ring-3 aria-invalid:ring-red-600/20",
             "dark:aria-invalid:border-red-600/50 dark:aria-invalid:ring-red-600/40",

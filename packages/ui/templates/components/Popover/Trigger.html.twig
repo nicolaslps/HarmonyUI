@@ -1,0 +1,10 @@
+{%- props value = null -%}
+{%- set _hui_popover_id = inject('popover_id') -%}
+{%- set popover_trigger_attrs = {
+    'data-scope': 'popover',
+    'data-part': 'trigger',
+    'data-owner': _hui_popover_id,
+    type: 'button',
+    'aria-haspopup': 'dialog',
+}|merge(value is not null ? {'data-value': value} : {}) -%}
+{%- block content %}{% endblock -%}

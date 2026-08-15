@@ -1,0 +1,12 @@
+{%- props as = 'span' -%}
+<{{ as }}
+    class="{{ hui('popover-indicator').apply({}, attributes.render('class'))|tailwind_merge }}"
+    {{ attributes.defaults({
+        'data-slot': 'popover-indicator',
+        'data-scope': 'popover',
+        'data-part': 'indicator',
+        'aria-hidden': 'true',
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</{{ as }}>
