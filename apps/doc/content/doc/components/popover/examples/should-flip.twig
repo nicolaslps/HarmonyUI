@@ -1,0 +1,55 @@
+<div class="grid gap-6">
+    <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        Each bordered box below is <code>position: relative</code>, making it the popover's
+        positioning boundary instead of the viewport.
+    </p>
+
+    <div class="grid gap-4">
+        <div class="relative flex h-32 items-end justify-center overflow-hidden rounded-md border border-neutral-200 dark:border-neutral-800">
+            <twig:ui:Popover :portalled="false">
+                <twig:ui:Popover:Trigger>
+                    <twig:ui:Button variant="outline" size="sm" {{ ...popover_trigger_attrs }} class="my-2">Default</twig:ui:Button>
+                </twig:ui:Popover:Trigger>
+                <twig:ui:Popover:Content class="w-48">
+                    Flips upward to stay in view.
+                </twig:ui:Popover:Content>
+            </twig:ui:Popover>
+        </div>
+
+        <div>
+            <div class="relative flex h-32 items-end justify-center rounded-md border border-neutral-200 dark:border-neutral-800">
+                <twig:ui:Popover :portalled="false" :shouldFlip="false">
+                    <twig:ui:Popover:Trigger>
+                        <twig:ui:Button variant="outline" size="sm" {{ ...popover_trigger_attrs }} class="my-2">shouldFlip="false"</twig:ui:Button>
+                    </twig:ui:Popover:Trigger>
+                    <twig:ui:Popover:Content class="w-48">
+                        Stays below and overflows the box instead of flipping.
+                    </twig:ui:Popover:Content>
+                </twig:ui:Popover>
+            </div>
+            <div class="relative z-[60] mt-2 flex h-24 items-center justify-center rounded-md border border-red-500 bg-red-500/5 text-center text-xs text-red-600 dark:text-red-400">
+                This space should be hidden
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-wrap gap-3 justify-evenly w-full">
+        <twig:ui:Popover>
+            <twig:ui:Popover:Trigger>
+                <twig:ui:Button variant="outline" size="sm" {{ ...popover_trigger_attrs }}>Default (portalled)</twig:ui:Button>
+            </twig:ui:Popover:Trigger>
+            <twig:ui:Popover:Content class="w-48">
+                Flips if it would overflow the viewport.
+            </twig:ui:Popover:Content>
+        </twig:ui:Popover>
+
+        <twig:ui:Popover :shouldFlip="false">
+            <twig:ui:Popover:Trigger>
+                <twig:ui:Button variant="outline" size="sm" {{ ...popover_trigger_attrs }}>shouldFlip="false" (portalled)</twig:ui:Button>
+            </twig:ui:Popover:Trigger>
+            <twig:ui:Popover:Content class="w-48">
+                Never flips, even outside the viewport.
+            </twig:ui:Popover:Content>
+        </twig:ui:Popover>
+    </div>
+</div>

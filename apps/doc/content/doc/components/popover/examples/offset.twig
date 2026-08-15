@@ -1,0 +1,19 @@
+<div class="flex gap-3">
+    <twig:ui:Popover>
+        <twig:ui:Popover:Trigger>
+            <twig:ui:Button variant="outline" {{ ...popover_trigger_attrs }}>Default</twig:ui:Button>
+        </twig:ui:Popover:Trigger>
+        <twig:ui:Popover:Content class="w-56">
+            6px gap, the default.
+        </twig:ui:Popover:Content>
+    </twig:ui:Popover>
+
+    <twig:ui:Popover :offset="24">
+        <twig:ui:Popover:Trigger>
+            <twig:ui:Button variant="outline" {{ ...popover_trigger_attrs }}>offset="24"</twig:ui:Button>
+        </twig:ui:Popover:Trigger>
+        <twig:ui:Popover:Content class="w-56">
+            24px gap.
+        </twig:ui:Popover:Content>
+    </twig:ui:Popover>
+</div>

@@ -1,0 +1,12 @@
+<twig:ui:Popover dir="rtl">
+    <twig:ui:Popover:Trigger>
+        <twig:ui:Button variant="outline" {{ ...popover_trigger_attrs }}>الإشعارات</twig:ui:Button>
+    </twig:ui:Popover:Trigger>
+    <twig:ui:Popover:Content class="w-72">
+        <twig:ui:Popover:Close />
+        <div class="grid gap-1">
+            <p class="text-sm leading-none font-medium text-neutral-950 dark:text-neutral-50">لا توجد إشعارات جديدة</p>
+            <p class="text-sm text-neutral-500 dark:text-neutral-400">ستظهر هنا الإشعارات الجديدة عند وصولها.</p>
+        </div>
+    </twig:ui:Popover:Content>
+</twig:ui:Popover>

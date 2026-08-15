@@ -1,0 +1,25 @@
+<twig:ui:Popover>
+    <twig:ui:Popover:Trigger>
+        <twig:ui:Button variant="outline" {{ ...popover_trigger_attrs }}>Open popover</twig:ui:Button>
+    </twig:ui:Popover:Trigger>
+    <twig:ui:Popover:Content class="w-72">
+        <div class="grid gap-1">
+            <p class="text-sm leading-none font-medium text-neutral-950 dark:text-neutral-50">Dimensions</p>
+            <p class="text-sm text-neutral-500 dark:text-neutral-400">Set the dimensions for the layer.</p>
+        </div>
+        <div class="grid grid-cols-3 items-center gap-3">
+            <label for="usage-popover-width" class="text-neutral-600 dark:text-neutral-400">Width</label>
+            <input
+                id="usage-popover-width"
+                value="100%"
+                class="col-span-2 h-8 rounded-md border border-neutral-200 bg-transparent px-2 dark:border-neutral-700"
+            />
+            <label for="usage-popover-height" class="text-neutral-600 dark:text-neutral-400">Height</label>
+            <input
+                id="usage-popover-height"
+                value="25px"
+                class="col-span-2 h-8 rounded-md border border-neutral-200 bg-transparent px-2 dark:border-neutral-700"
+            />
+        </div>
+    </twig:ui:Popover:Content>
+</twig:ui:Popover>

@@ -1,0 +1,23 @@
+<div class="w-72">
+    <twig:ui:Popover :sameWidth="true">
+        <twig:ui:Popover:Trigger>
+            <twig:ui:Button
+                variant="outline"
+                {{ ...popover_trigger_attrs }}
+                class="w-full justify-start text-neutral-500 aria-expanded:scale-100 dark:text-neutral-400"
+            >
+                Add a comment&hellip;
+            </twig:ui:Button>
+        </twig:ui:Popover:Trigger>
+        <twig:ui:Popover:Content>
+            <textarea
+                rows="3"
+                placeholder="Write a comment"
+                class="w-full resize-none rounded-md border border-neutral-200 bg-transparent p-2 dark:border-neutral-700"
+            ></textarea>
+            <div class="flex justify-end gap-2">
+                <twig:ui:Button size="sm">Comment</twig:ui:Button>
+            </div>
+        </twig:ui:Popover:Content>
+    </twig:ui:Popover>
+</div>

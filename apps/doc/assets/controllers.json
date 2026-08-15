@@ -12,6 +12,10 @@
             "dialog": {
                 "enabled": true,
                 "fetch": "eager"
+            },
+            "popover": {
+                "enabled": true,
+                "fetch": "eager"
             }
         }
     },

@@ -1,0 +1,20 @@
+<twig:ui:Popover>
+    <twig:ui:Popover:Trigger>
+        <twig:ui:Button variant="outline" {{ ...popover_trigger_attrs }} class="gap-2">
+            Sort by
+            <twig:ui:Popover:Indicator class="transition-transform duration-200 data-[state=open]:rotate-180">
+                <twig:ux:icon name="lucide:chevron-down" class="size-4" />
+            </twig:ui:Popover:Indicator>
+        </twig:ui:Button>
+    </twig:ui:Popover:Trigger>
+    <twig:ui:Popover:Content class="w-56">
+        <fieldset class="grid gap-2">
+            <label class="flex items-center gap-2">
+                <input type="radio" name="indicator-sort" checked /> Name (A to Z)
+            </label>
+            <label class="flex items-center gap-2">
+                <input type="radio" name="indicator-sort" /> Name (Z to A)
+            </label>
+        </fieldset>
+    </twig:ui:Popover:Content>
+</twig:ui:Popover>

@@ -1,0 +1,29 @@
+{% set placements = [
+    {value: 'top-start', col: 2, row: 1},
+    {value: 'top', col: 3, row: 1},
+    {value: 'top-end', col: 4, row: 1},
+    {value: 'right-start', col: 5, row: 2},
+    {value: 'right', col: 5, row: 3},
+    {value: 'right-end', col: 5, row: 4},
+    {value: 'bottom-end', col: 4, row: 5},
+    {value: 'bottom', col: 3, row: 5},
+    {value: 'bottom-start', col: 2, row: 5},
+    {value: 'left-end', col: 1, row: 4},
+    {value: 'left', col: 1, row: 3},
+    {value: 'left-start', col: 1, row: 2},
+] %}
+
+<div class="mx-auto grid w-lg grid-cols-5 grid-rows-5 gap-3">
+    {% for p in placements %}
+        <div class="flex items-center justify-center" style="grid-column: {{ p.col }}; grid-row: {{ p.row }};">
+            <twig:ui:Popover placement="{{ p.value }}">
+                <twig:ui:Popover:Trigger>
+                    <twig:ui:Button variant="outline" size="sm" {{ ...popover_trigger_attrs }} class="whitespace-nowrap px-2 text-xs">{{ p.value }}</twig:ui:Button>
+                </twig:ui:Popover:Trigger>
+                <twig:ui:Popover:Content>
+                    <code>placement="{{ p.value }}"</code>
+                </twig:ui:Popover:Content>
+            </twig:ui:Popover>
+        </div>
+    {% endfor %}
+</div>

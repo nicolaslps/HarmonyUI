@@ -30,7 +30,6 @@ final readonly class LegacySite
         'components/input',
         'components/input-group',
         'components/label',
-        'components/popover',
         'components/select',
         'components/separator',
         'components/skeleton',
