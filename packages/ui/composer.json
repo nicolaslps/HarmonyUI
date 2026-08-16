@@ -3,6 +3,7 @@
     "description": "HarmonyUI Symfony Package",
     "type": "symfony-bundle",
     "license": "MIT",
+    "keywords": ["symfony-ux"],
     "require": {
         "php": ">=8.4",
         "symfony/http-kernel": "^7.0 || ^8.0",
