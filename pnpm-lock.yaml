@@ -18,8 +18,8 @@ importers:
   apps/doc:
     dependencies:
       '@harmonyui/ui':
-        specifier: workspace:*
-        version: link:../../packages/ui/assets
+        specifier: file:vendor/harmonyui/ui/assets
+        version: file:apps/doc/vendor/harmonyui/ui/assets(@hotwired/stimulus@3.2.2)
       '@hotwired/stimulus':
         specifier: ^3.2.2
         version: 3.2.2
@@ -74,6 +74,11 @@ packages:
 
   '@floating-ui/utils@0.2.12':
     resolution: {integrity: sha512-HpCo8tmWzLVad5s2d19EhAz5zqrrQ6s69qd6moPMQvkOuSwDT1YgRfWSVuc4ennqrgv3OHppiOGMQ7oC13yIww==}
+
+  '@harmonyui/ui@file:apps/doc/vendor/harmonyui/ui/assets':
+    resolution: {directory: apps/doc/vendor/harmonyui/ui/assets, type: directory}
+    peerDependencies:
+      '@hotwired/stimulus': '>=3.0.0'
 
   '@hotwired/stimulus@3.2.2':
     resolution: {integrity: sha512-eGeIqNOQpXoPAIP7tC1+1Yc1yl1xnwYqg+3mzqxyrbE5pg5YFBZcA6YoTiByJB6DKAEsiWtl6tjTJS4IYtbB7A==}
@@ -1466,6 +1471,13 @@ snapshots:
       '@floating-ui/utils': 0.2.12
 
   '@floating-ui/utils@0.2.12': {}
+
+  '@harmonyui/ui@file:apps/doc/vendor/harmonyui/ui/assets(@hotwired/stimulus@3.2.2)':
+    dependencies:
+      '@hotwired/stimulus': 3.2.2
+      '@zag-js/dialog': 1.43.0
+      '@zag-js/popover': 1.43.0
+      '@zag-js/vanilla': 1.43.0
 
   '@hotwired/stimulus@3.2.2': {}
 

@@ -7,7 +7,7 @@
         "build": "vite build"
     },
     "dependencies": {
-        "@harmonyui/ui": "workspace:*",
+        "@harmonyui/ui": "file:vendor/harmonyui/ui/assets",
         "@hotwired/stimulus": "^3.2.2"
     },
     "devDependencies": {
