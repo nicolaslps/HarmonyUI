@@ -84,7 +84,7 @@
         {% endblock %}
 
         {% if app.environment == 'prod' and not app.debug %}
-            <script defer src="https://assets.onedollarstats.com/stonks.js"></script>
+            <script defer src="https://cloud.umami.is/script.js" data-website-id="710c1c0c-de3d-4d95-b6ba-6536cdeb12c5"></script>
             {% if ga4_measurement_id %}
                 <script async src="https://www.googletagmanager.com/gtag/js?id={{ ga4_measurement_id|e('url') }}"></script>
                 <script>
