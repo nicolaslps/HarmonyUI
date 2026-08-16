@@ -22,6 +22,7 @@
         "symfony/twig-bundle": "8.1.*",
         "symfony/ux-icons": "^3.2",
         "symfony/yaml": "8.1.*",
+        "tales-from-a-dev/twig-tailwind-extra": "^1.4",
         "tempest/highlight": "^2.27"
     },
     "config": {

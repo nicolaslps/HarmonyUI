@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7b9a871832be02288d6f204faf28926c",
+    "content-hash": "230eefab873cf2e666a4a88ad384dbc1",
     "packages": [
         {
             "name": "dflydev/dot-access-data",
@@ -87,7 +87,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/ui",
-                "reference": "bbfba84356e10434cc43fb11a05fb2b3f81387b4"
+                "reference": "eb8d1e95a55357d251b9f1b11f0e80f19b6d4c97"
             },
             "require": {
                 "php": ">=8.4",
@@ -102,7 +102,8 @@
                 "symfony/dom-crawler": "^8.1",
                 "symfony/framework-bundle": "^8.1",
                 "symfony/twig-bundle": "^8.1",
-                "symfony/yaml": "^8.1"
+                "symfony/yaml": "^8.1",
+                "twig/extra-bundle": "^3.12"
             },
             "type": "symfony-bundle",
             "extra": {

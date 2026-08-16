@@ -754,6 +754,11 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         default_variants?: array<string, scalar|Param|null>,
  *     }>,
  * }
+ * @psalm-type TalesFromADevTwigExtraTailwindConfig = array{
+ *     tailwind_merge?: array{
+ *         additional_configuration?: mixed, // Default: []
+ *     },
+ * }
  * @psalm-type RepriseConfig = array{
  *     output_path?: scalar|Param|null, // Directory where the @symfony/reprise plugin writes entrypoints.json and manifest.json. Set to false to only use named "builds". // Default: "%kernel.project_dir%/public/build"
  *     builds?: array<string, scalar|Param|null>,
@@ -904,6 +909,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     twig?: TwigConfig,
  *     twig_component?: TwigComponentConfig,
  *     harmony_ui?: HarmonyUiConfig,
+ *     tales_from_a_dev_twig_extra_tailwind?: TalesFromADevTwigExtraTailwindConfig,
  *     reprise?: RepriseConfig,
  *     ux_icons?: UxIconsConfig,
  *     liip_imagine?: LiipImagineConfig,
@@ -915,6 +921,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         twig?: TwigConfig,
  *         twig_component?: TwigComponentConfig,
  *         harmony_ui?: HarmonyUiConfig,
+ *         tales_from_a_dev_twig_extra_tailwind?: TalesFromADevTwigExtraTailwindConfig,
  *         reprise?: RepriseConfig,
  *         ux_icons?: UxIconsConfig,
  *         liip_imagine?: LiipImagineConfig,
@@ -928,6 +935,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         twig?: TwigConfig,
  *         twig_component?: TwigComponentConfig,
  *         harmony_ui?: HarmonyUiConfig,
+ *         tales_from_a_dev_twig_extra_tailwind?: TalesFromADevTwigExtraTailwindConfig,
  *         reprise?: RepriseConfig,
  *         ux_icons?: UxIconsConfig,
  *         liip_imagine?: LiipImagineConfig,
@@ -940,6 +948,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         twig?: TwigConfig,
  *         twig_component?: TwigComponentConfig,
  *         harmony_ui?: HarmonyUiConfig,
+ *         tales_from_a_dev_twig_extra_tailwind?: TalesFromADevTwigExtraTailwindConfig,
  *         reprise?: RepriseConfig,
  *         ux_icons?: UxIconsConfig,
  *         liip_imagine?: LiipImagineConfig,

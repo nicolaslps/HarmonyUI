@@ -35,6 +35,7 @@
         "symfony/yaml": "^8.1",
         "symfony/twig-bundle": "^8.1",
         "symfony/dom-crawler": "^8.1",
-        "symfony/css-selector": "^8.1"
+        "symfony/css-selector": "^8.1",
+        "twig/extra-bundle": "^3.12"
     }
 }

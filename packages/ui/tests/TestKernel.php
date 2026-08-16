@@ -15,6 +15,8 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\UX\TwigComponent\TwigComponentBundle;
+use TalesFromADev\Twig\Extra\Tailwind\Bridge\Symfony\Bundle\TalesFromADevTwigExtraTailwindBundle;
+use Twig\Extra\TwigExtraBundle\TwigExtraBundle;
 
 final class TestKernel extends Kernel
 {
@@ -25,6 +27,8 @@ final class TestKernel extends Kernel
         return [
             new FrameworkBundle(),
             new TwigBundle(),
+            new TwigExtraBundle(),
+            new TalesFromADevTwigExtraTailwindBundle(),
             new TwigComponentBundle(),
             new HarmonyUIBundle(),
         ];
