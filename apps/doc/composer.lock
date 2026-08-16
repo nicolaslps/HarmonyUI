@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "230eefab873cf2e666a4a88ad384dbc1",
+    "content-hash": "bff44fbce62e0845ae7780c552e5af1a",
     "packages": [
         {
             "name": "dflydev/dot-access-data",
@@ -87,7 +87,7 @@
             "dist": {
                 "type": "path",
                 "url": "../../packages/ui",
-                "reference": "eb8d1e95a55357d251b9f1b11f0e80f19b6d4c97"
+                "reference": "be3caa3a338f72e6d5b029619f287919426259ea"
             },
             "require": {
                 "php": ">=8.4",
@@ -130,6 +130,9 @@
                 "MIT"
             ],
             "description": "HarmonyUI Symfony Package",
+            "keywords": [
+                "symfony-ux"
+            ],
             "transport-options": {
                 "relative": true
             }
@@ -5196,16 +5199,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "14.3.0",
+            "version": "14.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "060a5c93e81afb01e97dbe8930a5d0c9bd46e54e"
+                "reference": "6ce313bb110384148d1dc7695a99175f59529069"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/060a5c93e81afb01e97dbe8930a5d0c9bd46e54e",
-                "reference": "060a5c93e81afb01e97dbe8930a5d0c9bd46e54e",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/6ce313bb110384148d1dc7695a99175f59529069",
+                "reference": "6ce313bb110384148d1dc7695a99175f59529069",
                 "shasum": ""
             },
             "require": {
@@ -5224,7 +5227,7 @@
                 "theseer/tokenizer": "^2.0.1"
             },
             "require-dev": {
-                "phpunit/phpunit": "^13.3"
+                "phpunit/phpunit": "^13.3.1"
             },
             "suggest": {
                 "ext-pcov": "PHP extension that provides line coverage",
@@ -5262,7 +5265,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
                 "security": "https://github.com/sebastianbergmann/php-code-coverage/security/policy",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/14.3.0"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/14.3.1"
             },
             "funding": [
                 {
@@ -5282,7 +5285,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-08-07T07:24:15+00:00"
+            "time": "2026-08-16T05:23:47+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
