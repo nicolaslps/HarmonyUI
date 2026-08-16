@@ -13,8 +13,18 @@ bundle's design tokens and per-component configuration, no rewriting required.
 
 - PHP 8.4+
 - Symfony 7.0+ or 8.0+
-- Tailwind CSS v4, set up through [Symfony AssetMapper](https://symfony.com/doc/current/frontend/asset_mapper.html) (recommended) or your own Node-based pipeline
-- [symfony/stimulus-bundle](https://symfony.com/bundles/StimulusBundle/current/index.html) to enable interactive components
+- A Node-based build tool: [Webpack Encore](https://symfony.com/doc/current/frontend.html) or [Symfony Reprise](https://github.com/symfony/reprise)
+- Tailwind CSS v4, installed through your Node package manager (npm, pnpm, yarn)
+
+> [!NOTE]
+> Symfony AssetMapper isn't supported yet, that integration is planned for a
+> later release.
+
+> [!WARNING]
+> Reprise is still pre-1.0 (`v0.7` at the time of writing) and under active
+> development. Check its [changelog](https://github.com/symfony/reprise/releases)
+> before relying on it in production, Webpack Encore remains the safer choice
+> if you need stability today.
 
 ## Installation
 
@@ -24,44 +34,58 @@ bundle's design tokens and per-component configuration, no rewriting required.
 composer require harmonyui/ui
 ```
 
-> HarmonyUI is pre-1.0: each `0.x` minor release may contain breaking changes.
-> A caret constraint like `^0.1` keeps you on non-breaking releases, review the
-> changelog before bumping to the next minor.
+> HarmonyUI is pre-1.0, breaking changes may land in any `0.x` release.
 
-### 2. Import the styles
+### 2. Install the JS dependencies
 
-Import the bundle's stylesheet from your app's CSS entry point, and tell
+`@harmonyui/ui` isn't published to npm, it ships inside the Composer package
+instead. Composer already added it to your `package.json` as a
+`file:` dependency pointing at the copy it just installed in `vendor/`, check
+it's there:
+
+```json
+// package.json
+{
+    "dependencies": {
+        "@harmonyui/ui": "file:vendor/harmonyui/ui/assets"
+    }
+}
+```
+
+Then install:
+
+```bash
+npm install
+```
+
+Interactive components ship their own Stimulus controllers under this package without extra configuration needed as
+they're wired up automatically.
+
+### 3. Import the styles
+
+Import the package's stylesheet from your app's CSS entry point, and tell
 Tailwind where to look for the classes used by HarmonyUI's templates and
 component styles: both live in `vendor/`, which Tailwind ignores by default.
 
 ```css
 /* assets/styles/app.css */
 @import "tailwindcss";
-@import "../../vendor/harmonyui/ui/assets/styles/harmonyui.css";
+@import "@harmonyui/ui/styles/harmonyui.css";
 
-@source "../../vendor/harmonyui/ui/config/styles/default";
 @source "../../vendor/harmonyui/ui/templates";
+@source "../../vendor/harmonyui/ui/config/styles";
 ```
 
-### 3. Build your CSS
+### 4. Build your assets
 
-With Symfony's TailwindBundle, build (or watch) the stylesheet:
-
-```bash
-php bin/console tailwind:build --watch
-```
-
-Using Webpack Encore or another Node-based setup instead? Run your usual
-Tailwind v4 build, nothing else changes.
-
-### 4. Enable interactive components
-
-Interactive components ship their own Stimulus controllers. Install
-`symfony/stimulus-bundle` if your project doesn't have it yet, it discovers
-and registers HarmonyUI's controllers automatically:
+Run whichever build tool you chose:
 
 ```bash
-composer require symfony/stimulus-bundle
+# Symfony Reprise (Vite)
+npx vite build
+
+# Webpack Encore
+npm run build
 ```
 
 ## Use your first component
