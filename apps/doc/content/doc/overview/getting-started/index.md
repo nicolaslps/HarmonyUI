@@ -39,9 +39,8 @@ composer require harmonyui/ui
 ### 2. Install the JS dependencies
 
 `@harmonyui/ui` isn't published to npm, it ships inside the Composer package
-instead. Composer already added it to your `package.json` as a
-`file:` dependency pointing at the copy it just installed in `vendor/`, check
-it's there:
+instead. Add it to your `package.json` as a `file:` dependency pointing at the
+copy Composer just installed in `vendor/`:
 
 ```json
 // package.json

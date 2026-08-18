@@ -32,11 +32,12 @@ RUN corepack enable
 
 WORKDIR /app
 
-# @harmonyui/ui isn't published to npm: it's resolved through the pnpm
-# workspace (packages/ui/assets), same as the Composer path repository above.
+# @harmonyui/ui isn't published to npm: apps/doc depends on it via a `file:`
+# path pointing at Composer's mirrored copy, so that copy must exist before
+# `pnpm install` resolves it.
 COPY pnpm-workspace.yaml pnpm-lock.yaml package.json ./
 COPY apps/doc/package.json apps/doc/vite.config.ts ./apps/doc/
-COPY packages/ui/assets/ ./packages/ui/assets/
+COPY --from=vendor /app/vendor/harmonyui ./apps/doc/vendor/harmonyui
 RUN pnpm install --frozen-lockfile --ignore-scripts
 
 COPY apps/doc/assets/ ./apps/doc/assets/
@@ -47,9 +48,6 @@ COPY apps/doc/templates/ ./apps/doc/templates/
 COPY apps/doc/content/ ./apps/doc/content/
 COPY apps/doc/config/harmony_ui/ ./apps/doc/config/harmony_ui/
 COPY apps/doc/src/ ./apps/doc/src/
-# Tailwind's app.css also reaches into vendor/harmonyui/ui (composer's
-# mirrored copy) for the package's default theme and templates (`@source`).
-COPY --from=vendor /app/vendor/harmonyui ./apps/doc/vendor/harmonyui
 RUN pnpm --filter doc build
 
 # --- Open Graph rendering dependencies (bookworm to match the glibc runtime) ---
