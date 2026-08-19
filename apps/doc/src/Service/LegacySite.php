@@ -31,7 +31,6 @@ final readonly class LegacySite
         'components/input-group',
         'components/label',
         'components/select',
-        'components/separator',
         'components/skeleton',
         'components/spinner',
         'components/switch',
