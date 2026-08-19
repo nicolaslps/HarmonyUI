@@ -1,0 +1,10 @@
+{%- props orientation = 'horizontal', decorative = true, as = 'div' -%}
+<{{ as }}
+    class="{{ hui('separator').apply({orientation: orientation}, attributes.render('class'))|tailwind_merge }}"
+    {{ attributes.defaults({
+        'data-slot': 'separator',
+        'data-orientation': orientation,
+        role: decorative ? 'none' : 'separator',
+        'aria-orientation': decorative ? false : orientation,
+    }) }}
+>{%- block content %}{% endblock -%}</{{ as }}>
