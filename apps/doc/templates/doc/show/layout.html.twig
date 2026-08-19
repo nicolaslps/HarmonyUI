@@ -17,9 +17,15 @@
                         <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-neutral-400 dark:text-neutral-500">{{ category }}</p>
                         <ul class="space-y-1 text-sm">
                             {% for item in pages %}
+                                {% if item.slug == page.meta.slug %}
+                                    {% set link_class = 'font-semibold text-neutral-900 dark:text-neutral-50' %}
+                                {% elseif is_legacy_doc(item.slug) %}
+                                    {% set link_class = 'text-neutral-300 hover:text-neutral-500 dark:text-neutral-700 dark:hover:text-neutral-500' %}
+                                {% else %}
+                                    {% set link_class = 'text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-50' %}
+                                {% endif %}
                                 <li>
-                                    <a href="{{ path('app_docs_show', {slug: item.slug}) }}"
-                                       class="{{ item.slug == page.meta.slug ? 'font-semibold text-neutral-900 dark:text-neutral-50' : 'text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-50' }}">
+                                    <a href="{{ path('app_docs_show', {slug: item.slug}) }}" class="{{ link_class }}">
                                         {{ item.title }}
                                     </a>
                                 </li>

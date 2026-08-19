@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Service;
 
+use Twig\Attribute\AsTwigFunction;
+
 use function in_array;
 use function ltrim;
 use function rtrim;
@@ -45,6 +47,7 @@ final readonly class LegacySite
     ) {
     }
 
+    #[AsTwigFunction('is_legacy_doc')]
     public function isLegacy(string $slug): bool
     {
         return in_array($slug, self::SLUGS, true);
