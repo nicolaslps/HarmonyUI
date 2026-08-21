@@ -13,6 +13,7 @@ return [
                 'shimmer' => [
                     'relative overflow-hidden after:shimmer-overlay',
                     'rtl:after:[animation-direction:reverse] motion-reduce:after:[animation:none]',
+                    'group-[&]/skeleton-shimmer:after:content-none',
                 ],
                 'none' => '',
             ],
@@ -21,7 +22,7 @@ return [
     ),
     'skeleton-group' => new ComponentStyle(
         base: [
-            'relative overflow-hidden after:shimmer-overlay',
+            'group/skeleton-shimmer relative overflow-hidden after:shimmer-overlay',
             'rtl:after:[animation-direction:reverse] motion-reduce:after:[animation:none]',
         ],
     ),
