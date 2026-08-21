@@ -1,0 +1,7 @@
+{%- props as = 'div', animation = 'shimmer' -%}
+<{{ as }}
+    class="{{ hui('skeleton').apply({animation: animation}, attributes.render('class'))|tailwind_merge }}"
+    {{ attributes.defaults({
+        'data-slot': 'skeleton',
+    }) }}
+></{{ as }}>

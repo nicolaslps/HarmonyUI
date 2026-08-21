@@ -11,3 +11,26 @@
   --tw-duration: var(--duration-spring);
   transition-duration: var(--duration-spring);
 }
+
+@utility animate-shimmer {
+  background-image: linear-gradient(
+    90deg,
+    var(--shimmer-base) 0%,
+    var(--shimmer-base) 25%,
+    var(--shimmer-highlight) 50%,
+    var(--shimmer-base) 75%,
+    var(--shimmer-base) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 500% 100%;
+  animation: shimmer 1.6s linear infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
