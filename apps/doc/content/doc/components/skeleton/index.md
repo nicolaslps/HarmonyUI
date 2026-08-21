@@ -34,6 +34,10 @@ Set `animation` to `shimmer`, `pulse` or `none`. Defaults to `shimmer`.
 
 <ComponentPreview name="animation"/>
 
+### Synced shimmer
+
+<ComponentPreview name="synced"/>
+
 ### RTL
 
 <ComponentPreview name="rtl"/>
@@ -45,4 +49,10 @@ Set `animation` to `shimmer`, `pulse` or `none`. Defaults to `shimmer`.
 | Prop | Type | Description |
 |---|---|---|
 | `animation` | `'shimmer'` \| `'pulse'` \| `'none'` | The loading animation. Defaults to `shimmer` |
+| `as` | `string` | The HTML tag to render. Defaults to `div` |
+
+### `<twig:ui:Skeleton:Group>`
+
+| Prop | Type | Description |
+|---|---|---|
 | `as` | `string` | The HTML tag to render. Defaults to `div` |
