@@ -1,0 +1,9 @@
+{%- props as = 'div' -%}
+<{{ as }}
+    class="{{ hui('skeleton-group').apply({}, attributes.render('class'))|tailwind_merge }}"
+    {{ attributes.defaults({
+        'data-slot': 'skeleton-group',
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</{{ as }}>

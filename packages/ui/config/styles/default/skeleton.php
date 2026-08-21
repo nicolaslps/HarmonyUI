@@ -11,13 +11,18 @@ return [
             'animation' => [
                 'pulse' => 'animate-pulse motion-reduce:animate-none',
                 'shimmer' => [
-                    '[--shimmer-base:var(--color-neutral-200)] [--shimmer-highlight:var(--color-neutral-100)]',
-                    'dark:[--shimmer-base:var(--color-neutral-800)] dark:[--shimmer-highlight:var(--color-neutral-700)]',
-                    'animate-shimmer rtl:[animation-direction:reverse] motion-reduce:animate-none',
+                    'relative overflow-hidden after:shimmer-overlay',
+                    'rtl:after:[animation-direction:reverse] motion-reduce:after:[animation:none]',
                 ],
                 'none' => '',
             ],
         ],
         defaultVariants: ['animation' => 'shimmer'],
+    ),
+    'skeleton-group' => new ComponentStyle(
+        base: [
+            'relative overflow-hidden after:shimmer-overlay',
+            'rtl:after:[animation-direction:reverse] motion-reduce:after:[animation:none]',
+        ],
     ),
 ];
