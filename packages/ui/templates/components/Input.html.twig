@@ -1,0 +1,6 @@
+<input
+    class="{{ hui('input').apply({}, attributes.render('class'))|tailwind_merge }}"
+    {{ attributes.defaults({
+        'data-slot': 'input',
+    }) }}
+/>
