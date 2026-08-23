@@ -33,7 +33,6 @@ final readonly class LegacySite
         'components/input-group',
         'components/label',
         'components/select',
-        'components/spinner',
         'components/switch',
         'components/tabs',
         'components/textarea',
