@@ -1,0 +1,35 @@
+{%- props errors = [] -%}
+{%- set slot_content -%}{%- block content %}{% endblock -%}{%- endset -%}
+{%- set slot_content = slot_content|trim -%}
+
+{%- if slot_content == '' -%}
+    {%- set messages = [] -%}
+    {%- for error in errors|default([]) -%}
+        {%- set message = error.message ?? error -%}
+        {%- if message is not same as(false) and message is not null and message != '' and message not in messages -%}
+            {%- set messages = messages|merge([message]) -%}
+        {%- endif -%}
+    {%- endfor -%}
+{%- endif -%}
+
+{%- if slot_content != '' or (messages ?? [])|length > 0 -%}
+    <div
+        role="alert"
+        class="{{ hui('field-error').apply({}, attributes.render('class'))|tailwind_merge }}"
+        {{ attributes.defaults({
+            'data-slot': 'field-error',
+        }) }}
+    >
+        {%- if slot_content != '' -%}
+            {{ slot_content }}
+        {%- elseif (messages ?? [])|length == 1 -%}
+            {{ messages[0] }}
+        {%- else -%}
+            <ul class="ltr:ml-4 rtl:ms-4 flex list-disc flex-col gap-1">
+                {%- for message in messages|default([]) -%}
+                    <li>{{ message }}</li>
+                {%- endfor -%}
+            </ul>
+        {%- endif -%}
+    </div>
+{%- endif -%}

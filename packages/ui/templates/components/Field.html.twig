@@ -1,0 +1,11 @@
+{%- props orientation = 'vertical' -%}
+<div
+    role="group"
+    data-orientation="{{ orientation }}"
+    class="{{ hui('field').apply({orientation: orientation}, attributes.render('class'))|tailwind_merge }}"
+    {{ attributes.defaults({
+        'data-slot': 'field',
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</div>

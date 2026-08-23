@@ -1,0 +1,8 @@
+<twig:ui:Label
+    class="{{ hui('field-label').apply({}, attributes.render('class'))|tailwind_merge }}"
+    {{ ...attributes.defaults({
+        'data-slot': 'field-label',
+    }) }}
+>
+    {{ block(outerBlocks.content) }}
+</twig:ui:Label>
