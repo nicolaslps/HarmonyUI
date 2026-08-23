@@ -32,6 +32,9 @@ return [
     'field-content' => new ComponentStyle(
         base: 'group/field-content flex flex-1 flex-col gap-0.5 leading-snug',
     ),
+    'field-group' => new ComponentStyle(
+        base: 'group/field-group @container/field-group flex w-full flex-col gap-5 *:data-[slot=field-group]:gap-4',
+    ),
     'field-label' => new ComponentStyle(
         base: [
             'group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50',

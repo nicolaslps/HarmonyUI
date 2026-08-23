@@ -1,0 +1,8 @@
+<div
+    class="{{ hui('field-group').apply({}, attributes.render('class'))|tailwind_merge }}"
+    {{ attributes.defaults({
+        'data-slot': 'field-group',
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</div>
