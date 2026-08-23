@@ -1,0 +1,9 @@
+{% set variant = inject('table_variant', 'default') %}
+<td
+    class="{{ hui('table-cell').apply({variant: variant}, attributes.render('class'))|tailwind_merge }}"
+    {{ attributes.defaults({
+        'data-slot': 'table-cell',
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</td>

@@ -1,0 +1,10 @@
+{% set variant = inject('table_variant', 'default') %}
+{% do provide('table_variant', 'footer') %}
+<tfoot
+    class="{{ hui('table-footer').apply({variant: variant}, attributes.render('class'))|tailwind_merge }}"
+    {{ attributes.defaults({
+        'data-slot': 'table-footer',
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</tfoot>

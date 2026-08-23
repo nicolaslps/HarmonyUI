@@ -1,0 +1,8 @@
+<th
+    class="{{ hui('table-head').apply({}, attributes.render('class'))|tailwind_merge }}"
+    {{ attributes.defaults({
+        'data-slot': 'table-head',
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</th>

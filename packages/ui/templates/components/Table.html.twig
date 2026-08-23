@@ -1,0 +1,12 @@
+{%- props variant = 'default' -%}
+{% do provide('table_variant', variant) %}
+<div
+    class="{{ hui('table-container').apply({}, attributes.render('class'))|tailwind_merge }}"
+    {{ attributes.defaults({
+        'data-slot': 'table-container',
+    }) }}
+>
+    <table class="{{ hui('table').apply({variant: variant})|tailwind_merge }}" data-slot="table">
+        {%- block content %}{% endblock -%}
+    </table>
+</div>
