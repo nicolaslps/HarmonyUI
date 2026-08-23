@@ -1,0 +1,17 @@
+<div class="w-full max-w-xs">
+    <twig:ui:Field:Group>
+        <twig:ui:Field>
+            <twig:ui:Field:Label for="fieldgroup-name">Name</twig:ui:Field:Label>
+            <twig:ui:Input id="fieldgroup-name" placeholder="Jordan Lee" />
+        </twig:ui:Field>
+        <twig:ui:Field>
+            <twig:ui:Field:Label for="fieldgroup-email">Email</twig:ui:Field:Label>
+            <twig:ui:Input id="fieldgroup-email" type="email" placeholder="name@example.com" />
+            <twig:ui:Field:Description>We'll send updates to this address.</twig:ui:Field:Description>
+        </twig:ui:Field>
+        <twig:ui:Field orientation="horizontal">
+            <twig:ui:Button type="reset" variant="outline">Reset</twig:ui:Button>
+            <twig:ui:Button type="submit">Submit</twig:ui:Button>
+        </twig:ui:Field>
+    </twig:ui:Field:Group>
+</div>

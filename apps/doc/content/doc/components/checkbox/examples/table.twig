@@ -1,0 +1,38 @@
+<twig:ui:Table>
+    <twig:ui:Table:Header>
+        <twig:ui:Table:Row>
+            <twig:ui:Table:Head class="w-8">
+                <twig:ui:Checkbox id="select-all" />
+            </twig:ui:Table:Head>
+            <twig:ui:Table:Head>Name</twig:ui:Table:Head>
+            <twig:ui:Table:Head>Email</twig:ui:Table:Head>
+            <twig:ui:Table:Head>Role</twig:ui:Table:Head>
+        </twig:ui:Table:Row>
+    </twig:ui:Table:Header>
+    <twig:ui:Table:Body>
+        <twig:ui:Table:Row data-state="selected">
+            <twig:ui:Table:Cell>
+                <twig:ui:Checkbox id="row-1" checked />
+            </twig:ui:Table:Cell>
+            <twig:ui:Table:Cell class="font-medium">Sarah Chen</twig:ui:Table:Cell>
+            <twig:ui:Table:Cell>sarah.chen@example.com</twig:ui:Table:Cell>
+            <twig:ui:Table:Cell>Admin</twig:ui:Table:Cell>
+        </twig:ui:Table:Row>
+        <twig:ui:Table:Row>
+            <twig:ui:Table:Cell>
+                <twig:ui:Checkbox id="row-2" />
+            </twig:ui:Table:Cell>
+            <twig:ui:Table:Cell class="font-medium">Marcus Rodriguez</twig:ui:Table:Cell>
+            <twig:ui:Table:Cell>marcus.rodriguez@example.com</twig:ui:Table:Cell>
+            <twig:ui:Table:Cell>User</twig:ui:Table:Cell>
+        </twig:ui:Table:Row>
+        <twig:ui:Table:Row>
+            <twig:ui:Table:Cell>
+                <twig:ui:Checkbox id="row-3" />
+            </twig:ui:Table:Cell>
+            <twig:ui:Table:Cell class="font-medium">Priya Patel</twig:ui:Table:Cell>
+            <twig:ui:Table:Cell>priya.patel@example.com</twig:ui:Table:Cell>
+            <twig:ui:Table:Cell>User</twig:ui:Table:Cell>
+        </twig:ui:Table:Row>
+    </twig:ui:Table:Body>
+</twig:ui:Table>
