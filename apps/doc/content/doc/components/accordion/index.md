@@ -8,7 +8,7 @@ Built on the native [`<details>` and `<summary>`](https://developer.mozilla.org/
 HTML elements, with exclusive mode relying on the `name` attribute, enhanced by a small
 Stimulus controller for arrow-key navigation, disabled items and `change` events.
 
-With Ctrl/Cmd+F, the browser can search for text inside a collapsed <details> panel and expand it automatically.
+With `Ctrl/Cmd+F`, the browser can search for text inside a collapsed `<details>` panel and expand it automatically.
 
 ## Usage
 
