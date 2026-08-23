@@ -1,0 +1,10 @@
+{%- props icon = 'lucide:loader-2', label = 'Loading' -%}
+<twig:ux:icon
+    :name="icon"
+    class="{{ hui('spinner').apply({}, attributes.render('class'))|tailwind_merge }}"
+    {{ ...attributes.defaults({
+        'data-slot': 'spinner',
+        'role': 'status',
+        'aria-label': label,
+    }) }}
+/>
