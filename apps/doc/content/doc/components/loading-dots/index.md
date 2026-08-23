@@ -1,8 +1,9 @@
 ---
-title: Spinner
-description: An indicator that content is loading.
+title: Loading Dots
+description: Three blinking dots that indicate an action running in the background.
 priority: 0
 ---
+
 ## Usage
 
 <ComponentPreview name="usage"/>
@@ -17,19 +18,15 @@ priority: 0
 
 <ComponentPreview name="color"/>
 
-### Custom icon
+### With text
 
-<ComponentPreview name="icon"/>
-
-### In a button
-
-<ComponentPreview name="button"/>
+<ComponentPreview name="text"/>
 
 ## API Reference
 
-### `<twig:ui:Spinner>`
+### `<twig:ui:LoadingDots>`
 
 | Prop | Type | Description |
 |---|---|---|
-| `icon` | `string` | The icon to spin. Defaults to `'lucide:loader-2'` |
+| `size` | `'sm'` \| `'md'` \| `'lg'` \| `'xl'` | The size of the dots. Defaults to `md` |
 | `label` | `string` | The accessible label announced to assistive technologies. Defaults to `'Loading'` |
