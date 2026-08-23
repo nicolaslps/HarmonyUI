@@ -1,0 +1,12 @@
+{%- props size = 'md', label = 'Loading' -%}
+<span
+    class="{{ hui('loading-dots').apply({size: size}, attributes.render('class'))|tailwind_merge }}"
+    {{ attributes.defaults({
+        'data-slot': 'loading-dots',
+        'aria-label': label,
+    }) }}
+>
+    <span class="{{ hui('loading-dots-dot').apply({}) }}"></span>
+    <span class="{{ hui('loading-dots-dot').apply({}, '[animation-delay:.2s]') }}"></span>
+    <span class="{{ hui('loading-dots-dot').apply({}, '[animation-delay:.4s]') }}"></span>
+</span>
