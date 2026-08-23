@@ -1,0 +1,79 @@
+<twig:ui:Table class="max-w-2xl">
+    <twig:ui:Table:Header>
+        <twig:ui:Table:Row>
+            <twig:ui:Table:Head>Member</twig:ui:Table:Head>
+            <twig:ui:Table:Head>Role</twig:ui:Table:Head>
+            <twig:ui:Table:Head>Status</twig:ui:Table:Head>
+            <twig:ui:Table:Head class="text-end">Last active</twig:ui:Table:Head>
+        </twig:ui:Table:Row>
+    </twig:ui:Table:Header>
+    <twig:ui:Table:Body>
+        <twig:ui:Table:Row>
+            <twig:ui:Table:Cell>
+                <div class="flex items-center gap-3">
+                    <twig:ui:Avatar size="sm">
+                        <twig:ui:Avatar:Image src="https://avatars.laravel.cloud/168544b7-8325-4ac9-a019-5316d1824b0e?vibe=forest" alt="Sarah Chen" />
+                        <twig:ui:Avatar:Fallback>SC</twig:ui:Avatar:Fallback>
+                    </twig:ui:Avatar>
+                    <div class="flex flex-col">
+                        <span class="font-medium">Sarah Chen</span>
+                        <span class="text-xs text-neutral-500 dark:text-neutral-400">sarah.chen@acme.com</span>
+                    </div>
+                </div>
+            </twig:ui:Table:Cell>
+            <twig:ui:Table:Cell>
+                <twig:ui:Badge variant="outline">Admin</twig:ui:Badge>
+            </twig:ui:Table:Cell>
+            <twig:ui:Table:Cell>
+                <twig:ui:Badge color="green" variant="soft">Active</twig:ui:Badge>
+            </twig:ui:Table:Cell>
+            <twig:ui:Table:Cell class="text-end">2 minutes ago</twig:ui:Table:Cell>
+        </twig:ui:Table:Row>
+        <twig:ui:Table:Row>
+            <twig:ui:Table:Cell>
+                <div class="flex items-center gap-3">
+                    <twig:ui:Avatar size="sm">
+                        <twig:ui:Avatar:Image src="https://avatars.laravel.cloud/1a5e26e9-6894-40fd-b37f-75286143c505?vibe=ocean" alt="Marcus Johnson" />
+                        <twig:ui:Avatar:Fallback>MJ</twig:ui:Avatar:Fallback>
+                    </twig:ui:Avatar>
+                    <div class="flex flex-col">
+                        <span class="font-medium">Marcus Johnson</span>
+                        <span class="text-xs text-neutral-500 dark:text-neutral-400">marcus.johnson@acme.com</span>
+                    </div>
+                </div>
+            </twig:ui:Table:Cell>
+            <twig:ui:Table:Cell>
+                <twig:ui:Badge variant="outline">Editor</twig:ui:Badge>
+            </twig:ui:Table:Cell>
+            <twig:ui:Table:Cell>
+                <twig:ui:Badge color="green" variant="soft">Active</twig:ui:Badge>
+            </twig:ui:Table:Cell>
+            <twig:ui:Table:Cell class="text-end">1 hour ago</twig:ui:Table:Cell>
+        </twig:ui:Table:Row>
+        <twig:ui:Table:Row>
+            <twig:ui:Table:Cell>
+                <div class="flex items-center gap-3">
+                    <twig:ui:Avatar size="sm">
+                        <twig:ui:Avatar:Fallback>EM</twig:ui:Avatar:Fallback>
+                    </twig:ui:Avatar>
+                    <div class="flex flex-col">
+                        <span class="font-medium">Elena Moreau</span>
+                        <span class="text-xs text-neutral-500 dark:text-neutral-400">elena.moreau@acme.com</span>
+                    </div>
+                </div>
+            </twig:ui:Table:Cell>
+            <twig:ui:Table:Cell>
+                <twig:ui:Badge variant="outline">Viewer</twig:ui:Badge>
+            </twig:ui:Table:Cell>
+            <twig:ui:Table:Cell>
+                <twig:ui:Badge color="amber" variant="soft">Invited</twig:ui:Badge>
+            </twig:ui:Table:Cell>
+            <twig:ui:Table:Cell class="text-end">Never</twig:ui:Table:Cell>
+        </twig:ui:Table:Row>
+    </twig:ui:Table:Body>
+    <twig:ui:Table:Footer>
+        <twig:ui:Table:Row>
+            <twig:ui:Table:Cell colspan="4">3 members</twig:ui:Table:Cell>
+        </twig:ui:Table:Row>
+    </twig:ui:Table:Footer>
+</twig:ui:Table>

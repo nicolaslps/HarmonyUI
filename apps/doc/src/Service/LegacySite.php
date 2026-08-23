@@ -35,7 +35,6 @@ final readonly class LegacySite
         'components/select',
         'components/spinner',
         'components/switch',
-        'components/table',
         'components/tabs',
         'components/textarea',
         'components/tooltip',

@@ -1,0 +1,51 @@
+<twig:ui:Table class="max-w-2xl">
+    <twig:ui:Table:Caption>A list of your recent invoices.</twig:ui:Table:Caption>
+    <twig:ui:Table:Header>
+        <twig:ui:Table:Row>
+            <twig:ui:Table:Head>Invoice</twig:ui:Table:Head>
+            <twig:ui:Table:Head>Status</twig:ui:Table:Head>
+            <twig:ui:Table:Head>Method</twig:ui:Table:Head>
+            <twig:ui:Table:Head class="text-end">Amount</twig:ui:Table:Head>
+        </twig:ui:Table:Row>
+    </twig:ui:Table:Header>
+    <twig:ui:Table:Body>
+        <twig:ui:Table:Row>
+            <twig:ui:Table:Cell class="font-medium">INV001</twig:ui:Table:Cell>
+            <twig:ui:Table:Cell>
+                <twig:ui:Badge color="green" variant="soft">Paid</twig:ui:Badge>
+            </twig:ui:Table:Cell>
+            <twig:ui:Table:Cell>Credit Card</twig:ui:Table:Cell>
+            <twig:ui:Table:Cell class="text-end">$250.00</twig:ui:Table:Cell>
+        </twig:ui:Table:Row>
+        <twig:ui:Table:Row>
+            <twig:ui:Table:Cell class="font-medium">INV002</twig:ui:Table:Cell>
+            <twig:ui:Table:Cell>
+                <twig:ui:Badge color="amber" variant="soft">Pending</twig:ui:Badge>
+            </twig:ui:Table:Cell>
+            <twig:ui:Table:Cell>PayPal</twig:ui:Table:Cell>
+            <twig:ui:Table:Cell class="text-end">$150.00</twig:ui:Table:Cell>
+        </twig:ui:Table:Row>
+        <twig:ui:Table:Row>
+            <twig:ui:Table:Cell class="font-medium">INV003</twig:ui:Table:Cell>
+            <twig:ui:Table:Cell>
+                <twig:ui:Badge color="red" variant="soft">Unpaid</twig:ui:Badge>
+            </twig:ui:Table:Cell>
+            <twig:ui:Table:Cell>Bank Transfer</twig:ui:Table:Cell>
+            <twig:ui:Table:Cell class="text-end">$350.00</twig:ui:Table:Cell>
+        </twig:ui:Table:Row>
+        <twig:ui:Table:Row>
+            <twig:ui:Table:Cell class="font-medium">INV004</twig:ui:Table:Cell>
+            <twig:ui:Table:Cell>
+                <twig:ui:Badge color="green" variant="soft">Paid</twig:ui:Badge>
+            </twig:ui:Table:Cell>
+            <twig:ui:Table:Cell>Credit Card</twig:ui:Table:Cell>
+            <twig:ui:Table:Cell class="text-end">$450.00</twig:ui:Table:Cell>
+        </twig:ui:Table:Row>
+    </twig:ui:Table:Body>
+    <twig:ui:Table:Footer>
+        <twig:ui:Table:Row>
+            <twig:ui:Table:Cell colspan="3">Total</twig:ui:Table:Cell>
+            <twig:ui:Table:Cell class="text-end">$1,200.00</twig:ui:Table:Cell>
+        </twig:ui:Table:Row>
+    </twig:ui:Table:Footer>
+</twig:ui:Table>
