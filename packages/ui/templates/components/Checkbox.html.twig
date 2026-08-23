@@ -1,0 +1,12 @@
+<div class="{{ hui('checkbox').apply({}) }}" data-slot="checkbox">
+    <input
+        type="checkbox"
+        class="{{ hui('checkbox-input').apply({}, attributes.render('class'))|tailwind_merge }}"
+        {{ attributes.defaults({
+            'data-slot': 'checkbox-input',
+        }) }}
+    />
+    <span class="{{ hui('checkbox-indicator').apply({}) }}" data-slot="checkbox-indicator">
+        <twig:ux:icon name="lucide:check" class="size-3.5" />
+    </span>
+</div>
