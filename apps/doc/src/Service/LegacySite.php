@@ -30,7 +30,6 @@ final readonly class LegacySite
         'components/form',
         'components/input-group',
         'components/select',
-        'components/switch',
         'components/tabs',
         'components/textarea',
         'components/tooltip',

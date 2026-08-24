@@ -16,6 +16,10 @@
             "popover": {
                 "enabled": true,
                 "fetch": "eager"
+            },
+            "switch": {
+                "enabled": true,
+                "fetch": "eager"
             }
         }
     },
