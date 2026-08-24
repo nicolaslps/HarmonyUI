@@ -16,14 +16,14 @@ return [
                 'horizontal' => [
                     "flex-row items-center has-[>[data-slot=field-content]]:items-start",
                     "*:data-[slot=field-label]:flex-auto",
-                    "has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px",
+                    "has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio],[role=switch]]:mt-px",
                 ],
                 'responsive' => [
                     "flex-col *:w-full [&>.sr-only]:w-auto",
                     "@md/field-group:flex-row @md/field-group:items-center",
                     "@md/field-group:has-[>[data-slot=field-content]]:items-start",
                     "@md/field-group:*:w-auto @md/field-group:*:data-[slot=field-label]:flex-auto",
-                    "@md/field-group:has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px",
+                    "@md/field-group:has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio],[role=switch]]:mt-px",
                 ],
             ],
         ],

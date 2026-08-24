@@ -8,6 +8,7 @@
     "dependencies": {
         "@zag-js/dialog": "^1.43.0",
         "@zag-js/popover": "^1.43.0",
+        "@zag-js/switch": "^1.43.0",
         "@zag-js/vanilla": "^1.43.0"
     },
     "symfony": {
@@ -33,6 +34,12 @@
             "popover": {
                 "main": "controllers/popover_controller.js",
                 "name": "hui-popover",
+                "fetch": "eager",
+                "enabled": true
+            },
+            "switch": {
+                "main": "controllers/switch_controller.js",
+                "name": "hui-switch",
                 "fetch": "eager",
                 "enabled": true
             }

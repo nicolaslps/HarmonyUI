@@ -1,0 +1,26 @@
+{%- props checked = false, disabled = false, invalid = false, required = false, readOnly = false, id = null, rootId = null, name = null, value = 'on', form = null, dir = null, size = 'default' -%}
+{%- set _hui_switch_id = rootId ?? hui_id('switch') -%}
+{%- set _hui_switch_attrs = {
+    'data-slot': 'switch',
+    'data-controller': 'hui-switch',
+    'data-hui-switch-input-id-value': id ?? hui_id('switch'),
+    'data-hui-switch-checked-value': checked ? 'true' : 'false',
+    'data-hui-switch-disabled-value': disabled ? 'true' : 'false',
+    'data-hui-switch-invalid-value': invalid ? 'true' : 'false',
+    'data-hui-switch-required-value': required ? 'true' : 'false',
+    'data-hui-switch-read-only-value': readOnly ? 'true' : 'false',
+    'data-hui-switch-name-value': name ?? '',
+    'data-hui-switch-value-value': value,
+    'data-hui-switch-form-value': form ?? '',
+    'data-hui-switch-dir-value': dir ?? '',
+} -%}
+<label
+    id="{{ _hui_switch_id }}"
+    class="{{ hui('switch').apply({}, attributes.render('class'))|tailwind_merge }}"
+    {{ attributes.defaults(_hui_switch_attrs) }}
+>
+    <span class="{{ hui('switch-control').apply({size: size}) }}" data-part="control">
+        <span class="{{ hui('switch-thumb').apply({size: size}) }}" data-part="thumb"></span>
+    </span>
+    <input data-part="hidden-input" />
+</label>
