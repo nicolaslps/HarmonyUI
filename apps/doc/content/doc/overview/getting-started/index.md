@@ -73,7 +73,11 @@ component styles: both live in `vendor/`, which Tailwind ignores by default.
 
 @source "../../vendor/harmonyui/ui/templates";
 @source "../../vendor/harmonyui/ui/config/styles";
+
+@custom-variant dark (&:where(.dark, .dark *):where(:not(.light, .light *)));
 ```
+
+The `dark` custom variant is required for HarmonyUI's dark mode styles to work.
 
 ### 4. Build your assets
 
