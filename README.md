@@ -1,8 +1,27 @@
-# HarmonyUI
+<p align="center">
+  <img src=".github/logo-light.svg" alt="HarmonyUI logo" width="72" height="72">
+</p>
 
-HarmonyUI is a UI component library for Symfony. It provides beautifully styled Twig components, built on Tailwind CSS and extensible through design tokens and per-component configuration.
+<h1 align="center">HarmonyUI</h1>
 
-Read the documentation at [harmonyui.org](https://harmonyui.org).
+<p align="center">
+  A UI component library for Symfony, with beautifully styled Twig components built on Tailwind CSS, Stimulus and Zag.js.
+</p>
+
+<p align="center">
+  <a href="https://harmonyui.org"><strong>Documentation</strong></a>
+  ·
+  <a href="https://github.com/nicolaslps/HarmonyUI/issues">Issues</a>
+</p>
+
+<p align="center">
+  <img alt="Status" src="https://img.shields.io/badge/status-pre--1.0-orange">
+  <img alt="PHP" src="https://img.shields.io/badge/php-%3E%3D8.4-777bb4">
+  <img alt="Symfony" src="https://img.shields.io/badge/symfony-7%20%7C%208-000000">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-blue">
+</p>
+
+---
 
 ## Installation
 
