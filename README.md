@@ -23,6 +23,9 @@
 
 ---
 
+> [!TIP]
+> Starting a new project? We recommend the [Symfony UX Toolkit shadcn kit](https://ux.symfony.com/toolkit/kits/shadcn?ref=github.com/nicolaslps/HarmonyUI&utm_source=github&utm_medium=referral&utm_campaign=harmonyui_readme&utm_content=toolkit_shadcn).
+
 ## Installation
 
 See the [installation guide](https://harmonyui.org/docs/overview/installation) on the documentation site.
