@@ -34,7 +34,7 @@ final class DocsController extends AbstractController
             throw $this->createNotFoundException(sprintf('Documentation page "%s" not found.', $slug));
         }
 
-        // Pages not rewritten yet embed the previous site instead of rendering.
+        // Pages not rewritten yet render a placeholder instead of their body.
         if ($legacySite->isLegacy($slug)) {
             return $this->render('doc/show/under_construction.html.twig', [
                 'page' => new DocPage($meta, '', []),
@@ -42,7 +42,6 @@ final class DocsController extends AbstractController
                 'title' => $legacySite->seoTitle($meta->title),
                 'description' => $legacySite->seoDescription($meta->description),
                 'og_description' => $meta->description,
-                'legacy_url' => $legacySite->url('/docs/'.$slug),
             ]);
         }
 

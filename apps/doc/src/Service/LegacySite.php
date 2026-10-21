@@ -7,13 +7,11 @@ namespace App\Service;
 use Twig\Attribute\AsTwigFunction;
 
 use function in_array;
-use function ltrim;
-use function rtrim;
 
 /**
- * The previous harmonyui.org, kept online while its pages are rewritten.
- * Slugs listed here render a placeholder embedding the old page instead of
- * their Markdown body; remove a slug once its page is rewritten. The SEO
+ * Pages carried over from the previous harmonyui.org that are not rewritten
+ * yet. Slugs listed here render an "under construction" placeholder instead
+ * of their Markdown body; remove a slug once its page is rewritten. The SEO
  * helpers reproduce the tags the old site served.
  */
 final readonly class LegacySite
@@ -35,20 +33,10 @@ final readonly class LegacySite
         'components/tooltip',
     ];
 
-    public function __construct(
-        private string $legacyHost = 'https://old.harmonyui.org',
-    ) {
-    }
-
     #[AsTwigFunction('is_legacy_doc')]
     public function isLegacy(string $slug): bool
     {
         return in_array($slug, self::SLUGS, true);
-    }
-
-    public function url(string $path): string
-    {
-        return rtrim($this->legacyHost, '/').'/'.ltrim($path, '/');
     }
 
     public function seoTitle(string $title): string
